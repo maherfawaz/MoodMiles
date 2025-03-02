@@ -22,16 +22,16 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        acting.UI.Click.started += ctx => StartTouch(ctx);
-        acting.UI.Click.canceled += ctx => EndTouch(ctx);
+        acting.Player.Attack.started += ctx => StartTouch(ctx);
+        acting.Player.Attack.canceled += ctx => EndTouch(ctx);
     }
 
     private void StartTouch(InputAction.CallbackContext context)
     {
-
+        Debug.Log("Touch start");
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
-
+        Debug.Log("Touch end");
     }
 }
