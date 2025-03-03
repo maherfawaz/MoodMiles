@@ -3,20 +3,42 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    private Camera _mainCamera;
+
+    public delegate void StartTouchEvent(Vector2 position, float time);
+    public event StartTouchEvent OnStartTouch;
+    public delegate void EndtTouch(Vector2 position, float time);
+    public event StartTouchEvent OnEndTouch; 
+    private InputSystem_Actions acting;
 
     private void Awake()
     {
-        _mainCamera = Camera.main;
+        acting = new InputSystem_Actions();
     }
 
-    public void OnClick(InputAction.CallbackContext context)
+    private void OnEnable()
     {
-        if (!context.started) return;
+        acting.Enable();
+    }
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Touchscreen.current.position.ReadValue()));
-        if (!rayHit.collider) return;
+    private void OnDisable()
+    {
+        acting.Disable();
+    }
 
-        Debug.Log(rayHit.collider);
+    private void Start()
+    {
+        acting.Touch.TouchPress.started += ctx => StartTouch(ctx);
+        acting.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
+    }
+
+    private void StartTouch(InputAction.CallbackContext context)
+    {
+        Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
+        if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float) context.startTime);
+    }
+    private void EndTouch(InputAction.CallbackContext context)
+    {
+        Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
+        if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
     }
 }
