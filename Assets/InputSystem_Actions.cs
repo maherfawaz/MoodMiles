@@ -1076,6 +1076,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Click"",
+            ""id"": ""8e73853a-9075-4050-963e-afabb5473729"",
+            ""actions"": [
+                {
+                    ""name"": ""Boop"",
+                    ""type"": ""Button"",
+                    ""id"": ""f750e36b-558e-4bb3-8d6e-d4d93f4137b8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""81419c31-d349-4f81-8c82-96ad2629922a"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""Boop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1164,12 +1192,16 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // Click
+        m_Click = asset.FindActionMap("Click", throwIfNotFound: true);
+        m_Click_Boop = m_Click.FindAction("Boop", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Click.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Click.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1620,6 +1652,102 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // Click
+    private readonly InputActionMap m_Click;
+    private List<IClickActions> m_ClickActionsCallbackInterfaces = new List<IClickActions>();
+    private readonly InputAction m_Click_Boop;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Click".
+    /// </summary>
+    public struct ClickActions
+    {
+        private @InputSystem_Actions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public ClickActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Click/Boop".
+        /// </summary>
+        public InputAction @Boop => m_Wrapper.m_Click_Boop;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Click; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="ClickActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(ClickActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="ClickActions" />
+        public void AddCallbacks(IClickActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ClickActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ClickActionsCallbackInterfaces.Add(instance);
+            @Boop.started += instance.OnBoop;
+            @Boop.performed += instance.OnBoop;
+            @Boop.canceled += instance.OnBoop;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="ClickActions" />
+        private void UnregisterCallbacks(IClickActions instance)
+        {
+            @Boop.started -= instance.OnBoop;
+            @Boop.performed -= instance.OnBoop;
+            @Boop.canceled -= instance.OnBoop;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ClickActions.UnregisterCallbacks(IClickActions)" />.
+        /// </summary>
+        /// <seealso cref="ClickActions.UnregisterCallbacks(IClickActions)" />
+        public void RemoveCallbacks(IClickActions instance)
+        {
+            if (m_Wrapper.m_ClickActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="ClickActions.AddCallbacks(IClickActions)" />
+        /// <seealso cref="ClickActions.RemoveCallbacks(IClickActions)" />
+        /// <seealso cref="ClickActions.UnregisterCallbacks(IClickActions)" />
+        public void SetCallbacks(IClickActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ClickActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ClickActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="ClickActions" /> instance referencing this action map.
+    /// </summary>
+    public ClickActions @Click => new ClickActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1833,5 +1961,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Click" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="ClickActions.AddCallbacks(IClickActions)" />
+    /// <seealso cref="ClickActions.RemoveCallbacks(IClickActions)" />
+    public interface IClickActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Boop" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBoop(InputAction.CallbackContext context);
     }
 }

@@ -990,6 +990,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Click",
+            "id": "8e73853a-9075-4050-963e-afabb5473729",
+            "actions": [
+                {
+                    "name": "Boop",
+                    "type": "Button",
+                    "id": "f750e36b-558e-4bb3-8d6e-d4d93f4137b8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "81419c31-d349-4f81-8c82-96ad2629922a",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Boop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
