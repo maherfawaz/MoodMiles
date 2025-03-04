@@ -1,40 +1,89 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 
-public class StepCounter : Sensor
-{    
-    [Header("Dynamic")]
-    public int steps;
-    public static StepCounter current { get; private set; }
-    public IntegerControl stepCounter { get; protected set; }
-    public InputAction stepCount;
-
-    public void Start() {
-        var device = InputSystem.GetDevice<StepCounter>();
-        if (device != null) {
-            stepCounter = device.stepCounter;
-            InputSystem.EnableDevice(device);
-            current = this;
+public class StepCounter : MonoBehaviour
+{
+    // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
+    // Singleton setup
+    private static StepCounter _instance;
+    public static StepCounter Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindFirstObjectByType<StepCounter>();
+                if (_instance == null)
+                {
+                    GameObject container = new GameObject("StepCounter");
+                    _instance = container.AddComponent<StepCounter>();
+                }
+            }
+            return _instance;
         }
     }
 
-    public void Update() {
-        if (StepCounter.current != null) {
-            steps = StepCounter.current.stepCounter.ReadValue();
+[Header("Configuration")]
+    public StepCounterConfig config;
+[Header("Runtime Variables")]
+    [SerializeField] private float distanceWalked = 0f;
+    [SerializeField] private int stepCount = 0;
+    private Vector3 acceleration;
+    private Vector3 prevAcceleration;
+    private void Start()
+    {
+        if (config == null)
+        {
+            Debug.LogError("Oops! StepCounterConfig is missing!");
+            return;
         }
-        //GetSensorValue();
+        prevAcceleration = Input.acceleration;
+        StepDataHandler.Instance.CheckForNewDay();
     }
-
-    /*public void OnStep(InputAction.CallbackContext context) {
-        steps++;
-    }*/
-
-    public string GetSensorName() {
-        return "StepCounter";
+    private void Update()
+    {
+        if (config == null) return;
+        DetectSteps();
+        CalculateDistance();
+        StepDataHandler.Instance.SaveDailySteps(stepCount);
     }
-
-    public string GetSensorValue() {
-        return steps.ToString();
+    private void DetectSteps()
+    {
+        acceleration = Input.acceleration;
+        float delta = (acceleration - prevAcceleration).magnitude;
+        if (delta > config.threshold)
+        {
+            stepCount++;
+            Debug.Log($"Step detected! Count: {stepCount}");
+        }
+        prevAcceleration = acceleration;
+    }
+    private void CalculateDistance()
+    {
+        distanceWalked = stepCount * config.stepLength;
+    }
+    public void CalibrateStepLength(float newStepLength)
+    {
+        if (newStepLength > 0)
+        {
+            config.stepLength = newStepLength;
+            Debug.Log($"Step length calibrated to: {config.stepLength} meters");
+        }
+        else
+        {
+            Debug.LogWarning("Whoops! That's not a valid step length.");
+        }
+    }
+    // Getter methods and data management
+    public float GetDistanceWalked() => distanceWalked;
+    public int GetStepCount() => stepCount;
+    public void ResetStepData()
+    {
+        stepCount = 0;
+        distanceWalked = 0f;
+    }
+    public void LoadStepData(int loadedStepCount)
+    {
+        stepCount = loadedStepCount;
+        CalculateDistance();
     }
 }
