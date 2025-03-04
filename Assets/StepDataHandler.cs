@@ -5,15 +5,11 @@ public class StepDataHandler : MonoBehaviour
     // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
     // Singleton setup (similar to StepCounter)
     private static StepDataHandler _instance;
-    public static StepDataHandler Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<StepDataHandler>();
-                if (_instance == null)
-                {
+    public static StepDataHandler Instance {
+        get {
+            if (_instance == null) {
+                _instance = FindFirstObjectByType<StepDataHandler>();
+                if (_instance == null) {
                     GameObject container = new GameObject("StepDataHandler");
                     _instance = container.AddComponent<StepDataHandler>();
                 }
@@ -22,34 +18,28 @@ public class StepDataHandler : MonoBehaviour
         }
     }
 
-private const string lastRecordedDateKey = "LastRecordedDate";
+    private const string lastRecordedDateKey = "LastRecordedDate";
     private const string dailyStepsKey = "DailySteps";
-    public void SaveDailySteps(int stepCount)
-    {
+    public void SaveDailySteps(int stepCount) {
         PlayerPrefs.SetInt(dailyStepsKey, stepCount);
     }
-    public void CheckForNewDay()
-    {
+    public void CheckForNewDay() {
         string currentDateString = System.DateTime.Now.ToString("yyyyMMdd");
         string lastRecordedDate = PlayerPrefs.GetString(lastRecordedDateKey, currentDateString);
-        if (currentDateString != lastRecordedDate)
-        {
+        if (currentDateString != lastRecordedDate) {
             ResetDailySteps();
             PlayerPrefs.SetString(lastRecordedDateKey, currentDateString);
         }
-        else
-        {
+        else {
             LoadDailySteps();
         }
     }
-    private void ResetDailySteps()
-    {
+    private void ResetDailySteps() {
         PlayerPrefs.SetInt(dailyStepsKey, 0);
         StepCounter.Instance.ResetStepData();
         Debug.Log("New day, new steps! Counter reset.");
     }
-    private void LoadDailySteps()
-    {
+    private void LoadDailySteps() {
         int stepCount = PlayerPrefs.GetInt(dailyStepsKey, 0);
         StepCounter.Instance.LoadStepData(stepCount);
         Debug.Log("Loaded steps from your last adventure.");

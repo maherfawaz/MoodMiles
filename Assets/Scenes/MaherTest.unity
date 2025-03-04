@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0318ed0238111c04794a862a79167ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearDataOnStart: 0
   config: {fileID: 11400000, guid: c8d4d9c78722d7c488fddb7e5d58b832, type: 2}
   distanceWalked: 0
   stepCount: 0
