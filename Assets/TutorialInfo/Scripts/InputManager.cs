@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+[DefaultExecutionOrder(-1)]
+public class InputManager : Singleton<InputManager>
 {
 
     public delegate void StartTouchEvent(Vector2 position, float time);
@@ -42,3 +43,4 @@ public class InputManager : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
     }
 }
+//"How to use Touch with NEW Input System - Unity Tutorial" by Samyam
