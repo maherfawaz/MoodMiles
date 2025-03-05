@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StepCounter : MonoBehaviour
 {
-    // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
+    // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82, https://youtu.be/o_2KMYLDdlw?si=3xszGHWfZyTYpk5c
     // Singleton setup
     private static StepCounter _instance;
     public static StepCounter Instance {
@@ -21,6 +22,10 @@ public class StepCounter : MonoBehaviour
     [Header("Inscribed")]
     [Tooltip("Clear step data from PlayerPrefs on play. Editor only.")]
     public bool clearDataOnStart;
+
+    [Header("Dynamic")]
+    public Text stepsText;
+    public Text distanceText;
 
     [Header("Configuration")]
     public StepCounterConfig config;
@@ -41,6 +46,8 @@ public class StepCounter : MonoBehaviour
             ResetStepData();
             Debug.Log("Step data cleared from PlayerPrefs.");
         }
+        stepsText = GameObject.Find("Steps").GetComponent<Text>();
+        distanceText = GameObject.Find("Distance").GetComponent<Text>();
     }
 
     private void Update() {
@@ -48,6 +55,8 @@ public class StepCounter : MonoBehaviour
         DetectSteps();
         CalculateDistance();
         StepDataHandler.Instance.SaveDailySteps(stepCount);
+        stepsText.text = $"Steps: {stepCount}";
+        distanceText.text = $"Distance: {distanceWalked}m";
     }
 
     private void DetectSteps() {
