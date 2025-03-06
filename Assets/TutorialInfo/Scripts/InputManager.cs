@@ -55,3 +55,4 @@ public class InputManager : Singleton<InputManager>
     }
 }
 //"How to use Touch with NEW Input System - Unity Tutorial" by Samyam
+//Some code from "Detect Clicks in Unity 2D (New Input System) | Bite-Sized Tutorials" by chonk
