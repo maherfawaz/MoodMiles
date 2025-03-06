@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 [DefaultExecutionOrder(-1)]
 public class InputManager : Singleton<InputManager>
 {
-
+    private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
     public delegate void EndtTouch(Vector2 position, float time);
@@ -14,6 +14,7 @@ public class InputManager : Singleton<InputManager>
     private void Awake()
     {
         acting = new InputSystem_Actions();
+        _maindCamera = Camera.main;
     }
 
     private void OnEnable()
@@ -41,6 +42,16 @@ public class InputManager : Singleton<InputManager>
     {
         Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
+    }
+
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        var rayHit = Physics2D.GetRayIntersection(_maindCamera.ScreenPointToRay(Touchscreen.current.position.ReadValue()));
+        if (!rayHit.collider) return;
+
+        Debug.Log(rayHit.collider.gameObject.name);
     }
 }
 //"How to use Touch with NEW Input System - Unity Tutorial" by Samyam
