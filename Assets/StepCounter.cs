@@ -19,10 +19,6 @@ public class StepCounter : MonoBehaviour
         }
     }
 
-    [Header("Inscribed")]
-    [Tooltip("Clear step data from PlayerPrefs on play. Editor only.")]
-    public bool clearDataOnStart;
-
     [Header("Dynamic")]
     public Text stepsText;
     public Text distanceText;
@@ -42,10 +38,6 @@ public class StepCounter : MonoBehaviour
         }
         prevAcceleration = Input.acceleration;
         StepDataHandler.Instance.CheckForNewDay();
-        if (clearDataOnStart && Application.isEditor) {
-            ResetStepData();
-            Debug.Log("Step data cleared from PlayerPrefs.");
-        }
         stepsText = GameObject.Find("Steps").GetComponent<Text>();
         distanceText = GameObject.Find("Distance").GetComponent<Text>();
     }
