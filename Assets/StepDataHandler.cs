@@ -1,4 +1,5 @@
 using UnityEngine;
+using GooglePlayGames.BasicApi.SavedGame;
 
 public class StepDataHandler : MonoBehaviour
 {
@@ -17,12 +18,13 @@ public class StepDataHandler : MonoBehaviour
             return _instance;
         }
     }
-
     private const string lastRecordedDateKey = "LastRecordedDate";
     private const string dailyStepsKey = "DailySteps";
+
     public void SaveDailySteps(int stepCount) {
         PlayerPrefs.SetInt(dailyStepsKey, stepCount);
     }
+
     public void CheckForNewDay() {
         string currentDateString = System.DateTime.Now.ToString("yyyyMMdd");
         string lastRecordedDate = PlayerPrefs.GetString(lastRecordedDateKey, currentDateString);
@@ -34,11 +36,13 @@ public class StepDataHandler : MonoBehaviour
             LoadDailySteps();
         }
     }
+
     private void ResetDailySteps() {
         PlayerPrefs.SetInt(dailyStepsKey, 0);
         StepCounter.Instance.ResetStepData();
         Debug.Log("New day, new steps! Counter reset.");
     }
+
     private void LoadDailySteps() {
         int stepCount = PlayerPrefs.GetInt(dailyStepsKey, 0);
         StepCounter.Instance.LoadStepData(stepCount);
