@@ -37,15 +37,15 @@ public class StepDataHandler : MonoBehaviour
         }
     }
 
-    private void ResetDailySteps() {
+    void ResetDailySteps() {
         PlayerPrefs.SetInt(dailyStepsKey, 0);
-        StepCounter.Instance.ResetStepData();
+        OldStepCounter.Instance.ResetStepData();
         Debug.Log("New day, new steps! Counter reset.");
     }
 
-    private void LoadDailySteps() {
+    void LoadDailySteps() {
         int stepCount = PlayerPrefs.GetInt(dailyStepsKey, 0);
-        StepCounter.Instance.LoadStepData(stepCount);
+        OldStepCounter.Instance.LoadStepData(stepCount);
         Debug.Log("Loaded steps from your last adventure.");
     }
 }
