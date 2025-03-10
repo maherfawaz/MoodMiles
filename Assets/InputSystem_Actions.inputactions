@@ -85,15 +85,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Step",
-                    "type": "Value",
-                    "id": "bbbaeffe-7900-4636-b268-cba7fc7aff4e",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -479,17 +470,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5ac05de-73b3-44da-a360-c9b286bf86e8",
-                    "path": "<StepCounter>/stepCounter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Step",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class OldStepCounter : MonoBehaviour
 {
@@ -20,11 +20,10 @@ public class OldStepCounter : MonoBehaviour
     }
 
     [Header("Dynamic")]
-    public Text stepsText;
-    public Text distanceText;
+    public TextMeshProUGUI stepsText, distanceText;
 
     [Header("Configuration")]
-    public StepCounterConfig config;
+    public OldStepCounterConfig config;
     [Header("Runtime Variables")]
     [SerializeField] private float distanceWalked = 0f;
     [SerializeField] private int stepCount = 0;
@@ -37,16 +36,16 @@ public class OldStepCounter : MonoBehaviour
             return;
         }
         prevAcceleration = Input.acceleration;
-        StepDataHandler.Instance.CheckForNewDay();
-        stepsText = GameObject.Find("Steps").GetComponent<Text>();
-        distanceText = GameObject.Find("Distance").GetComponent<Text>();
+        OldStepDataHandler.Instance.CheckForNewDay();
+        stepsText = GameObject.Find("Steps").GetComponent<TextMeshProUGUI>();
+        distanceText = GameObject.Find("Distance").GetComponent<TextMeshProUGUI>();
     }
 
     void Update() {
         if (config == null) return;
         DetectSteps();
         CalculateDistance();
-        StepDataHandler.Instance.SaveDailySteps(stepCount);
+        OldStepDataHandler.Instance.SaveDailySteps(stepCount);
         stepsText.text = $"Steps: {stepCount}";
         distanceText.text = $"Distance: {distanceWalked}m";
     }

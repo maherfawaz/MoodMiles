@@ -1,18 +1,17 @@
 using UnityEngine;
-using GooglePlayGames.BasicApi.SavedGame;
 
-public class StepDataHandler : MonoBehaviour
+public class OldStepDataHandler : MonoBehaviour
 {
     // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
     // Singleton setup (similar to StepCounter)
-    private static StepDataHandler _instance;
-    public static StepDataHandler Instance {
+    private static OldStepDataHandler _instance;
+    public static OldStepDataHandler Instance {
         get {
             if (_instance == null) {
-                _instance = FindFirstObjectByType<StepDataHandler>();
+                _instance = FindFirstObjectByType<OldStepDataHandler>();
                 if (_instance == null) {
                     GameObject container = new GameObject("StepDataHandler");
-                    _instance = container.AddComponent<StepDataHandler>();
+                    _instance = container.AddComponent<OldStepDataHandler>();
                 }
             }
             return _instance;
