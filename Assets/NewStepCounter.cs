@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Android;
 
 // https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
@@ -55,10 +54,8 @@ public class NewStepCounter : MonoBehaviour
         Debug.Log("Editor Platform");
 #endif
 #if UNITY_ANDROID
-        if (!Permission.HasUserAuthorizedPermission("android.permission.ACTIVITY_RECOGNITION")) {
-            Permission.RequestUserPermission("android.permission.ACTIVITY_RECOGNITION");
-        }
-        if (Permission.HasUserAuthorizedPermission("android.permission.ACTIVITY_RECOGNITION")) {
+        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.ACTIVITY_RECOGNITION");
+        if (result == AndroidRuntimePermissions.Permission.Granted) {
             permissionGranted = true;
             Debug.Log("Permission granted");
             InitializeStepCounter();
