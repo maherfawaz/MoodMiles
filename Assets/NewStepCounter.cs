@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Android;
 
+// https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI counterTMP;
