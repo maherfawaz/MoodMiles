@@ -35,8 +35,7 @@ public class NewStepCounter : MonoBehaviour
         if (stepOffset == 0) {
             stepOffset = StepCounter.current.stepCounter.ReadValue();
             Debug.Log("Step offset " + stepOffset);
-        }
-        else {
+        } else {
             long currentSteps = StepCounter.current.stepCounter.ReadValue();
             long stepsTaken = currentSteps - stepOffset;
             counterTMP.text = "Steps: " + stepsTaken;
@@ -62,8 +61,7 @@ public class NewStepCounter : MonoBehaviour
             permissionGranted = true;
             Debug.Log("Permission granted");
             InitializeStepCounter();
-        }
-        else {
+        } else {
             Debug.Log("Permission denied");
         }
 #endif
