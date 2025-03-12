@@ -1,17 +1,17 @@
 using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using UnityEngine.UI;
+using TMPro;
 
 public class PlayGamesManager : MonoBehaviour
 {
     public string playerName;
     public string id;
     public string imgURL;
-    public Text text;
+    public TextMeshProUGUI text;
 
     void Start() {
-        text = GameObject.Find("Text").GetComponent<Text>();
+        text = GameObject.Find("SignIn").GetComponent<TextMeshProUGUI>();
         SignIn();
     }
 
