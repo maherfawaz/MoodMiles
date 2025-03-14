@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 public class NewStepCounter : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI counterTMP;
-    public int simulatedSteps;
-    public const float stepsPerKilometer = 1350.0f;
     long stepOffset;
     bool permissionGranted = false;
 
@@ -39,13 +37,6 @@ public class NewStepCounter : MonoBehaviour
             long currentSteps = StepCounter.current.stepCounter.ReadValue();
             long stepsTaken = currentSteps - stepOffset;
             counterTMP.text = "Steps: " + stepsTaken;
-
-            /*try {
-                Challenge.staticData.player.steps = (int)stepsTaken;
-            }
-            catch (OverflowException) {
-                Debug.Log("Failure to convert long steps");
-            }*/
         }
     }
 
