@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [DefaultExecutionOrder(-1)]
-public class InputManager : Singleton<InputManager>
+public class SlothInput : MonoBehaviour
 {
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
     public delegate void EndtTouch(Vector2 position, float time);
-    public event StartTouchEvent OnEndTouch; 
+    public event StartTouchEvent OnEndTouch;
     private InputSystem_Actions acting;
 
     private void Awake()
@@ -36,13 +36,13 @@ public class InputManager : Singleton<InputManager>
     private void StartTouch(InputAction.CallbackContext context)
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
-        if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float) context.startTime);
+        if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
         Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
-        
+        GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = false;
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -54,9 +54,11 @@ public class InputManager : Singleton<InputManager>
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        
-        
+        if (rayHit == GameObject.FindWithTag("Spinner"))
+        {
+            GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = true;
+        }
+
     }
 }
-//"How to use Touch with NEW Input System - Unity Tutorial" by Samyam
-//Some code from "Detect Clicks in Unity 2D (New Input System) | Bite-Sized Tutorials" by chonk
+
