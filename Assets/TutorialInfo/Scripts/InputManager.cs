@@ -42,6 +42,7 @@ public class InputManager : Singleton<InputManager>
     {
         Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
+        GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = false;
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -52,6 +53,12 @@ public class InputManager : Singleton<InputManager>
         if (!rayHit.collider) return;
 
         Debug.Log(rayHit.collider.gameObject.name);
+
+        if(rayHit == GameObject.FindWithTag("Spinner"))
+        {
+            GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = true;
+        }
+        
     }
 }
 //"How to use Touch with NEW Input System - Unity Tutorial" by Samyam
