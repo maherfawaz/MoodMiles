@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 // https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI counterTMP;
-    long stepOffset;
-    bool permissionGranted = false;
+    [SerializeField] private TextMeshProUGUI counterTMP;
+    private long stepOffset;
+    private bool permissionGranted = false;
 
     void Start() {
         if (Application.isEditor) {
