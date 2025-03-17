@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 // https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI counterTMP;
-    long stepOffset;
-    bool permissionGranted = false;
+    [SerializeField] private TextMeshProUGUI counterTMP;
+    private long stepOffset;
+    private bool permissionGranted = false;
 
     void Start() {
         if (Application.isEditor) {
@@ -49,22 +49,17 @@ public class NewStepCounter : MonoBehaviour
         if (result == AndroidRuntimePermissions.Permission.Granted) {
             permissionGranted = true;
             Debug.Log("Permission granted");
-            InitializeStepCounter();
+            InputSystem.EnableDevice(StepCounter.current);
         } else {
             Debug.Log("Permission denied");
         }
 #endif
     }
 
-    void InitializeStepCounter() {
-        InputSystem.EnableDevice(StepCounter.current);
-        stepOffset = StepCounter.current.stepCounter.ReadValue();
-    }
-
     void OnApplicationPause(bool pause) {
         if (!pause && permissionGranted) {
             // Reinitialize the step counter when the app is resumed
-            InitializeStepCounter();
+            InputSystem.EnableDevice(StepCounter.current);
         }
     }
   }
