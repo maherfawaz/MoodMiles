@@ -42,7 +42,7 @@ public class NewStepCounter : MonoBehaviour
         } else {
             currentSteps = StepCounter.current.stepCounter.ReadValue();
             stepsTaken = currentSteps - stepOffset;
-            counterTMP.text = "Steps: " + stepsTaken + " / " + stepGoal;
+            counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
         }
 
         if (stepsTaken >= stepGoal) {
