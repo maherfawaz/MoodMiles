@@ -22,6 +22,7 @@ public class Paw : MonoBehaviour
         }
         if(attacks == 10)
         {
+            GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
             gameObject.SetActive(false);
         }
     }

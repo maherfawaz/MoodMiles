@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spinner
   - Paw
+  - Health
   layers:
   - Default
   - TransparentFX

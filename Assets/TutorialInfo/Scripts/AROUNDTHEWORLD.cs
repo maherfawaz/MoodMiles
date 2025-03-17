@@ -26,6 +26,7 @@ public class AROUNDTHEWORLD : MonoBehaviour
             if (charging <= 0)
             {
                 charge = false;
+                GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
                 gameObject.SetActive(false);
                 
             }

@@ -5,6 +5,22 @@ using UnityEngine;
 public class AudioLoudnessDetector : MonoBehaviour
 {
     public int sampleWindow = 64;
+
+    private AudioClip _microphoneClip;
+
+    private void Start()
+    {
+        {
+            MicrophoneToAudioClip(microphoneIndex: 0);
+        }
+    }
+    private void MicrophoneToAudioClip(int microphoneIndex)
+    {
+        foreach (var name in Microphone.devices)
+        {
+            Debug.Log(name);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
     {

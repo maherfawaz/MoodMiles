@@ -67,6 +67,7 @@ public class dogManager : MonoBehaviour
         foreach (var rigidbody in ShakingRigidbodies)
         {
             rigidbody.AddForce(deviceAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
+            GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
             Shaker.SetActive(false);
         }
     }

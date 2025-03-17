@@ -42,7 +42,7 @@ public class SlothInput : MonoBehaviour
     {
         Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
-        GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = false;
+       
     }
 
     public void OnClick(InputAction.CallbackContext context)
