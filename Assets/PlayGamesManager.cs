@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayGamesManager : MonoBehaviour
 {
+    [Header("Dynamic")]
     public string playerName;
     public string id;
     public string imgURL;

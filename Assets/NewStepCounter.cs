@@ -5,9 +5,15 @@ using UnityEngine.InputSystem;
 // https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI counterTMP;
-    private long stepOffset;
-    private bool permissionGranted = false;
+    [Header("Inscribed")]
+    public long stepGoal;
+
+    [Header("Dynamic")]
+    public TextMeshProUGUI counterTMP;
+    public long stepOffset;
+    public long stepsTaken;
+    public long currentSteps;
+    public bool permissionGranted = false;
 
     void Start() {
         if (Application.isEditor) {
@@ -34,9 +40,15 @@ public class NewStepCounter : MonoBehaviour
             stepOffset = StepCounter.current.stepCounter.ReadValue();
             Debug.Log("Step offset " + stepOffset);
         } else {
-            long currentSteps = StepCounter.current.stepCounter.ReadValue();
-            long stepsTaken = currentSteps - stepOffset;
-            counterTMP.text = "Steps: " + stepsTaken;
+            currentSteps = StepCounter.current.stepCounter.ReadValue();
+            stepsTaken = currentSteps - stepOffset;
+            counterTMP.text = "Steps: " + stepsTaken + " / " + stepGoal;
+        }
+
+        if (stepsTaken >= stepGoal) {
+            counterTMP.text = "Goal reached!";
+            // Disable the step counter when the goal is reached
+            InputSystem.DisableDevice(StepCounter.current);
         }
     }
 
