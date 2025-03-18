@@ -29,7 +29,7 @@ public class PlayerProfile : MonoBehaviour
     void Start() {
         DontDestroyOnLoad(gameObject);
         if (PlayerPrefs.HasKey(questionsAnsweredKey)) {
-            if (PlayerPrefs.GetInt(questionsAnsweredKey) == 1) {
+            if (PlayerPrefs.GetString(questionsAnsweredKey) == "Yes") {
                 stepsGoal = PlayerPrefs.GetInt(stepsGoalKey);
                 sleepTime = PlayerPrefs.GetInt(sleepTimeKey);
             }
@@ -42,6 +42,6 @@ public class PlayerProfile : MonoBehaviour
     }
 
     public void QuestionsAnswered() {
-        PlayerPrefs.SetInt(questionsAnsweredKey, 1);
+        PlayerPrefs.SetString(questionsAnsweredKey, "Yes");
     }
 }
