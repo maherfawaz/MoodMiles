@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 public class Bosshealth : MonoBehaviour
 {
-    public int health = 8;
+    public int health;
     public TextMeshProUGUI mainText;
+    public static string bu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +15,9 @@ public class Bosshealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mainText.text = health.ToString();
+        health = StaticHp.totalHP;
+        mainText.text = bu;
+         bu = health.ToString();
+        
     }
 }

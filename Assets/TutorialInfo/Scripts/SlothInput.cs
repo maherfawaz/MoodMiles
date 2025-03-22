@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 public class SlothInput : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI maiText;
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
     public delegate void EndtTouch(Vector2 position, float time);
     public event StartTouchEvent OnEndTouch;
     private InputSystem_Actions acting;
-
+    public bool finish = false;
     private void Awake()
     {
         acting = new InputSystem_Actions();
@@ -37,6 +41,12 @@ public class SlothInput : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
+        if(finish == true)
+        {
+            string dataToKeep = maiText.text;
+            Bosshealth.bu = dataToKeep; 
+            SceneManager.LoadScene("Quaid Base");
+        }
     }
     private void EndTouch(InputAction.CallbackContext context)
     {

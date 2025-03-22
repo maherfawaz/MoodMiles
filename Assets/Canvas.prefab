@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 206491728614551952}
   - component: {fileID: 7250544937468296533}
   - component: {fileID: 2889926071244385841}
+  - component: {fileID: 1351389066715198937}
   m_Layer: 5
   m_Name: Boss Health
   m_TagString: Health
@@ -151,6 +152,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 8
   mainText: {fileID: 7250544937468296533}
+--- !u!114 &1351389066715198937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409590993264138361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4683e75adb9c48459d14adb4226954a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maiText: {fileID: 7250544937468296533}
 --- !u!1 &6550698801635606250
 GameObject:
   m_ObjectHideFlags: 0

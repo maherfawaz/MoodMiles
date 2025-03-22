@@ -9,6 +9,7 @@ public class AROUNDTHEWORLD : MonoBehaviour
     [SerializeField] private Transform rotateAround;
     public bool charge = false;
     public float charging = 10;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +27,8 @@ public class AROUNDTHEWORLD : MonoBehaviour
             if (charging <= 0)
             {
                 charge = false;
-                GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
+                StaticHp.totalHP -= 1;
+                GameObject.FindWithTag("Manager").GetComponent<SlothInput>().finish = true;
                 gameObject.SetActive(false);
                 
             }

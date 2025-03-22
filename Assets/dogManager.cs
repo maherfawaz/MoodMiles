@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 
@@ -14,7 +15,7 @@ public class dogManager : MonoBehaviour
     public float ShakeForceMultiplier;
     public Rigidbody2D[] ShakingRigidbodies;
     public GameObject Shaker;
-
+    public bool finish = false;
     private void Awake()
     {
         acting = new InputSystem_Actions();
@@ -41,6 +42,10 @@ public class dogManager : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
+        if (finish == true)
+        {
+            SceneManager.LoadScene("Quaid Base");
+        }
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
@@ -67,8 +72,9 @@ public class dogManager : MonoBehaviour
         foreach (var rigidbody in ShakingRigidbodies)
         {
             rigidbody.AddForce(deviceAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
-            GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
+            StaticHp.totalHP -= 1;
             Shaker.SetActive(false);
+            finish = true;
         }
     }
 

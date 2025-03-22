@@ -11,6 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MaherStepTest.unity
     guid: 39d8e29163c9e2a46b1c8eced7b58c7b
+  - enabled: 1
+    path: Assets/Quaid/Quaid Bird Attack.unity
+    guid: ca37c56881ed0a5459d3ba57f04e2c14
+  - enabled: 1
+    path: Assets/Quaid/Quaid Base.unity
+    guid: 4dabefd83786b7c409ad6d5fcdbf384b
+  - enabled: 1
+    path: Assets/Quaid/Quaid Bear Attack.unity
+    guid: 1e9a48fa7a67529489db3eb754855a92
+  - enabled: 1
+    path: Assets/Quaid/Quaid Dog Attack.unity
+    guid: be86e7c795a8e754e84fb8ccad19689b
+  - enabled: 1
+    path: Assets/Quaid/Quaid Sloth Click.unity
+    guid: bdc45b8d7ff6345449ca3e0015ddfc7d
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}

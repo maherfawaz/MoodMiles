@@ -5,6 +5,7 @@ public class Paw : MonoBehaviour
     public float QuickTime;
     public float ptime;
     public float attacks;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +23,8 @@ public class Paw : MonoBehaviour
         }
         if(attacks == 10)
         {
-            GameObject.FindWithTag("Health").GetComponent<Bosshealth>().health -= 1;
+            StaticHp.totalHP -= 1;
+            GameObject.FindWithTag("Manager").GetComponent<BearManager>().finish = true;
             gameObject.SetActive(false);
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 public class BearManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class BearManager : MonoBehaviour
     public delegate void EndtTouch(Vector2 position, float time);
     public event StartTouchEvent OnEndTouch;
     private InputSystem_Actions acting;
-
+    public bool finish = false;
     private void Awake()
     {
         acting = new InputSystem_Actions();
@@ -37,6 +38,10 @@ public class BearManager : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
+        if (finish == true)
+        {
+            SceneManager.LoadScene("Quaid Base");
+        }
     }
     private void EndTouch(InputAction.CallbackContext context)
     {

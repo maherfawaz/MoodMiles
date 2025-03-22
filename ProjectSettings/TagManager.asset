@@ -7,6 +7,7 @@ TagManager:
   - Spinner
   - Paw
   - Health
+  - Manager
   layers:
   - Default
   - TransparentFX
