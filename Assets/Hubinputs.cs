@@ -1,27 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
-public class SlothInput : MonoBehaviour
+public class Hubinputs : MonoBehaviour
 {
-    public GameObject wellDone;
-    public GameObject defeat;
-    public GameObject boss;
-    [SerializeField] TextMeshProUGUI maiText;
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
     public delegate void EndtTouch(Vector2 position, float time);
     public event StartTouchEvent OnEndTouch;
     private InputSystem_Actions acting;
-    public bool finish = false;
+
     private void Awake()
     {
-        wellDone.SetActive(false);
-        defeat.SetActive(false);
         acting = new InputSystem_Actions();
         _maindCamera = Camera.main;
     }
@@ -46,18 +38,12 @@ public class SlothInput : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
-        if(finish == true)
-        {
-            string dataToKeep = maiText.text;
-            Bosshealth.bu = dataToKeep; 
-            SceneManager.LoadScene("Quaid Base");
-        }
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
         Debug.Log("Touch ended " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
-        GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = false;
+
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -69,25 +55,13 @@ public class SlothInput : MonoBehaviour
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        if (rayHit == GameObject.FindWithTag("Spinner"))
+        if (rayHit == GameObject.FindWithTag("Sloth"))
         {
-            GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = true;
+            if(SnoozeInro.intro == false)
+            {
+                SceneManager.LoadScene("Snooze Intro");
+            }
         }
 
-    }
-
-    public void Update()
-    {
-        if (finish == true)
-        {
-            wellDone.SetActive(true);
-        }
-
-        if(StaticHp.totalHP == 0)
-        {
-            boss.SetActive(false);
-            defeat.SetActive(true);
-        }
     }
 }
-

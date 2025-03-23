@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Quaid/Quaid Sloth Click.unity
     guid: bdc45b8d7ff6345449ca3e0015ddfc7d
+  - enabled: 1
+    path: Assets/Quaid/Snooze Intro.unity
+    guid: 7b1926b29b99c734ba5a00f396dd070b
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}
