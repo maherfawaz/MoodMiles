@@ -871,7 +871,6 @@ RectTransform:
   m_Children:
   - {fileID: 401055882}
   - {fileID: 1016347400}
-  - {fileID: 2020307017}
   - {fileID: 1271732991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -912,6 +911,7 @@ RectTransform:
   m_Children:
   - {fileID: 885271512}
   - {fileID: 1282272913}
+  - {fileID: 2020307017}
   m_Father: {fileID: 1217469117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 2020307018}
   - component: {fileID: 2020307020}
   m_Layer: 5
-  m_Name: SnoozeName
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1340,16 +1340,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020307016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1217469117}
+  m_Father: {fileID: 1271732991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -296, y: -83}
+  m_AnchoredPosition: {x: -302, y: 397.00006}
   m_SizeDelta: {x: 600, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020307018
