@@ -157,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 36, y: -3.3}
-  m_SizeDelta: {x: 1455.334, y: 2606.6}
+  m_SizeDelta: {x: 1432, y: 2800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358902157
 MonoBehaviour:
@@ -282,7 +282,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 1
-  m_AspectRatio: 1
+  m_AspectRatio: 0
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
