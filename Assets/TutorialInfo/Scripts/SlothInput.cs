@@ -48,9 +48,17 @@ public class SlothInput : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         if(finish == true)
         {
-            string dataToKeep = maiText.text;
-            Bosshealth.bu = dataToKeep; 
-            SceneManager.LoadScene("Quaid Base");
+            if (StaticHp.totalHP <= 1)
+            {
+                string dataToKeep = maiText.text;
+                Bosshealth.bu = dataToKeep;
+                SceneManager.LoadScene("Quaid Base");
+            }
+            
+            if (StaticHp.totalHP == 0)
+            {
+                SceneManager.LoadScene("Jail Cutsceen");
+            }
         }
     }
     private void EndTouch(InputAction.CallbackContext context)

@@ -15,7 +15,7 @@ public class Sleep : MonoBehaviour
     public GameObject bibut;
     public GameObject sbu;
     public GameObject dbut;
-    public GameObject timer;
+  
 
     void Start() {
         timeRemaining = hours * 3600;
@@ -43,7 +43,7 @@ public class Sleep : MonoBehaviour
                 sbu.SetActive(true);
                 dbut.SetActive(true);
                 timerIsRunning = false;
-                timer.SetActive(false);
+               
             }
         }
     }
