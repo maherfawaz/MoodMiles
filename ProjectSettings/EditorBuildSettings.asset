@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Quaid/Jail Cutsceen.unity
     guid: 3524a5e911b76b24a94c880c4325d268
+  - enabled: 1
+    path: Assets/Quaid/Intro Cutsceen.unity
+    guid: 5a1048544ea62d644a347e43ad239593
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}
