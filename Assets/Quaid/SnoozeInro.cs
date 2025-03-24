@@ -3,6 +3,8 @@ using UnityEngine;
 public class SnoozeInro : MonoBehaviour
 {
     public static bool intro = false;
+    public static bool mission = false;
+    public static bool attack = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

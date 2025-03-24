@@ -61,6 +61,7 @@ public class Textho : MonoBehaviour
         else
         {
             SnoozeInro.intro = true;
+            SnoozeInro.mission = true;
             SceneManager.LoadScene("Quaid Base");
             
         }
