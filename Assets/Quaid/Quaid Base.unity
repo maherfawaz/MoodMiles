@@ -1730,7 +1730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1223170678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2159,6 +2159,7 @@ MonoBehaviour:
   bibut: {fileID: 1578217238}
   sbu: {fileID: 1650460763}
   dbut: {fileID: 1787916459}
+  timer: {fileID: 523034815}
 --- !u!1 &1578217238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,7 +2426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Snooooo: {fileID: 1257791826}
-  setup: {fileID: 0}
+  setup: {fileID: 1223170677}
 --- !u!1 &1652303970
 GameObject:
   m_ObjectHideFlags: 0
