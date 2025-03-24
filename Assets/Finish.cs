@@ -5,7 +5,7 @@ public class Finish : MonoBehaviour
 {
     public void Finisher()
     {
-        StaticHp.totalHP = 8;
+        StaticHp.totalHP = 1;
         SceneManager.LoadScene("Quaid Base");
     }
 }
