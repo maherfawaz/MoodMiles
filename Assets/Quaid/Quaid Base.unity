@@ -661,8 +661,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.93, y: 50}
-  m_SizeDelta: {x: 698.38, y: 325.52}
+  m_AnchoredPosition: {x: 30, y: -1}
+  m_SizeDelta: {x: 723.88, y: 506.5477}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299258243
 MonoBehaviour:
@@ -688,7 +688,7 @@ MonoBehaviour:
     sleep. Are you ready to make rest a priority and push burnout away?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5332245297675976991, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -712,8 +712,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &299258244
@@ -799,8 +799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.33133, y: -308.18488}
-  m_SizeDelta: {x: 243.8849, y: 224.8242}
+  m_AnchoredPosition: {x: -182.85902, y: -342.23795}
+  m_SizeDelta: {x: 274.79, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311515826
 MonoBehaviour:
@@ -1386,8 +1386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.0502, y: 0}
-  m_SizeDelta: {x: 1295.0955, y: 2302.392}
+  m_AnchoredPosition: {x: 9, y: 5}
+  m_SizeDelta: {x: 1459.207, y: 2594.146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020352097
 MonoBehaviour:
@@ -1679,8 +1679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.93, y: 50}
-  m_SizeDelta: {x: 698.38, y: 325.52}
+  m_AnchoredPosition: {x: 30, y: -1}
+  m_SizeDelta: {x: 723.88, y: 506.5477}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438198290
 MonoBehaviour:
@@ -1706,7 +1706,7 @@ MonoBehaviour:
     sleep. Are you ready to make rest a priority and push burnout away?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5332245297675976991, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1730,8 +1730,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1966,42 +1966,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7250544937468296533, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
-    - target: {fileID: 7250544937468296533, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5332245297675976991, guid: 59120a6e333d4d043846454a0110f28b, type: 2}
-    - target: {fileID: 7250544937468296533, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363931946702732821, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363931946702732821, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1300
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819279890695535240, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 675.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819279890695535240, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 143.5088
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819279890695535240, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819279890695535240, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 996
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2091,8 +2055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 412.45746, y: -135.50552}
-  m_SizeDelta: {x: 243.8849, y: 224.8242}
+  m_AnchoredPosition: {x: 480.539, y: -147.67596}
+  m_SizeDelta: {x: 274.79, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578217240
 MonoBehaviour:
@@ -2212,8 +2176,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 302.4749, y: -441.91547}
-  m_SizeDelta: {x: 293.7452, y: 224.8242}
+  m_AnchoredPosition: {x: 356.62097, y: -492.91394}
+  m_SizeDelta: {x: 330.968, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650460765
 MonoBehaviour:
@@ -2433,8 +2397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263.878, y: -666.73444}
-  m_SizeDelta: {x: 275.0476, y: 224.8242}
+  m_AnchoredPosition: {x: -281.4991, y: -746.2217}
+  m_SizeDelta: {x: 309.901, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787916461
 MonoBehaviour:
