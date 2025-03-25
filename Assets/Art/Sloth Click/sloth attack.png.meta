@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sloth attack_0: 6576358826411063170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

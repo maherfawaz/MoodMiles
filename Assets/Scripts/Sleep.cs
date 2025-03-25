@@ -5,7 +5,7 @@ using TMPro;
 public class Sleep : MonoBehaviour
 {
     [Header("Inscribed")]
-    public int hours;
+    public float hours;
     public GameObject bebut;
     public GameObject bibut;
     public GameObject sbu;
