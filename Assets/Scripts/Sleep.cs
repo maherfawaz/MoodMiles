@@ -6,15 +6,15 @@ public class Sleep : MonoBehaviour
 {
     [Header("Inscribed")]
     public int hours;
+    public GameObject bebut;
+    public GameObject bibut;
+    public GameObject sbu;
+    public GameObject dbut;
 
     [Header("Dynamic")]
     public TextMeshProUGUI timerText;
     public float timeRemaining;
     public bool timerIsRunning = false;
-    public GameObject bebut;
-    public GameObject bibut;
-    public GameObject sbu;
-    public GameObject dbut;
   
 
     void Start() {
