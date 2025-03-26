@@ -2012,14 +2012,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50d758409b8bcd488fd7e7324493085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hours: 0
-  timerText: {fileID: 0}
-  timeRemaining: 0
-  timerIsRunning: 0
+  hours: 0.016666
   bebut: {fileID: 311515824}
   bibut: {fileID: 1578217238}
   sbu: {fileID: 1650460763}
   dbut: {fileID: 1787916459}
+  timerText: {fileID: 0}
+  timeRemaining: 0
+  timerIsRunning: 0
 --- !u!1 &1578217238
 GameObject:
   m_ObjectHideFlags: 0
