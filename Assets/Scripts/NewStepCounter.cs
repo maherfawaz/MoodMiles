@@ -14,6 +14,7 @@ public class NewStepCounter : MonoBehaviour
     public long stepsTaken;
     public long currentSteps;
     public bool permissionGranted = false;
+    public bool stepOn = false;
 
     void Start() {
         if (Application.isEditor) {
@@ -27,29 +28,40 @@ public class NewStepCounter : MonoBehaviour
     }
 
     void Update() {
-        if (Application.isEditor || !permissionGranted) {
-            return;
-        }
+        if (stepOn == true)
+        {
+            if (Application.isEditor || !permissionGranted)
+            {
+                return;
+            }
 
-        if (StepCounter.current == null) {
-            Debug.Log("StepCounter not available");
-            return;
-        }
+            if (StepCounter.current == null)
+            {
+                Debug.Log("StepCounter not available");
+                return;
+            }
 
-        if (stepOffset == 0) {
-            stepOffset = StepCounter.current.stepCounter.ReadValue();
-            Debug.Log("Step offset " + stepOffset);
-        } else {
-            currentSteps = StepCounter.current.stepCounter.ReadValue();
-            stepsTaken = currentSteps - stepOffset;
-            counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
-        }
+            if (stepOffset == 0)
+            {
+                stepOffset = StepCounter.current.stepCounter.ReadValue();
+                Debug.Log("Step offset " + stepOffset);
+            }
+            else
+            {
+                currentSteps = StepCounter.current.stepCounter.ReadValue();
+                stepsTaken = currentSteps - stepOffset;
+                counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
+            }
 
-        if (stepsTaken >= stepGoal) {
-            counterTMP.text = "Goal reached!";
-            // Disable the step counter when the goal is reached
-            InputSystem.DisableDevice(StepCounter.current);
+            if (stepsTaken >= stepGoal)
+            {
+                counterTMP.text = "Goal reached!";
+                Dashie.attack = true;
+                // Disable the step counter when the goal is reached
+                InputSystem.DisableDevice(StepCounter.current);
+            }
         }
+        
     }
 
     async void RequestPermission() {
@@ -73,5 +85,11 @@ public class NewStepCounter : MonoBehaviour
             // Reinitialize the step counter when the app is resumed
             InputSystem.EnableDevice(StepCounter.current);
         }
+    }
+
+    public void StepsStart()
+    {
+        stepOn = true;
+        
     }
   }

@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Quaid/Jail.unity
     guid: ae759f42048276c4084c03682b43b7d7
+  - enabled: 1
+    path: Assets/Quaid/Dash Intro.unity
+    guid: 15bafccb478f985438f217f24991646a
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}

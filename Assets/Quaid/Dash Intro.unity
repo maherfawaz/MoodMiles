@@ -395,10 +395,14 @@ PrefabInstance:
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1264379676}
+      objectReference: {fileID: 1264379679}
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Go
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DahTalk, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5488760476390958194, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_Pivot.x
@@ -668,7 +672,7 @@ GameObject:
   - component: {fileID: 1264379675}
   - component: {fileID: 1264379678}
   - component: {fileID: 1264379677}
-  - component: {fileID: 1264379676}
+  - component: {fileID: 1264379679}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -695,25 +699,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0001, y: 16.396}
   m_SizeDelta: {x: 689.693, y: 476.2951}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1264379676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264379674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43c75044913fa549882e8d6776cc61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textUse: {fileID: 1264379677}
-  lines:
-  - Hey hey! I'm dash! I'm the friendly hound here to help you! Sometimes burn out
-    can be the only thing on your mind.
-  - Let's get some excersise in! Come walk with me and get your steps in to help
-    confront burn out!
-  textSpeed: 0
 --- !u!114 &1264379677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +798,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264379674}
   m_CullTransparentMesh: 1
+--- !u!114 &1264379679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264379674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3943fdbb19c4e4c40a12bc9268ac01a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUse: {fileID: 1264379677}
+  lines:
+  - Hey hey! I'm dash! I'm the friendly hound here to help you! Sometimes burn out
+    can be the only thing on your mind.
+  - Let's get some excersise in! Come walk with me and get your steps in to help
+    confront burn out!
+  textSpeed: 0
 --- !u!1 &1619242959
 GameObject:
   m_ObjectHideFlags: 0

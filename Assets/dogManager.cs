@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 
 public class dogManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI maiText;
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
@@ -42,9 +45,21 @@ public class dogManager : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
-        if (finish == true)
+        if(finish == true)
         {
-            SceneManager.LoadScene("Quaid Base");
+            if (StaticHp.totalHP <= 1)
+            {
+                string dataToKeep = maiText.text;
+                Bosshealth.bu = dataToKeep;
+                SceneManager.LoadScene("Quaid Base");
+            }
+            
+            if (StaticHp.totalHP == 0)
+            {
+                SceneManager.LoadScene("Jail Cutsceen");
+            }
+            Dashie.attack = false;
+            Dashie.mission = true;
         }
     }
     private void EndTouch(InputAction.CallbackContext context)
