@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerProfile : MonoBehaviour
 {
     // https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
-    // Singleton setup (similar to StepCounter)
+    // Singleton setup
     private static PlayerProfile _instance;
     public static PlayerProfile Instance {
         get {
@@ -17,6 +17,7 @@ public class PlayerProfile : MonoBehaviour
             return _instance;
         }
     }
+    
     [Header("Inscribed")]
     public int stepsGoal;
     public int sleepTime;
