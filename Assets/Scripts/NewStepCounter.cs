@@ -10,9 +10,9 @@ public class NewStepCounter : MonoBehaviour
 
     [Header("Dynamic")]
     public TextMeshProUGUI counterTMP;
-    public long stepOffset;
-    public long stepsTaken;
-    public long currentSteps;
+    public long lastStepOffset;
+    public int stepsTaken;
+    public long currentStepOffset;
     public bool permissionGranted = false;
     public bool stepOn = false;
 
@@ -41,15 +41,15 @@ public class NewStepCounter : MonoBehaviour
                 return;
             }
 
-            if (stepOffset == 0)
-            {
-                stepOffset = StepCounter.current.stepCounter.ReadValue();
-                Debug.Log("Step offset " + stepOffset);
-            }
-            else
-            {
-                currentSteps = StepCounter.current.stepCounter.ReadValue();
-                stepsTaken = currentSteps - stepOffset;
+            if (currentStepOffset == 0) {
+                currentStepOffset = StepCounter.current.stepCounter.ReadValue();
+                if (currentStepOffset > lastStepOffset) { // A scuffed way to track steps walked when app is closed cause Unity won't let me, won't work if device is restarted
+                    currentStepOffset = currentStepOffset - lastStepOffset;
+                }
+                Debug.Log("Step offset " + currentStepOffset);
+            } else {
+                lastStepOffset = StepCounter.current.stepCounter.ReadValue();
+                stepsTaken = (int)(lastStepOffset - currentStepOffset);
                 counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
             }
 
