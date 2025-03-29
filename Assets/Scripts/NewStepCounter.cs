@@ -30,6 +30,7 @@ public class NewStepCounter : MonoBehaviour
     void Update() {
         if (stepOn == true)
         {
+            Dashie.mission = false;
             if (Application.isEditor || !permissionGranted)
             {
                 return;
@@ -56,6 +57,7 @@ public class NewStepCounter : MonoBehaviour
             if (stepsTaken >= stepGoal)
             {
                 counterTMP.text = "Goal reached!";
+                stepOn = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
                 InputSystem.DisableDevice(StepCounter.current);
