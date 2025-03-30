@@ -10,6 +10,7 @@ public class Sleep : MonoBehaviour
     public GameObject bibut;
     public GameObject sbu;
     public GameObject dbut;
+    public GameObject Tmi;
 
     [Header("Dynamic")]
     public TextMeshProUGUI timerText;
@@ -25,6 +26,7 @@ public class Sleep : MonoBehaviour
     void Update() {
         if (timerIsRunning) {
             if (timeRemaining > 0) {
+                Tmi.SetActive(true);
                 timeRemaining -= Time.deltaTime;
                 float timeRemainingMinutes = timeRemaining / 60;
                 float timeRemainingHours = timeRemaining / 3600;
@@ -42,6 +44,7 @@ public class Sleep : MonoBehaviour
                 bibut.SetActive(true);
                 sbu.SetActive(true);
                 dbut.SetActive(true);
+                Tmi.SetActive(false);
                 timerIsRunning = false;
                
             }
