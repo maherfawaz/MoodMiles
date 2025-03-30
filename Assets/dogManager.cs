@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class dogManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI maiText;
+    public bool activate;
+    public GameObject wellDone;
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
@@ -18,6 +19,7 @@ public class dogManager : MonoBehaviour
     public float ShakeForceMultiplier;
     public Rigidbody2D[] ShakingRigidbodies;
     public GameObject Shaker;
+    public GameObject progress;
     public bool finish = false;
     private void Awake()
     {
@@ -47,11 +49,11 @@ public class dogManager : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         if(finish == true)
         {
-            if (StaticHp.totalHP <= 1)
+            StaticHp.totalHP -= 1;
+            if (StaticHp.totalHP > 0)
             {
-                string dataToKeep = maiText.text;
-                Bosshealth.bu = dataToKeep;
-                SceneManager.LoadScene("Quaid Base");
+                
+                SceneManager.LoadScene(2);
             }
             
             if (StaticHp.totalHP == 0)
@@ -86,10 +88,23 @@ public class dogManager : MonoBehaviour
     {
         foreach (var rigidbody in ShakingRigidbodies)
         {
-            rigidbody.AddForce(deviceAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
-            StaticHp.totalHP -= 1;
+            //rigidbody.AddForce(deviceAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
+            activate = true;
+            
+        }
+    }
+
+    public void Update()
+    {
+        if(activate == true)
+        {
+            progress.GetComponent<Charge>().current += 1;
+        }
+
+        if(finish == true)
+        {
             Shaker.SetActive(false);
-            finish = true;
+            wellDone.SetActive(true);
         }
     }
 

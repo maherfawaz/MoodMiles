@@ -10,7 +10,7 @@ public class SlothInput : MonoBehaviour
     public GameObject wellDone;
     public GameObject defeat;
     public GameObject boss;
-    [SerializeField] TextMeshProUGUI maiText;
+    public GameObject wheel;
     private Camera _maindCamera;
     public delegate void StartTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnStartTouch;
@@ -46,20 +46,7 @@ public class SlothInput : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
-        if(finish == true)
-        {
-            if (StaticHp.totalHP <= 1)
-            {
-                string dataToKeep = maiText.text;
-                Bosshealth.bu = dataToKeep;
-                SceneManager.LoadScene("Quaid Base");
-            }
-            
-            if (StaticHp.totalHP == 0)
-            {
-                SceneManager.LoadScene("Jail Cutsceen");
-            }
-        }
+        
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
@@ -77,10 +64,13 @@ public class SlothInput : MonoBehaviour
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        if (rayHit == GameObject.FindWithTag("Spinner"))
-        {
-            GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = true;
-        }
+       
+            if (rayHit == GameObject.FindWithTag("Spinner"))
+            {
+                GameObject.FindWithTag("Spinner").GetComponent<AROUNDTHEWORLD>().charge = true;
+            }
+        
+        
 
     }
 
@@ -89,6 +79,7 @@ public class SlothInput : MonoBehaviour
         if (finish == true)
         {
             wellDone.SetActive(true);
+            wheel.SetActive(false);
         }
 
         if(StaticHp.totalHP == 0)

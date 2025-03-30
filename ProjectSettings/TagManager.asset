@@ -9,6 +9,7 @@ TagManager:
   - Health
   - Manager
   - Sloth
+  - Progress
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class AROUNDTHEWORLD : MonoBehaviour
     public bool charge = false;
     public float charging = 10;
     
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,20 +24,25 @@ public class AROUNDTHEWORLD : MonoBehaviour
         this.transform.RotateAround(rotateAround.position, Vector3.forward, rotationSpeed * Time.deltaTime);
         if(charge == true)
         {
-            charging -= Time.deltaTime;
-            if (charging <= 0)
-            {
-                charge = false;
-                StaticHp.totalHP -= 1;
-                GameObject.FindWithTag("Manager").GetComponent<SlothInput>().finish = true;
-                SnoozeInro.attack = false;
-                SnoozeInro.mission = true;
-                gameObject.SetActive(false);
-                
-            }
+            
+            
+                charging -= Time.deltaTime;
+                if (charging <= 0)
+                {
+                    charge = false;
+                    StaticHp.totalHP -= 1;
+                    GameObject.FindWithTag("Manager").GetComponent<SlothInput>().finish = true;
+                    SnoozeInro.attack = false;
+                    SnoozeInro.mission = true;
+                    gameObject.SetActive(false);
+
+                }
+            
+            
         }
     }
 
+    
    
 }
 //Some code from "How to Rotate GameObjects in Unity 2d" by Game Dev by Kaupenjoe
