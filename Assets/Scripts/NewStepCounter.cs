@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
-    public long stepGoal;
+    public int stepGoal;
 
     [Header("Dynamic")]
     public TextMeshProUGUI counterTMP;
@@ -28,16 +28,13 @@ public class NewStepCounter : MonoBehaviour
     }
 
     void Update() {
-        if (stepOn == true)
-        {
+        if (stepOn == true) {
             Dashie.mission = false;
-            if (Application.isEditor || !permissionGranted)
-            {
+            if (Application.isEditor || !permissionGranted) {
                 return;
             }
 
-            if (StepCounter.current == null)
-            {
+            if (StepCounter.current == null) {
                 Debug.Log("StepCounter not available");
                 return;
             }

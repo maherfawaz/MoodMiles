@@ -7718,7 +7718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79f0262ac33a5c40966070b06a29eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepGoal: 100
+  stepGoal: 10
   counterTMP: {fileID: 0}
   lastStepOffset: 0
   stepsTaken: 0
