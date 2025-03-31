@@ -5822,7 +5822,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1285541286}
         m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: Tttack
+        m_MethodName: SnoozeAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Attack : MonoBehaviour
 {
-    public void Tttack()
+    public void SnoozeAttack()
     {
         SceneManager.LoadScene("Quaid Sloth Click");
     }
