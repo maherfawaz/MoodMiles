@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 599a9c65e3117eb4a8e5d5996f3606f3
+guid: 452ebcd41254bc64183efde0a1c4c02f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1450119834195028863
-    second: SignUp_Personal information (9)_0
+      213: 903930253207391225
+    second: dash background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SignUp_Personal information (9)_0
+      name: dash background_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7b61fe5e4cdf1410800000000000000
-      internalID: 1450119834195028863
+      spriteID: 9fbc72ca6c76b8c00800000000000000
+      internalID: 903930253207391225
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SignUp_Personal information (9)_0: 1450119834195028863
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
