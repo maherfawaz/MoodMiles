@@ -584,6 +584,7 @@ MonoBehaviour:
     can focus on what really matters. Are you ready to make rest a priority and push
     burnout away?"
   textSpeed: 0
+  animalName: Snooze
 --- !u!114 &885271516
 MonoBehaviour:
   m_ObjectHideFlags: 0

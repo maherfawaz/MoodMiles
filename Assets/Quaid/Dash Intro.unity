@@ -424,7 +424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264379679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DahTalk, Assembly-CSharp
         m_MethodName: Go
         m_Mode: 1
@@ -452,7 +452,7 @@ PrefabInstance:
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1264379679}
+      objectReference: {fileID: 0}
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Go
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264379679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DahTalk, Assembly-CSharp
         m_MethodName: Go
         m_Mode: 1
@@ -921,17 +921,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1264379674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3943fdbb19c4e4c40a12bc9268ac01a6, type: 3}
+  m_Script: {fileID: 11500000, guid: b43c75044913fa549882e8d6776cc61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textUse: {fileID: 1264379677}
   lines:
   - Hey hey! I'm Dash! I'm the friendly hound here to help you! Sometimes burn out
     can be the only thing on your mind and make you feel stuck.
-  - Let's go on a mission together! Let's wallk and get you out of this stuck feeling.
+  - Let's go on a mission together! Let's walk and get you out of this stuck feeling.
   - Are you ready to get out there and confront burn out while getting some excersise
     in?
   textSpeed: 0
+  animalName: Dash
 --- !u!1 &1619242959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1053,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264379679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DahTalk, Assembly-CSharp
         m_MethodName: Go
         m_Mode: 1
@@ -1184,7 +1185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264379679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DahTalk, Assembly-CSharp
         m_MethodName: Go
         m_Mode: 1

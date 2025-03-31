@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class DahTalk : MonoBehaviour
+
+public class IntroText : MonoBehaviour
 {
     public TextMeshProUGUI textUse;
     public string[] lines;
     public float textSpeed;
+    public string animalName;
     private int index;
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,6 @@ public class DahTalk : MonoBehaviour
     // Update is called once per frame
     public void Go()
     {
-
-
         if (textUse.text == lines[index])
         {
             NextLine();
@@ -32,7 +32,6 @@ public class DahTalk : MonoBehaviour
             StopAllCoroutines();
             textUse.text = lines[index];
         }
-
     }
 
     void StartDialogue()
@@ -58,12 +57,17 @@ public class DahTalk : MonoBehaviour
             textUse.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else
+        else if (animalName == "Snooze")
+        {
+            SnoozeInro.intro = true;
+            SnoozeInro.mission = true;
+            SceneManager.LoadScene("Quaid Base");
+        }
+        else if (animalName == "Dash")
         {
             Dashie.intro = true;
             Dashie.mission = true;
             SceneManager.LoadScene("Quaid Base");
-
         }
     }
 }
