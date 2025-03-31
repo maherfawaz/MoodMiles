@@ -54,13 +54,12 @@ public class NewStepCounter : MonoBehaviour
                 //counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
             }
 
-            if (stepsTaken >= stepGoal)
-            {
+            if (stepsTaken >= stepGoal) {
                 //counterTMP.text = "Goal reached!";
-                stepOn = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
                 InputSystem.DisableDevice(StepCounter.current);
+                stepOn = false;
             }
         }
         
