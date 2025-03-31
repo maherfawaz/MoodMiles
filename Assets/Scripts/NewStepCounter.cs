@@ -48,11 +48,11 @@ public class NewStepCounter : MonoBehaviour
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
-                //counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
+                counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
             }
 
             if (stepsTaken >= stepGoal) {
-                //counterTMP.text = "Goal reached!";
+                counterTMP.text = "Goal reached!";
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
                 InputSystem.DisableDevice(StepCounter.current);
@@ -87,6 +87,5 @@ public class NewStepCounter : MonoBehaviour
 
     public void StepsStart() {
         stepOn = true;
-        
     }
   }

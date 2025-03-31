@@ -7,4 +7,9 @@ public class Attack : MonoBehaviour
     {
         SceneManager.LoadScene("Quaid Sloth Click");
     }
+
+    public void DashAttack()
+    {
+        SceneManager.LoadScene("Quaid Dog Attack");
+    }
 }
