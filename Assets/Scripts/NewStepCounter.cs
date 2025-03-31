@@ -22,7 +22,7 @@ public class NewStepCounter : MonoBehaviour
             return;
         }
 
-        counterTMP = GameObject.Find("Steps").GetComponent<TextMeshProUGUI>();
+        //counterTMP = GameObject.Find("Steps").GetComponent<TextMeshProUGUI>();
 
         RequestPermission();
     }
@@ -51,12 +51,12 @@ public class NewStepCounter : MonoBehaviour
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = (int)(lastStepOffset - currentStepOffset);
-                counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
+                //counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
             }
 
             if (stepsTaken >= stepGoal)
             {
-                counterTMP.text = "Goal reached!";
+                //counterTMP.text = "Goal reached!";
                 stepOn = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
