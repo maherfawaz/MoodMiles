@@ -11,7 +11,7 @@ public class Next : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Quaid Base");
         }
     }
 }
