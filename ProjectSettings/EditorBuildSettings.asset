@@ -39,10 +39,7 @@ EditorBuildSettings:
     path: Assets/Quaid/Dash Intro.unity
     guid: 15bafccb478f985438f217f24991646a
   - enabled: 0
-    path: Assets/Scenes/MaherGooglePlayTest.unity
-    guid: dd9bc482ec0ec784eaf8351d66fdd2cf
-  - enabled: 0
-    path: Assets/Scenes/MaherStepTest.unity
+    path: Assets/Scenes/MaherTest.unity
     guid: 39d8e29163c9e2a46b1c8eced7b58c7b
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}

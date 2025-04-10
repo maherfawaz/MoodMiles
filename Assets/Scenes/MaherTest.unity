@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 970762117}
   - component: {fileID: 970762116}
   m_Layer: 5
-  m_Name: Steps
+  m_Name: Calories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,15 +737,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147531026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79f0262ac33a5c40966070b06a29eb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f42247a8ab17948b12e5b8a808c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepGoal: 500
-  counterTMP: {fileID: 970762116}
-  stepOffset: 0
-  stepsTaken: 0
-  currentSteps: 0
+  caloriesGoal: 1000
+  weight: 70
+  speed: 0
+  duration: 0
+  metValue: 5
+  accel: {x: 0, y: 0, z: 0}
+  caloriesBurned: 0
   permissionGranted: 0
+  counterTMP: {fileID: 0}
 --- !u!1 &1427127636
 GameObject:
   m_ObjectHideFlags: 0
