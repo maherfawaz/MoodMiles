@@ -7,7 +7,7 @@ public class Calories : MonoBehaviour
     // https://www.calculator.net/calories-burned-calculator.html
     [Header("Inscribed")]
     public int caloriesGoal = 1000;
-    public int weight = 70; // in kg
+    public int weightKg = 70;
 
     [Header("Dynamic")]
     public float speed;
@@ -54,7 +54,7 @@ public class Calories : MonoBehaviour
             metValue = 8.0f; // Running at 8 mph (12.9 km/h)
         }
         // Calculate calories burned using the formula: Calories = MET * weight (kg) * duration (hours)
-        caloriesBurned = Mathf.RoundToInt(metValue * weight * (duration / 60)); // Convert duration from minutes to hours
+        caloriesBurned = Mathf.RoundToInt(metValue * weightKg * (duration / 60)); // Convert duration from minutes to hours
         if (caloriesBurned > lastCaloriesBurned) {
             counterTMP.text = $"Calories burned: {caloriesBurned}/{caloriesGoal}";
             lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
