@@ -13,10 +13,15 @@ public class ScaleFromMicrophone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float loudness = detector.GetLoudnessFromAudioClip(source.timeSamples, source.clip) * loudnessSensibility;
-        //Debug.Log(loudness);
-       // if (loudness < threshold) loudness = 0;
+        float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
+        Debug.Log(loudness);
+        if (loudness < threshold) loudness = 0;
 
-        //transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+
+        if (gameObject.transform.localScale == maxScale)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
