@@ -21,7 +21,9 @@ public class ScaleFromMicrophone : MonoBehaviour
 
         if (gameObject.transform.localScale == maxScale)
         {
+            StaticHp.totalHP -= 1;
             GameObject.FindWithTag("Manager").GetComponent<BirdManager>().finish = true;
+
             goodJob.SetActive(true);
             gameObject.SetActive(false);
         }
