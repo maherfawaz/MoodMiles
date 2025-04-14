@@ -5,7 +5,7 @@ public class ScaleFromMicrophone : MonoBehaviour
     
     public Vector3 minScale, maxScale;
     public AudioLoudnessDetector detector;
-
+    public GameObject goodJob;
     public float loudnessSensibility = 100f;
     public float threshold = 0.1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +21,8 @@ public class ScaleFromMicrophone : MonoBehaviour
 
         if (gameObject.transform.localScale == maxScale)
         {
+            GameObject.FindWithTag("Manager").GetComponent<BirdManager>().finish = true;
+            goodJob.SetActive(true);
             gameObject.SetActive(false);
         }
     }

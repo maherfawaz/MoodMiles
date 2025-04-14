@@ -3,6 +3,7 @@ using UnityEngine;
 public class Paw : MonoBehaviour
 {
     public float QuickTime;
+    public GameObject goodJob;
     public float ptime;
     public float attacks;
     
@@ -25,6 +26,7 @@ public class Paw : MonoBehaviour
         {
             StaticHp.totalHP -= 1;
             GameObject.FindWithTag("Manager").GetComponent<BearManager>().finish = true;
+            goodJob.SetActive(true);
             gameObject.SetActive(false);
         }
     }
