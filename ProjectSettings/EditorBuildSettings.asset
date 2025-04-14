@@ -41,6 +41,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MaherTest.unity
     guid: 39d8e29163c9e2a46b1c8eced7b58c7b
+  - enabled: 1
+    path: Assets/Quaid/Zippy Intro.unity
+    guid: 1b1305ed701b8404ebe8e9ab16dd5dd5
+  - enabled: 1
+    path: Assets/Quaid/Bruno Intro.unity
+    guid: 21061ca6eb38431429ff14a958dd1c84
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}

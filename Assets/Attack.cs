@@ -12,4 +12,14 @@ public class Attack : MonoBehaviour
     {
         SceneManager.LoadScene("Quaid Dog Attack");
     }
+
+    public void BearAttack()
+    {
+        SceneManager.LoadScene("Quaid Bear Attack");
+    }
+
+    public void BirdAttack()
+    {
+        SceneManager.LoadScene("Quaid Bird Attack");
+    }
 }

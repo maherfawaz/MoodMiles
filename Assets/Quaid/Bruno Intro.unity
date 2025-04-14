@@ -488,14 +488,14 @@ PrefabInstance:
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1063346248}
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Go
       objectReference: {fileID: 0}
     - target: {fileID: 4800075935445058294, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DahTalk, Assembly-CSharp
+      value: IntroText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5488760476390958194, guid: 53797e49b05a6b249b32212e1561aafc, type: 3}
       propertyPath: m_Pivot.x
@@ -630,7 +630,7 @@ MonoBehaviour:
   - Are you ready to get out there and confront burn out while getting some excersise
     in?
   textSpeed: 0
-  animalName: Dash
+  animalName: Bruno
 --- !u!114 &1063346249
 MonoBehaviour:
   m_ObjectHideFlags: 0
