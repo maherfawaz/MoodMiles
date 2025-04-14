@@ -853,7 +853,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 122367670}
         m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: DashAttack
+        m_MethodName: BirdAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3149,9 +3149,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1565168474}
-        m_TargetAssemblyTypeName: NewStepCounter, Assembly-CSharp
-        m_MethodName: StepsStart
+      - m_Target: {fileID: 1565168478}
+        m_TargetAssemblyTypeName: Testbut, Assembly-CSharp
+        m_MethodName: testButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10619,7 +10619,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1368198931}
         m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: DashAttack
+        m_MethodName: BearAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12735,7 +12735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a1e30fd4af8084e910157623270669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sNumber: 0
+  sNumber: 13
 --- !u!1 &1578217238
 GameObject:
   m_ObjectHideFlags: 0
