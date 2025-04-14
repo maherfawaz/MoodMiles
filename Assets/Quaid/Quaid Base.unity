@@ -225,9 +225,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1565168474}
-        m_TargetAssemblyTypeName: NewStepCounter, Assembly-CSharp
-        m_MethodName: StepsStart
+      - m_Target: {fileID: 1565168479}
+        m_TargetAssemblyTypeName: Calories, Assembly-CSharp
+        m_MethodName: BurnStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12626,6 +12626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6550698801635606250, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1565168478}
+    - targetCorrespondingSourceObject: {fileID: 6550698801635606250, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565168479}
   m_SourcePrefab: {fileID: 100100000, guid: 5702f3c45d469704cb63fda86cacc80d, type: 3}
 --- !u!224 &1565168472 stripped
 RectTransform:
@@ -12736,6 +12739,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sNumber: 13
+--- !u!114 &1565168479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948150443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f42247a8ab17948b12e5b8a808c7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caloriesGoal: 1000
+  weightKg: 70
+  burnOn: 0
+  speed: 0
+  duration: 0
+  metValue: 0
+  accel: {x: 0, y: 0, z: 0}
+  caloriesBurned: 0
+  permissionGranted: 0
+  counterTMP: {fileID: 2018660077}
 --- !u!1 &1578217238
 GameObject:
   m_ObjectHideFlags: 0
@@ -13496,7 +13521,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -14897,7 +14922,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

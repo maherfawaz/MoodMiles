@@ -6,18 +6,18 @@ public class BearButton : MonoBehaviour
     public GameObject Hound;
     public void Dashin()
     {
-        if (Dashie.intro == false)
+        if (Bruno.intro == false)
         {
             SceneManager.LoadScene("Bruno Intro");
         }
 
-        if (Dashie.mission == true)
+        if (Bruno.mission == true)
         {
             Dash.SetActive(true);
 
         }
 
-        if (Dashie.attack == true)
+        if (Bruno.attack == true)
         {
             Hound.SetActive(true);
         }

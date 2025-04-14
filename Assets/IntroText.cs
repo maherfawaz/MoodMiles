@@ -69,6 +69,19 @@ public class IntroText : MonoBehaviour
             Dashie.mission = true;
             SceneManager.LoadScene("Quaid Base");
         }
+        else if (animalName == "Zippy")
+        {
+            Zippy.intro = true;
+            Zippy.mission = true;
+            SceneManager.LoadScene("Quaid Base");
+        }
+
+        else if (animalName == "Bruno")
+        {
+            Bruno.intro = true;
+            Bruno.mission = true;
+            SceneManager.LoadScene("Quaid Base");
+        }
     }
 }
 
