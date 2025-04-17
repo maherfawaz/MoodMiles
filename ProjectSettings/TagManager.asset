@@ -10,6 +10,7 @@ TagManager:
   - Manager
   - Sloth
   - Progress
+  - Music
   layers:
   - Default
   - TransparentFX
