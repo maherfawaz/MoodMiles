@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class BearButton : MonoBehaviour
 {
     public GameObject Dash;
+    public GameObject progr;
     public GameObject Hound;
     public void Dashin()
     {
@@ -15,6 +16,11 @@ public class BearButton : MonoBehaviour
         {
             Dash.SetActive(true);
 
+        }
+
+        if (Bruno.progress == true)
+        {
+            progr.SetActive(true);
         }
 
         if (Bruno.attack == true)

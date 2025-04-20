@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class BirdButton : MonoBehaviour
 {
     public GameObject Dash;
+    public GameObject progr;
     public GameObject Hound;
     public void Dashin()
     {
@@ -16,6 +17,11 @@ public class BirdButton : MonoBehaviour
         {
             Dash.SetActive(true);
 
+        }
+
+        if(Zippy.progress == true)
+        {
+            progr.SetActive(true);
         }
 
         if (Zippy.attack == true)

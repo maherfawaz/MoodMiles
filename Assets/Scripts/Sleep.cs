@@ -8,7 +8,7 @@ public class Sleep : MonoBehaviour
     public float hours;
     public GameObject bebut;
     public GameObject bibut;
-    public GameObject sbu;
+    
     public GameObject dbut;
     public GameObject Tmi;
 
@@ -33,16 +33,16 @@ public class Sleep : MonoBehaviour
                 timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)timeRemainingHours, (int)timeRemainingMinutes % 60, (int)timeRemaining % 60);
                 bebut.SetActive(false);
                 bibut.SetActive(false);
-                sbu.SetActive(false);
+                
                 dbut.SetActive(false);
             } else {
                 Debug.Log("Time has run out!");
-                SnoozeInro.mission = false;
+                SnoozeInro.progress = false;
                 SnoozeInro.attack = true;
                 timeRemaining = 0;
                 bebut.SetActive(true);
                 bibut.SetActive(true);
-                sbu.SetActive(true);
+                
                 dbut.SetActive(true);
                 Tmi.SetActive(false);
                 timerIsRunning = false;

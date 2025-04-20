@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SnoozeInro : MonoBehaviour
+public class ProgressText : MonoBehaviour
 {
-    public static bool intro = false;
-    public static bool mission = false;
-    public static bool progress = false;
-    public static bool attack = false;
+    public TextMeshProUGUI textUse;
+    public TextMeshProUGUI textNeeded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +16,6 @@ public class SnoozeInro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        textUse.text = textNeeded.text;
     }
 }

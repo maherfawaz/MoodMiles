@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class SnoozeButton : MonoBehaviour
 {
     public GameObject Snooooo;
+    public GameObject progr;
     public GameObject setup;
     public void Snooze()
     {
@@ -14,6 +15,11 @@ public class SnoozeButton : MonoBehaviour
         if (SnoozeInro.mission == true)
         {
             Snooooo.SetActive(true);
+        }
+
+        if (SnoozeInro.progress == true)
+        {
+            progr.SetActive(true);
         }
 
         if (SnoozeInro.attack == true)

@@ -76,6 +76,7 @@ public class Calories : MonoBehaviour
             if(caloriesBurned >= caloriesGoal)
             {
                 burnOn = false;
+                Bruno.progress = false;
                 Bruno.attack = true;
             }
         }

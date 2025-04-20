@@ -5,6 +5,7 @@ public class DashButton : MonoBehaviour
 {
     public GameObject Dash;
     public GameObject Hound;
+    public GameObject progr;
     public void Dashin()
     {
         if (Dashie.intro == false)
@@ -16,6 +17,11 @@ public class DashButton : MonoBehaviour
         {
             Dash.SetActive(true);
             
+        }
+
+        if (Dashie.progress == true)
+        {
+            progr.SetActive(true);
         }
 
         if (Dashie.attack == true)
