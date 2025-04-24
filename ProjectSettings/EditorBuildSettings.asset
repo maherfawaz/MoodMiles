@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/MaherTest.unity
+    guid: 39d8e29163c9e2a46b1c8eced7b58c7b
   - enabled: 1
     path: Assets/Quaid/Start.unity
     guid: 6b5332a90b61317409266267168e9b59
@@ -38,9 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Quaid/Dash Intro.unity
     guid: 15bafccb478f985438f217f24991646a
-  - enabled: 0
-    path: Assets/Scenes/MaherTest.unity
-    guid: 39d8e29163c9e2a46b1c8eced7b58c7b
   - enabled: 1
     path: Assets/Quaid/Zippy Intro.unity
     guid: 1b1305ed701b8404ebe8e9ab16dd5dd5

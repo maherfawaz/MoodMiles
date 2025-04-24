@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class StaticHp : MonoBehaviour
 {
-    public static int totalHP = 2;
+    public static int totalHP = 4;
 }
