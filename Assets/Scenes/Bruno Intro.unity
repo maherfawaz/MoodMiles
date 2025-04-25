@@ -508,7 +508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4290672859706143423, guid: 3fd93ad7dc3e3c540af869675c830232, type: 3}
+  m_Sprite: {fileID: 903930253207391225, guid: 452ebcd41254bc64183efde0a1c4c02f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -761,11 +761,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textUse: {fileID: 1063346249}
   lines:
-  - Hey there, champ! I'm Bruno! Bruno the bear!
-  - Calories are important in life. Not only just burning but eating them too!
-  - It's all about balance. Getting healthy nutrients and burning some calories will
-    lead your body in being healthier.
-  - Now lets use that balance of calories to beat Burn Out.
+  - Hey hey! I'm Dash! I'm the friendly hound here to help you! Sometimes burn out
+    can be the only thing on your mind and make you feel stuck.
+  - Let's go on a mission together! Let's walk and get you out of this stuck feeling.
+  - Are you ready to get out there and confront burn out while getting some excersise
+    in?
   textSpeed: 0
   animalName: Bruno
 --- !u!114 &1063346249
@@ -920,7 +920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -785}
+  m_AnchoredPosition: {x: -331.11, y: -646}
   m_SizeDelta: {x: 662.226, y: 1014.252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082643637
