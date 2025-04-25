@@ -15,6 +15,10 @@ public class NewStepCounter : MonoBehaviour
     public long currentStepOffset;
     public bool permissionGranted = false;
     public bool stepOn = false;
+    public GameObject bebut;
+    public GameObject bibut;
+
+    public GameObject dbut;
 
     void Start() {
         if (Application.isEditor) {
@@ -29,6 +33,10 @@ public class NewStepCounter : MonoBehaviour
 
     void Update() {
         if (stepOn == true) {
+            bebut.SetActive(false);
+            bibut.SetActive(false);
+
+            dbut.SetActive(false);
             Dashie.mission = false;
             if (Application.isEditor || !permissionGranted) {
                 return;
@@ -55,6 +63,10 @@ public class NewStepCounter : MonoBehaviour
                 counterTMP.text = "Goal reached!";
                 Dashie.progress = false;
                 Dashie.attack = true;
+                bebut.SetActive(true);
+                bibut.SetActive(true);
+
+                dbut.SetActive(true);
                 // Disable the step counter when the goal is reached
                 InputSystem.DisableDevice(StepCounter.current);
                 stepOn = false;

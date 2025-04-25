@@ -19,7 +19,12 @@ public class Calories : MonoBehaviour
     public bool permissionGranted = false;
     public TextMeshProUGUI counterTMP;
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
-    
+    public GameObject bebut;
+    public GameObject bibut;
+
+    public GameObject dbut;
+   
+
     void Start() {
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
@@ -34,6 +39,10 @@ public class Calories : MonoBehaviour
     void Update() {
         if (burnOn == true)
         {
+            bebut.SetActive(false);
+            bibut.SetActive(false);
+
+            dbut.SetActive(false);
             if (Application.isEditor || !permissionGranted)
             {
                 return;
@@ -78,6 +87,10 @@ public class Calories : MonoBehaviour
                 burnOn = false;
                 Bruno.progress = false;
                 Bruno.attack = true;
+                bebut.SetActive(true);
+                bibut.SetActive(true);
+
+                dbut.SetActive(true);
             }
         }
         

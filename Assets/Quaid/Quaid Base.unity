@@ -17808,6 +17808,9 @@ MonoBehaviour:
   currentStepOffset: 0
   permissionGranted: 0
   stepOn: 0
+  bebut: {fileID: 311515824}
+  bibut: {fileID: 1578217238}
+  dbut: {fileID: 1650460763}
 --- !u!114 &1565168475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17894,6 +17897,9 @@ MonoBehaviour:
   caloriesBurned: 0
   permissionGranted: 0
   counterTMP: {fileID: 2018660077}
+  bebut: {fileID: 1787916459}
+  bibut: {fileID: 1578217238}
+  dbut: {fileID: 1650460763}
 --- !u!1 &1565553118
 GameObject:
   m_ObjectHideFlags: 0
