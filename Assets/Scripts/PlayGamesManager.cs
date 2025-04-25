@@ -32,7 +32,13 @@ public class PlayGamesManager : MonoBehaviour
     private bool isSaving;
 
     void Start() {
-        DontDestroyOnLoad(gameObject);
+        PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
+
+        if (objs.Length > 1) {
+            Destroy(gameObject);
+        } else {
+            DontDestroyOnLoad(gameObject);
+        }
         SignIn();
     }
 

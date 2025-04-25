@@ -8,9 +8,9 @@ public class Music : MonoBehaviour
 
         if (objs.Length > 1) {
             Destroy(gameObject);
+        } else {
+            DontDestroyOnLoad(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     void Update() {
