@@ -8,32 +8,27 @@ public class Sleep : MonoBehaviour
     public float hours;
     public GameObject bebut;
     public GameObject bibut;
-    
     public GameObject dbut;
-    public GameObject Tmi;
+    public TextMeshProUGUI timerText;
 
     [Header("Dynamic")]
-    public TextMeshProUGUI timerText;
     public float timeRemaining;
     public bool timerIsRunning = false;
   
 
     void Start() {
         timeRemaining = hours * 3600;
-        timerText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Update() {
         if (timerIsRunning) {
             if (timeRemaining > 0) {
-                Tmi.SetActive(true);
                 timeRemaining -= Time.deltaTime;
                 float timeRemainingMinutes = timeRemaining / 60;
                 float timeRemainingHours = timeRemaining / 3600;
                 timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)timeRemainingHours, (int)timeRemainingMinutes % 60, (int)timeRemaining % 60);
                 bebut.SetActive(false);
                 bibut.SetActive(false);
-                
                 dbut.SetActive(false);
             } else {
                 Debug.Log("Time has run out!");
@@ -42,9 +37,7 @@ public class Sleep : MonoBehaviour
                 timeRemaining = 0;
                 bebut.SetActive(true);
                 bibut.SetActive(true);
-                
                 dbut.SetActive(true);
-                Tmi.SetActive(false);
                 timerIsRunning = false;
                
             }

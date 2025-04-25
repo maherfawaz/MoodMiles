@@ -14,7 +14,6 @@ public class MissonStart : MonoBehaviour
         if (animalName == "Zippy")
         {
             Zippy.mission = false;
-            Zippy.progress = true;
         }
         if (animalName == "Snooze")
         {

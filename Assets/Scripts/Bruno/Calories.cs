@@ -8,6 +8,7 @@ public class Calories : MonoBehaviour
     [Header("Inscribed")]
     public int caloriesGoal = 1000;
     public int weightKg = 70;
+    public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
     public bool burnOn = false;
@@ -17,7 +18,6 @@ public class Calories : MonoBehaviour
     public Vector3 accel;
     public int caloriesBurned;
     public bool permissionGranted = false;
-    public TextMeshProUGUI counterTMP;
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
@@ -25,8 +25,6 @@ public class Calories : MonoBehaviour
             Debug.Log("Running in Editor");
             return;
         }
-
-        counterTMP = GameObject.Find("Calories").GetComponent<TextMeshProUGUI>();
 
         RequestPermission();
     }
@@ -69,7 +67,7 @@ public class Calories : MonoBehaviour
             caloriesBurned = Mathf.RoundToInt(metValue * weightKg * (duration / 60)); // Convert duration from minutes to hours
             if (caloriesBurned > lastCaloriesBurned)
             {
-                counterTMP.text = $"Calories burned: {caloriesBurned}/{caloriesGoal}";
+                counterTMP.text = $"{caloriesBurned}/{caloriesGoal}";
                 lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
             }
 

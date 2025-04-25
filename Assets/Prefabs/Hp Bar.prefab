@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596107d0cf6b98a4db0a971ac5e1b471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximum: 8
-  current: 8
+  maximum: 4
+  current: 4
   mask: {fileID: 7710451007795804172}
 --- !u!1 &8164433739165955729
 GameObject:

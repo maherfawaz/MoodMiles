@@ -7,9 +7,9 @@ public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
     public long stepGoal;
+    public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
-    public TextMeshProUGUI counterTMP;
     public long lastStepOffset;
     public long stepsTaken;
     public long currentStepOffset;
@@ -21,8 +21,6 @@ public class NewStepCounter : MonoBehaviour
             Debug.Log("Running in Editor");
             return;
         }
-
-        //counterTMP = GameObject.Find("Steps").GetComponent<TextMeshProUGUI>();
 
         RequestPermission();
     }
@@ -48,7 +46,7 @@ public class NewStepCounter : MonoBehaviour
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
-                counterTMP.text = "Steps: " + stepsTaken + "/" + stepGoal;
+                counterTMP.text = $"{stepsTaken}/{stepGoal}";
             }
 
             if (stepsTaken >= stepGoal) {
