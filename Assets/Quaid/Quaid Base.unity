@@ -3504,6 +3504,7 @@ GameObject:
   - component: {fileID: 280565916}
   - component: {fileID: 280565915}
   - component: {fileID: 280565914}
+  - component: {fileID: 280565917}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3575,10 +3576,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 280565917}
+        m_TargetAssemblyTypeName: MissonStart, Assembly-CSharp
+        m_MethodName: Missi
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3649,6 +3650,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280565912}
   m_CullTransparentMesh: 1
+--- !u!114 &280565917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280565912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35bc0aa97819364f84e22395f80ac9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Zippy
 --- !u!1 &280973365
 GameObject:
   m_ObjectHideFlags: 0
