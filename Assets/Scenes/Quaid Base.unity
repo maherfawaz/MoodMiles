@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 7893246}
   - component: {fileID: 7893245}
   - component: {fileID: 7893244}
+  - component: {fileID: 7893247}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -202,10 +203,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7893247}
+        m_TargetAssemblyTypeName: MissonStart, Assembly-CSharp
+        m_MethodName: Missi
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -276,6 +277,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7893242}
   m_CullTransparentMesh: 1
+--- !u!114 &7893247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35bc0aa97819364f84e22395f80ac9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Bruno
 --- !u!1 &8966233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3504,7 @@ GameObject:
   - component: {fileID: 280565916}
   - component: {fileID: 280565915}
   - component: {fileID: 280565914}
+  - component: {fileID: 280565917}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3561,10 +3576,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 280565917}
+        m_TargetAssemblyTypeName: MissonStart, Assembly-CSharp
+        m_MethodName: Missi
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3635,6 +3650,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280565912}
   m_CullTransparentMesh: 1
+--- !u!114 &280565917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280565912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35bc0aa97819364f84e22395f80ac9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Zippy
 --- !u!1 &280973365
 GameObject:
   m_ObjectHideFlags: 0
@@ -7412,6 +7440,7 @@ GameObject:
   - component: {fileID: 599897921}
   - component: {fileID: 599897920}
   - component: {fileID: 599897919}
+  - component: {fileID: 599897922}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7483,10 +7512,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 599897922}
+        m_TargetAssemblyTypeName: MissonStart, Assembly-CSharp
+        m_MethodName: Missi
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7557,6 +7586,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599897917}
   m_CullTransparentMesh: 1
+--- !u!114 &599897922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599897917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35bc0aa97819364f84e22395f80ac9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Dash
 --- !u!1 &625967601
 GameObject:
   m_ObjectHideFlags: 0
@@ -9581,6 +9623,7 @@ GameObject:
   - component: {fileID: 800416185}
   - component: {fileID: 800416184}
   - component: {fileID: 800416183}
+  - component: {fileID: 800416186}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9652,10 +9695,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
+      - m_Target: {fileID: 800416186}
+        m_TargetAssemblyTypeName: MissonStart, Assembly-CSharp
+        m_MethodName: Missi
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9726,6 +9769,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800416181}
   m_CullTransparentMesh: 1
+--- !u!114 &800416186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800416181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35bc0aa97819364f84e22395f80ac9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Snooze
 --- !u!1 &801896628
 GameObject:
   m_ObjectHideFlags: 0
@@ -17808,6 +17864,9 @@ MonoBehaviour:
   currentStepOffset: 0
   permissionGranted: 0
   stepOn: 0
+  bebut: {fileID: 311515824}
+  bibut: {fileID: 1578217238}
+  dbut: {fileID: 1650460763}
 --- !u!114 &1565168475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17894,6 +17953,9 @@ MonoBehaviour:
   caloriesBurned: 0
   permissionGranted: 0
   counterTMP: {fileID: 2018660077}
+  bebut: {fileID: 1787916459}
+  bibut: {fileID: 1578217238}
+  dbut: {fileID: 1650460763}
 --- !u!1 &1565553118
 GameObject:
   m_ObjectHideFlags: 0
