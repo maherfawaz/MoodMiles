@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7662020917416803031, guid: 660c9692005089d478ac28732d85c818, type: 3}
+  m_Sprite: {fileID: -8216853096770180263, guid: 61cdaa9137a0c2e4d8ea57d2638d56e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12535,8 +12535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Today\u2019s mission is to perform a simple breathing exercise! Are you
-    ready to calm yourself and fight against burn out?"
+  m_text: Great work! Now let's go!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
   m_sharedMaterial: {fileID: 5205836948720251117, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
@@ -12972,8 +12971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Today\u2019s mission is to get moving and burn some calories! Are you
-    ready to get some exercise in and fight against burn out?"
+  m_text: Great work! Now let's go!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
   m_sharedMaterial: {fileID: 5205836948720251117, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
@@ -20434,8 +20432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Today\u2019s mission is to get moving and get your steps in! Are you
-    ready to get some excersise in and fight against burn out?"
+  m_text: Great work! Now let's go!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
   m_sharedMaterial: {fileID: 5205836948720251117, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
@@ -21300,7 +21297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Today\u2019s mission is to get moving and get 100 steps in! Are you ready
+  m_text: "Today\u2019s mission is to get moving and get your steps in! Are you ready
     to get some excercise in and fight against burn out?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
@@ -23604,14 +23601,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hp Bar
       objectReference: {fileID: 0}
-    - target: {fileID: 4804324816823822251, guid: a38f43a6dd0dda042bf53eeaf0ba8292, type: 3}
-      propertyPath: current
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4804324816823822251, guid: a38f43a6dd0dda042bf53eeaf0ba8292, type: 3}
-      propertyPath: maximum
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6220675156896696846, guid: a38f43a6dd0dda042bf53eeaf0ba8292, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -23690,10 +23679,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220675156896696846, guid: a38f43a6dd0dda042bf53eeaf0ba8292, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7710451007795804172, guid: a38f43a6dd0dda042bf53eeaf0ba8292, type: 3}
-      propertyPath: m_FillMethod
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

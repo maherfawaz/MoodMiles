@@ -29,7 +29,7 @@ public class Breathing : MonoBehaviour
             if(breathIn == true)
             {
                 counterTMP.text = "Breath!";
-                gameObject.GetComponent<Slider>().value += 1;
+                gameObject.GetComponent<Slider>().value += 4;
                 if(gameObject.GetComponent<Slider>().value == gameObject.GetComponent<Slider>().maxValue)
                 {
                     breathIn = false;
@@ -64,7 +64,7 @@ public class Breathing : MonoBehaviour
             if (breathOut == true)
             {
                 counterTMP.text = "Exhale!";
-                gameObject.GetComponent<Slider>().value -= 1;
+                gameObject.GetComponent<Slider>().value -= 4;
                 if (gameObject.GetComponent<Slider>().value == gameObject.GetComponent<Slider>().minValue)
                 {
                     breathOut = false;
