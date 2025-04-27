@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Charge : MonoBehaviour
 {
     public int maximum;
-    public int current;
+    public float current;
     public Image mask;
     public bool hit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +17,7 @@ public class Charge : MonoBehaviour
     {
         GetCurrentFill();
 
-        if (current == maximum)
+        if (current >= maximum)
         {
 
 

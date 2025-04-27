@@ -98,7 +98,7 @@ public class dogManager : MonoBehaviour
     {
         if(activate == true)
         {
-            progress.GetComponent<Charge>().current += 1;
+            progress.GetComponent<Charge>().current += 0.1f;
         }
 
         if(finish == true)

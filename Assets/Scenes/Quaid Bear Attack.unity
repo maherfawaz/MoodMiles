@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01005262639b64d4a98fa39c7d50fe97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QuickTime: 5
+  QuickTime: 10
   goodJob: {fileID: 1875827154}
   ptime: 5
   attacks: 0

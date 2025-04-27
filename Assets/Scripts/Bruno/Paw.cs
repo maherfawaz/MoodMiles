@@ -22,7 +22,7 @@ public class Paw : MonoBehaviour
             QuickTime = ptime;
             attacks = 0;
         }
-        if(attacks == 10)
+        if(attacks == 30)
         {
             StaticHp.totalHP -= 1;
             GameObject.FindWithTag("Manager").GetComponent<BearManager>().finish = true;
