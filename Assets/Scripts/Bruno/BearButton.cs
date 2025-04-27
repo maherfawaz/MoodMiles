@@ -27,6 +27,11 @@ public class BearButton : MonoBehaviour
         {
             Hound.SetActive(true);
         }
+
+        if (Bruno.finish == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Accept()

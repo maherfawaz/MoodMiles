@@ -40,7 +40,17 @@ public class BearManager : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         if (finish == true)
         {
-            SceneManager.LoadScene("Quaid Base");
+            if (StaticHp.totalHP > 0)
+            {
+                Bruno.attack = false;
+                Bruno.finish = true;
+                SceneManager.LoadScene(2);
+            }
+
+            if (StaticHp.totalHP == 0)
+            {
+                SceneManager.LoadScene("Jail Cutsceen");
+            }
         }
     }
     private void EndTouch(InputAction.CallbackContext context)

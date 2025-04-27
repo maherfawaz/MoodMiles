@@ -22,6 +22,11 @@ public class BirdButton : MonoBehaviour
         {
             Hound.SetActive(true);
         }
+
+        if (Zippy.finish == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Accept()

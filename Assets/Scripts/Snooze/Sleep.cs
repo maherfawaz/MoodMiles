@@ -6,6 +6,7 @@ public class Sleep : MonoBehaviour
 {
     [Header("Inscribed")]
     public float hours;
+    public static float ours;
     public GameObject bebut;
     public GameObject bibut;
     public GameObject dbut;
@@ -13,6 +14,7 @@ public class Sleep : MonoBehaviour
 
     [Header("Dynamic")]
     public float timeRemaining;
+    public static float tr;
     public bool timerIsRunning = false;
   
 
@@ -21,6 +23,8 @@ public class Sleep : MonoBehaviour
     }
 
     void Update() {
+        ours = hours;
+        tr = timeRemaining;
         if (timerIsRunning) {
             if (timeRemaining > 0) {
                 timeRemaining -= Time.deltaTime;

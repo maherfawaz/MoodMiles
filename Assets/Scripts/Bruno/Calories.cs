@@ -7,6 +7,7 @@ public class Calories : MonoBehaviour
     // https://www.calculator.net/calories-burned-calculator.html
     [Header("Inscribed")]
     public int caloriesGoal = 1000;
+    public static float cg;
     public int weightKg = 70;
     public TextMeshProUGUI counterTMP;
 
@@ -17,6 +18,7 @@ public class Calories : MonoBehaviour
     public float metValue;
     public Vector3 accel;
     public int caloriesBurned;
+    public static float cb;
     public bool permissionGranted = false;
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
@@ -30,6 +32,8 @@ public class Calories : MonoBehaviour
     }
 
     void Update() {
+        cb = caloriesBurned;
+        cg = caloriesGoal;
         if (burnOn == true)
         {
             if (Application.isEditor || !permissionGranted)

@@ -11,6 +11,8 @@ public class Next : MonoBehaviour
         }
         else
         {
+            SnoozeInro.attack = false;
+            SnoozeInro.finish = true;
             SceneManager.LoadScene("Quaid Base");
         }
     }

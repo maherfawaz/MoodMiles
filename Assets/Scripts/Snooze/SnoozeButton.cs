@@ -26,5 +26,10 @@ public class SnoozeButton : MonoBehaviour
         {
             setup.SetActive(true);
         }
+
+        if (SnoozeInro.finish == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

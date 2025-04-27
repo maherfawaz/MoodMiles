@@ -7,11 +7,13 @@ public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
     public long stepGoal;
+    public static float sg;
     public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
     public long lastStepOffset;
     public long stepsTaken;
+    public static float st;
     public long currentStepOffset;
     public bool permissionGranted = false;
     public bool stepOn = false;
@@ -26,6 +28,8 @@ public class NewStepCounter : MonoBehaviour
     }
 
     void Update() {
+        sg = stepGoal;
+        st = stepsTaken;
         if (stepOn == true) {
             Dashie.mission = false;
             if (Application.isEditor || !permissionGranted) {

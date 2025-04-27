@@ -6,6 +6,7 @@ public class SnoozeInro : MonoBehaviour
     public static bool mission = false;
     public static bool progress = false;
     public static bool attack = false;
+    public static bool finish = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

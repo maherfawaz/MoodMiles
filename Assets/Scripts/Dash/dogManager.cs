@@ -52,7 +52,8 @@ public class dogManager : MonoBehaviour
             StaticHp.totalHP -= 1;
             if (StaticHp.totalHP > 0)
             {
-                
+                Dashie.attack = false;
+                Dashie.finish = true;
                 SceneManager.LoadScene(2);
             }
             
@@ -60,8 +61,7 @@ public class dogManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Jail Cutsceen");
             }
-            Dashie.attack = false;
-            Dashie.mission = true;
+            
         }
     }
     private void EndTouch(InputAction.CallbackContext context)

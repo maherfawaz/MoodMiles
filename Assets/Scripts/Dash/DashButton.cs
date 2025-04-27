@@ -28,6 +28,11 @@ public class DashButton : MonoBehaviour
         {
             Hound.SetActive(true);
         }
+
+        if (Dashie.finish == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Accept()
