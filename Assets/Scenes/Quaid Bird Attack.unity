@@ -940,7 +940,7 @@ MonoBehaviour:
   detector: {fileID: 1536832567}
   goodJob: {fileID: 131268769}
   loudnessSensibility: 100
-  threshold: 0.1
+  threshold: 20
 --- !u!1 &942456378
 GameObject:
   m_ObjectHideFlags: 0

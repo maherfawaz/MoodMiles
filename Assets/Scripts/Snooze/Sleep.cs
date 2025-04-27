@@ -16,14 +16,15 @@ public class Sleep : MonoBehaviour
     public float timeRemaining;
     public static float tr;
     public bool timerIsRunning = false;
-  
 
-    void Start() {
+
+    void Start()
+    {
         timeRemaining = hours * 3600;
+        ours = timeRemaining;
     }
 
     void Update() {
-        ours = hours;
         tr = timeRemaining;
         if (timerIsRunning) {
             if (timeRemaining > 0) {
