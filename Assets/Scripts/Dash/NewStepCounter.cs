@@ -30,7 +30,11 @@ public class NewStepCounter : MonoBehaviour
     void Update() {
         sg = stepGoal;
         st = stepsTaken;
-        if (stepOn == true) {
+        if (currentStepOffset < stepGoal)
+        {
+            counterTMP.text = $"{stepsTaken}/{stepGoal}";
+        }
+        if (SnoozeInro.progress == true) {
             Dashie.mission = false;
             if (Application.isEditor || !permissionGranted) {
                 return;

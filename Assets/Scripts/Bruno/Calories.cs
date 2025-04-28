@@ -34,7 +34,12 @@ public class Calories : MonoBehaviour
     void Update() {
         cb = caloriesBurned;
         cg = caloriesGoal;
-        if (burnOn == true)
+        if (caloriesBurned > lastCaloriesBurned)
+        {
+            counterTMP.text = $"{caloriesBurned}/{caloriesGoal}";
+            lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
+        }
+        if (Bruno.progress == true)
         {
             if (Application.isEditor || !permissionGranted)
             {

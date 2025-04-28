@@ -24,6 +24,7 @@ public class MissonStart : MonoBehaviour
         {
             Dashie.mission = false;
             Dashie.progress = true;
+
         }
     }
     
