@@ -5,6 +5,7 @@ public class SnoozeButton : MonoBehaviour
     public GameObject Snooooo;
     public GameObject progr;
     public GameObject setup;
+    public int sNumber;
     public void Snooze()
     {
         if (SnoozeInro.intro == false)
@@ -12,24 +13,9 @@ public class SnoozeButton : MonoBehaviour
             SceneManager.LoadScene("Snooze Intro");
         }
 
-        if (SnoozeInro.mission == true)
+        else
         {
-            Snooooo.SetActive(true);
-        }
-
-        if (SnoozeInro.progress == true)
-        {
-            progr.SetActive(true);
-        }
-
-        if (SnoozeInro.attack == true)
-        {
-            setup.SetActive(true);
-        }
-
-        if (SnoozeInro.finish == true)
-        {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(sNumber);
         }
     }
 }

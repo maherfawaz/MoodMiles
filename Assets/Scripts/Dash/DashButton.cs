@@ -6,6 +6,7 @@ public class DashButton : MonoBehaviour
     public GameObject Dash;
     public GameObject Hound;
     public GameObject progr;
+    public int sNumber;
     public void Dashin()
     {
         if (Dashie.intro == false)
@@ -13,30 +14,11 @@ public class DashButton : MonoBehaviour
             SceneManager.LoadScene("Dash Intro");
         }
 
-        if (Dashie.mission == true)
+        else
         {
-            Dash.SetActive(true);
-            
-        }
-
-        if (Dashie.progress == true)
-        {
-            progr.SetActive(true);
-        }
-
-        if (Dashie.attack == true)
-        {
-            Hound.SetActive(true);
-        }
-
-        if (Dashie.finish == true)
-        {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(sNumber);
         }
     }
 
-    public void Accept()
-    {
-        Dashie.mission = false;
-    }
+    
 }

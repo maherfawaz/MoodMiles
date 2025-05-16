@@ -50,6 +50,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zippy Breathing.unity
     guid: b7ab294834dc71742a183c4d8cfa4b5e
+  - enabled: 1
+    path: Assets/Scenes/Bruno Home.unity
+    guid: d932d1a22e055fd43a5c5203c9a8ce5e
+  - enabled: 1
+    path: Assets/Scenes/Snooze Home.unity
+    guid: 994f0b56a4a425446b271a5699d0b52c
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}

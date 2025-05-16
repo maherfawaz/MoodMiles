@@ -5,32 +5,22 @@ public class BirdButton : MonoBehaviour
 {
     public GameObject Dash;
     public GameObject Hound;
+    public int sNumber;
     public void Dashin()
     {
+
         if (Zippy.intro == false)
         {
             SceneManager.LoadScene("Zippy Intro");
         }
 
-        if (Zippy.mission == true)
+        else
         {
-            Dash.SetActive(true);
-
+            SceneManager.LoadScene(sNumber);
         }
 
-        if (Zippy.attack == true)
-        {
-            Hound.SetActive(true);
-        }
-
-        if (Zippy.finish == true)
-        {
-            gameObject.SetActive(false);
-        }
+        
     }
 
-    public void Accept()
-    {
-        Dashie.mission = false;
-    }
+    
 }

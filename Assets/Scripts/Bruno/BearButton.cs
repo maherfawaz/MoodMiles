@@ -5,6 +5,7 @@ public class BearButton : MonoBehaviour
     public GameObject Dash;
     public GameObject progr;
     public GameObject Hound;
+    public int sNumber;
     public void Dashin()
     {
         if (Bruno.intro == false)
@@ -12,30 +13,11 @@ public class BearButton : MonoBehaviour
             SceneManager.LoadScene("Bruno Intro");
         }
 
-        if (Bruno.mission == true)
+        else
         {
-            Dash.SetActive(true);
-
-        }
-
-        if (Bruno.progress == true)
-        {
-            progr.SetActive(true);
-        }
-
-        if (Bruno.attack == true)
-        {
-            Hound.SetActive(true);
-        }
-
-        if (Bruno.finish == true)
-        {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(sNumber);
         }
     }
 
-    public void Accept()
-    {
-        Dashie.mission = false;
-    }
+  
 }
