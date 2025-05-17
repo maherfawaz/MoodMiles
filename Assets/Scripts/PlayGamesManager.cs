@@ -92,7 +92,7 @@ public class PlayGamesManager : MonoBehaviour
                 byte[] savedData = Encoding.ASCII.GetBytes(jsonString);
 
                 SavedGameMetadataUpdate updatedMetadata = new SavedGameMetadataUpdate.Builder()
-                    .WithUpdatedDescription("My Save File Description")
+                    .WithUpdatedDescription($"{id} - {playerName} - {System.DateTime.Now}")
                     .Build();
 
                 PlayGamesPlatform.Instance.SavedGame.CommitUpdate(
