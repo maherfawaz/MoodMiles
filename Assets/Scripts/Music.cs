@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
+    [Header("Dynamic")]
+    public AudioSource musicSource;
+
     void Start() {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
 
@@ -10,12 +13,15 @@ public class Music : MonoBehaviour
             Destroy(gameObject);
         } else {
             DontDestroyOnLoad(gameObject);
+            musicSource = GetComponent<AudioSource>();
         }
     }
 
     void Update() {
         if (SceneManager.GetActiveScene().name == "Jail Cutsceen") {
-            Destroy(gameObject);
+            musicSource.Pause();
+        } else if (musicSource.isPlaying == false) {
+            musicSource.UnPause();
         }
     }
 }
