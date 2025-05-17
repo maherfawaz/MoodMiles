@@ -4,6 +4,7 @@ using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using TMPro;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 public class PlayGamesManager : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class PlayGamesManager : MonoBehaviour
     public string id;
     public string imgURL;
     private bool isLoading = false;
-    private bool isSaving;
+    private bool isSaving = false;
+    private bool isDeleting = false;
 
     void Start() {
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
@@ -144,6 +146,30 @@ public class PlayGamesManager : MonoBehaviour
                         isLoading = false;
                     }
                 );
+            }
+        );
+    }
+    
+    public void DeleteData(SavedGameRequestStatus status) {
+        if (isDeleting == true) {
+            Debug.LogError("Delete already in progress");
+            return;
+        }
+
+        isDeleting = true;
+
+        PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
+            fileName,
+            DataSource.ReadCacheOrNetwork,
+            ConflictResolutionStrategy.UseMostRecentlySaved,
+            (status, metadata) => {
+                if (status != SavedGameRequestStatus.Success) {
+                    Debug.LogError("Error opening saved game");
+                    isDeleting = false;
+                    return;
+                }
+                PlayGamesPlatform.Instance.SavedGame.Delete(metadata);
+                SceneManager.LoadScene(0);
             }
         );
     }
