@@ -7,6 +7,7 @@ public class DashButton : MonoBehaviour
     public GameObject Hound;
     public GameObject progr;
     public int sNumber;
+    public GameObject Light;
     public void Dashin()
     {
         if (Dashie.intro == false)
@@ -20,5 +21,17 @@ public class DashButton : MonoBehaviour
         }
     }
 
-    
+    public void Update()
+    {
+        if (Dashie.intro == false)
+        {
+            Light.SetActive(true);
+
+        }
+
+        else
+        {
+            Light.SetActive(false);
+        }
+    }
 }

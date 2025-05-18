@@ -6,4 +6,5 @@ public class Zippy : MonoBehaviour
     public static bool mission = false;
     public static bool attack = false;
     public static bool finish = false;
+    public static bool skipTu = false;
 }

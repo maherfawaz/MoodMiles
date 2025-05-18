@@ -6,6 +6,7 @@ public class SnoozeButton : MonoBehaviour
     public GameObject progr;
     public GameObject setup;
     public int sNumber;
+    public GameObject Light;
     public void Snooze()
     {
         if (SnoozeInro.intro == false)
@@ -16,6 +17,20 @@ public class SnoozeButton : MonoBehaviour
         else
         {
             SceneManager.LoadScene(sNumber);
+        }
+    }
+
+    public void Update()
+    {
+        if (SnoozeInro.intro == false)
+        {
+            Light.SetActive(true);
+
+        }
+
+        else
+        {
+            Light.SetActive(false);
         }
     }
 }

@@ -6,6 +6,7 @@ public class BearButton : MonoBehaviour
     public GameObject progr;
     public GameObject Hound;
     public int sNumber;
+    public GameObject Light;
     public void Dashin()
     {
         if (Bruno.intro == false)
@@ -19,5 +20,17 @@ public class BearButton : MonoBehaviour
         }
     }
 
-  
+    public void Update()
+    {
+        if (Bruno.intro == false)
+        {
+            Light.SetActive(true);
+
+        }
+
+        else
+        {
+            Light.SetActive(false);
+        }
+    }
 }

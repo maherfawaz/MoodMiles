@@ -7,4 +7,5 @@ public class Dashie : MonoBehaviour
     public static bool progress = false;
     public static bool attack = false;
     public static bool finish = false;
+    public static bool skipTu = false;
 }

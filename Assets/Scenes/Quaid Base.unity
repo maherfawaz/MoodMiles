@@ -4550,6 +4550,8 @@ MonoBehaviour:
   Dash: {fileID: 458681760}
   progr: {fileID: 1706278639}
   Hound: {fileID: 418300752}
+  sNumber: 14
+  Light: {fileID: 237394858}
 --- !u!1 &316929017
 GameObject:
   m_ObjectHideFlags: 0
@@ -17221,7 +17223,6 @@ GameObject:
   - component: {fileID: 1498725156}
   - component: {fileID: 1498725155}
   - component: {fileID: 1498725154}
-  - component: {fileID: 1498725153}
   m_Layer: 5
   m_Name: Analysis Button
   m_TagString: Sloth
@@ -17248,21 +17249,6 @@ RectTransform:
   m_AnchoredPosition: {x: 481.99, y: -995}
   m_SizeDelta: {x: 271.89, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1498725153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498725151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c69f0d5ac3728e4f8e91819f59ea0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Snooooo: {fileID: 1257791826}
-  progr: {fileID: 1198226796}
-  setup: {fileID: 1223170677}
 --- !u!114 &1498725154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17644,7 +17630,6 @@ GameObject:
   - component: {fileID: 1507836371}
   - component: {fileID: 1507836370}
   - component: {fileID: 1507836369}
-  - component: {fileID: 1507836368}
   m_Layer: 5
   m_Name: Store Buttom
   m_TagString: Sloth
@@ -17671,21 +17656,6 @@ RectTransform:
   m_AnchoredPosition: {x: 156.56, y: -995}
   m_SizeDelta: {x: 288.77, y: 253.314}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1507836368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507836366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c69f0d5ac3728e4f8e91819f59ea0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Snooooo: {fileID: 1257791826}
-  progr: {fileID: 1198226796}
-  setup: {fileID: 1223170677}
 --- !u!114 &1507836369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18621,6 +18591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dash: {fileID: 270320947}
   Hound: {fileID: 1139775417}
+  Light: {fileID: 755337453}
+  sNumber: 17
 --- !u!1 &1586191779
 GameObject:
   m_ObjectHideFlags: 0
@@ -19534,6 +19506,8 @@ MonoBehaviour:
   Snooooo: {fileID: 1257791826}
   progr: {fileID: 1198226796}
   setup: {fileID: 1223170677}
+  sNumber: 15
+  Light: {fileID: 863003626}
 --- !u!1 &1650607059
 GameObject:
   m_ObjectHideFlags: 0
@@ -21474,6 +21448,8 @@ MonoBehaviour:
   Dash: {fileID: 1604256263}
   Hound: {fileID: 1326808809}
   progr: {fileID: 488645197}
+  sNumber: 16
+  Light: {fileID: 10918931}
 --- !u!1 &1795223461
 GameObject:
   m_ObjectHideFlags: 0
@@ -24276,6 +24252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036685d4b4a5cd44fb1c6e59915c37ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
 --- !u!1 &2052717126
 GameObject:
   m_ObjectHideFlags: 0
