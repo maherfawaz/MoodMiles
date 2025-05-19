@@ -75,6 +75,7 @@ public class Breathing : MonoBehaviour
         else
         {
             Zippy.attack = true;
+            Zippy.mission = false;
             SceneManager.LoadScene("Quaid Base");
         }
         

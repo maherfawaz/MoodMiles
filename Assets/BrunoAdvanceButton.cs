@@ -1,24 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class ZippyHomeButton : MonoBehaviour
+public class BrunoAdvanceButton : MonoBehaviour
 {
     public GameObject mission;
     public GameObject tu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Zippy.mission == true)
+        if (Bruno.mission == true)
         {
 
         }
-        if (Zippy.attack == true)
+        if (Bruno.attack == true)
         {
 
         }
@@ -30,20 +29,20 @@ public class ZippyHomeButton : MonoBehaviour
 
     public void Zipp()
     {
-        if (Zippy.mission == true)
+        if (Bruno.mission == true)
         {
             mission.SetActive(true);
         }
 
-        if (Zippy.attack == true)
+        if (Bruno.attack == true)
         {
-            if(Zippy.skipTu == false)
+            if (Zippy.skipTu == false)
             {
                 tu.SetActive(true);
             }
             else
             {
-                SceneManager.LoadScene("Quaid Bird Attack");
+                SceneManager.LoadScene("Quaid Bear Attack");
             }
         }
         else
@@ -51,5 +50,4 @@ public class ZippyHomeButton : MonoBehaviour
 
         }
     }
-    
 }

@@ -1,24 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ZippyHomeButton : MonoBehaviour
+public class DashAdvanceButton : MonoBehaviour
 {
     public GameObject mission;
     public GameObject tu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Zippy.mission == true)
+        if (Dashie.mission == true)
         {
 
         }
-        if (Zippy.attack == true)
+        if (Dashie.attack == true)
         {
 
         }
@@ -30,20 +30,20 @@ public class ZippyHomeButton : MonoBehaviour
 
     public void Zipp()
     {
-        if (Zippy.mission == true)
+        if (Dashie.mission == true)
         {
             mission.SetActive(true);
         }
 
-        if (Zippy.attack == true)
+        if (Dashie.attack == true)
         {
-            if(Zippy.skipTu == false)
+            if (Zippy.skipTu == false)
             {
                 tu.SetActive(true);
             }
             else
             {
-                SceneManager.LoadScene("Quaid Bird Attack");
+                SceneManager.LoadScene("Quaid Dog Attack");
             }
         }
         else
@@ -51,5 +51,4 @@ public class ZippyHomeButton : MonoBehaviour
 
         }
     }
-    
 }
