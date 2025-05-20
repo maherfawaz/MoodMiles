@@ -31,7 +31,7 @@ public class NewStepCounter : MonoBehaviour
         sg = stepGoal;
         st = stepsTaken;
         if (Dashie.progress == true) {
-            Dashie.mission = false;
+            
             if (Application.isEditor || !permissionGranted) {
                 return;
             }
