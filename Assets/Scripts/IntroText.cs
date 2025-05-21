@@ -61,26 +61,26 @@ public class IntroText : MonoBehaviour
         {
             SnoozeInro.intro = true;
             SnoozeInro.mission = true;
-            SceneManager.LoadScene("Quaid Base");
+            SceneManager.LoadScene("Snooze Home");
         }
         else if (animalName == "Dash")
         {
             Dashie.intro = true;
             Dashie.mission = true;
-            SceneManager.LoadScene("Quaid Base");
+            SceneManager.LoadScene("Dash Home");
         }
         else if (animalName == "Zippy")
         {
             Zippy.intro = true;
             Zippy.mission = true;
-            SceneManager.LoadScene("Quaid Base");
+            SceneManager.LoadScene("Zippy Home");
         }
 
         else if (animalName == "Bruno")
         {
             Bruno.intro = true;
             Bruno.mission = true;
-            SceneManager.LoadScene("Quaid Base");
+            SceneManager.LoadScene("Bruno Home");
         }
     }
 }
