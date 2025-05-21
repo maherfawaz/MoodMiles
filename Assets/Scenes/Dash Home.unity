@@ -407,6 +407,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2129141491}
     m_Modifications:
+    - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445.357
+      objectReference: {fileID: 0}
+    - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 38.441
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705597560353453264, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3019031731982476860, guid: 47d76b6c5cdb0654c8396c014a9160e4, type: 3}
+    - target: {fileID: 4227957542121497582, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5648197356988740343, guid: 6e5cb01c4cd862c4ab5a9d654ecf41ca, type: 3}
+    - target: {fileID: 4494454712707638742, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_text
+      value: Shake your phone!
+      objectReference: {fileID: 0}
     - target: {fileID: 4669986355770239218, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -495,6 +515,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6021585068592435782, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 425.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021585068592435782, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 543.844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021585068592435782, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021585068592435782, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 221.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484056590690756062, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7712889252448647843, guid: d0b2833284176134c8e5c29b44c3be4b, type: 3}
     - target: {fileID: 6670848852706961805, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -506,6 +546,26 @@ PrefabInstance:
     - target: {fileID: 7241197533396252266, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: sNumber
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544036052826213846, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_text
+      value: Charge forward and bite the boss!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310348932845671131, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 517.799
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310348932845671131, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 42.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067550578706841801, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067550578706841801, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 159
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1448,11 +1508,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 729971181}
+  - {fileID: 1384464009}
+  - {fileID: 1111913941}
   - {fileID: 1386786565}
   - {fileID: 88600451}
   - {fileID: 996250371}
-  - {fileID: 1111913941}
-  - {fileID: 1384464009}
   - {fileID: 1798508959}
   - {fileID: 2023528939}
   m_Father: {fileID: 0}
