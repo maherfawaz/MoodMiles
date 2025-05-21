@@ -544,17 +544,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5847160422029341956, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6670848852706961805, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Name
       value: Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 6670848852706961805, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1801,12 +1793,12 @@ RectTransform:
   - {fileID: 417062320}
   - {fileID: 1097456920}
   - {fileID: 1262313661}
+  - {fileID: 34974579}
+  - {fileID: 1111913941}
+  - {fileID: 1751848378}
   - {fileID: 1386786565}
   - {fileID: 1871253867}
   - {fileID: 629556760}
-  - {fileID: 1111913941}
-  - {fileID: 34974579}
-  - {fileID: 1751848378}
   - {fileID: 1049573888}
   - {fileID: 1150148796}
   - {fileID: 1079910989}
