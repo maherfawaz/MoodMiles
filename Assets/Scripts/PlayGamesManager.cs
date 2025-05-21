@@ -150,7 +150,7 @@ public class PlayGamesManager : MonoBehaviour
         );
     }
     
-    public void DeleteData(SavedGameRequestStatus status) {
+    public void DeleteData() {
         if (isDeleting == true) {
             Debug.LogError("Delete already in progress");
             return;
