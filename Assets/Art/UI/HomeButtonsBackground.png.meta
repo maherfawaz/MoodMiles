@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4a760215b9dcafe46bd2cf6b46ad774e
+guid: 742e9bd1d06cf8942aeee6da7d6e2b2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 728085160490663989
-    second: Bottom tabs_0
+      213: 6902942414278325751
+    second: Group 60_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bottom tabs_0
+      name: Group 60_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 530874d889daa1a00800000000000000
-      internalID: 728085160490663989
+      spriteID: 7f5790c6d8d2ccf50800000000000000
+      internalID: 6902942414278325751
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bottom tabs_0: 728085160490663989
+      Group 60_0: 6902942414278325751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
