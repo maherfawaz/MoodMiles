@@ -308,8 +308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.72468, y: -37.999817}
-  m_SizeDelta: {x: 1440, y: 2880}
+  m_AnchoredPosition: {x: 83, y: -37.999817}
+  m_SizeDelta: {x: 1474, y: 2880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2027366929950367687
 CanvasRenderer:
@@ -414,8 +414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Today\u2019s mission is to get moving and burn some calories! Are you
-    ready to get some excercise in and fight against burn out?"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
   m_sharedMaterial: {fileID: 5205836948720251117, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
@@ -667,7 +666,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4448965807802984055}
-  m_LocalRotation: {x: 0, y: 0.9934188, z: 0, w: 0.1145385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 103.547424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -675,7 +674,7 @@ RectTransform:
   - {fileID: 5059511334814307937}
   - {fileID: 5429774974354807584}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 166.846, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 443.061, y: 442}

@@ -2122,8 +2122,8 @@ RectTransform:
   - {fileID: 655411546}
   - {fileID: 1386786565}
   - {fileID: 1193901519}
-  - {fileID: 1805780294}
   - {fileID: 1111913941}
+  - {fileID: 1805780294}
   - {fileID: 2145939347}
   - {fileID: 1159675616}
   m_Father: {fileID: 0}
@@ -2403,6 +2403,22 @@ PrefabInstance:
     - target: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1550
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -88
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text

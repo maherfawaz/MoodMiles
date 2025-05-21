@@ -366,6 +366,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059511334814307937, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_text
+      value: "Today\u2019s mission is to get moving and burn some calories! Are you
+        ready to get some excercise in and fight against burn out?"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1350,6 +1363,7 @@ MonoBehaviour:
   burnOn: 0
   speed: 0
   duration: 0
+  time: 0
   metValue: 0
   accel: {x: 0, y: 0, z: 0}
   caloriesBurned: 0
