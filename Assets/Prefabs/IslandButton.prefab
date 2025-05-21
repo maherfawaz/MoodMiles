@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 8910225864777171375}
   - component: {fileID: 1483381173801124270}
   m_Layer: 5
-  m_Name: Island
+  m_Name: IslandButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
