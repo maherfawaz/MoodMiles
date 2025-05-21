@@ -1709,6 +1709,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2129141491}
     m_Modifications:
+    - target: {fileID: 269740957712989161, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: sNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4669986355770239218, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2300,6 +2304,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1159675615}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2145939348}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1321380157050807977, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2368,7 +2404,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_text
+      value: Recharge by getting a great night's sleep
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 692.707
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 139.885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789708537556349660, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7662020917416803031, guid: 660c9692005089d478ac28732d85c818, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8438208954208857403, guid: 813bbea630928894089e51889e65038a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
