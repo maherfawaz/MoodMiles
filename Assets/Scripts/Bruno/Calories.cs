@@ -14,6 +14,7 @@ public class Calories : MonoBehaviour
     [Header("Dynamic")]
     public bool burnOn = false;
     public float speed;
+    public float time;
     public float duration;
     public float metValue;
     public Vector3 accel;
@@ -53,7 +54,8 @@ public class Calories : MonoBehaviour
             }
 
             accel = Accelerometer.current.acceleration.ReadValue();
-            duration = Time.time / 60; // Convert seconds to minutes
+            time += Time.deltaTime;
+            duration = time / 60; // Convert seconds to minutes
             speed = Mathf.Sqrt(accel.x * accel.x + accel.y * accel.y + accel.z * accel.z) * 3.6f; // Convert m/s to km/h
                                                                                                   // Calculate MET value based on speed (in km/h)
             if (speed < 4)
