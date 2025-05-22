@@ -48,8 +48,7 @@ public class DashAdvanceButton : MonoBehaviour
         }
         else
         {
-            mission.SetActive(false);
-            tu.SetActive(false);
+           
         }
     }
 }

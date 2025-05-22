@@ -470,9 +470,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 213402651}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1079910991}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonStart
+      objectReference: {fileID: 0}
     - target: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_Name
       value: Mission
@@ -509,6 +517,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
   m_PrefabInstance: {fileID: 213402648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &213402651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8438208954208857403, guid: 813bbea630928894089e51889e65038a, type: 3}
+  m_PrefabInstance: {fileID: 213402648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53e112b5e345294da6fe4c073906e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &462151410
 PrefabInstance:
   m_ObjectHideFlags: 0
