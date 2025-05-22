@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 988a99434a7e2e44ca07e54433fd8793
+guid: 971d43d59569f354e83318105b359ebe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4074834828980588549
-    second: Component 21_0
-  - first:
-      213: 5728294411826168939
-    second: Component 21_1
+      213: 3023947217505616116
+    second: island_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -142,33 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Component 21_0
+      name: island_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 4
         y: 1
-        width: 65
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bffe83cff474377c0800000000000000
-      internalID: -4074834828980588549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Component 21_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 28
         width: 43
         height: 47
       alignment: 0
@@ -179,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6401c1fa6dfe7f40800000000000000
-      internalID: 5728294411826168939
+      spriteID: 4f004f609f737f920800000000000000
+      internalID: 3023947217505616116
       vertices: []
       indices: 
       edges: []
@@ -198,9 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Component 21_0: -4074834828980588549
-      Component 21_1: 5728294411826168939
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
