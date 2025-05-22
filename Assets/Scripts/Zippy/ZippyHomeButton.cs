@@ -5,6 +5,7 @@ public class ZippyHomeButton : MonoBehaviour
 {
     public GameObject mission;
     public GameObject tu;
+    public GameObject ready;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,15 +17,16 @@ public class ZippyHomeButton : MonoBehaviour
     {
         if (Zippy.mission == true)
         {
-
+            ready.SetActive(false);
         }
         if (Zippy.attack == true)
         {
+            ready.SetActive(true);
 
         }
         else
         {
-
+            ready.SetActive(false);
         }
     }
 
