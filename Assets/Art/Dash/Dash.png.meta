@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 6d9e1bc2218a8814d9a59e620e4ba9d4
+guid: 7905ab4d62cceb640982d74c410053cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3293516593980826292
-    second: "\u110C\u1166\u1106\u1169\u11A8_\u110B\u1165\u11B9\u1102\u1173\u11AB_\u110B\u1161\u1110\u1173\u110B\u116F\u110F\u1173
-      4 1_0"
+      213: 693877499116038855
+    second: DashWhole_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -124,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -140,14 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u110C\u1166\u1106\u1169\u11A8_\u110B\u1165\u11B9\u1102\u1173\u11AB_\u110B\u1161\u1110\u1173\u110B\u116F\u110F\u1173
-        4 1_0"
+      name: DashWhole_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 249
-        height: 260
+        x: 6
+        y: 19
+        width: 163
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b2e41674ebe4bd20800000000000000
-      internalID: 3293516593980826292
+      spriteID: 7caa27cb8e521a900800000000000000
+      internalID: 693877499116038855
       vertices: []
       indices: 
       edges: []
@@ -176,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u110C\u1166\u1106\u1169\u11A8_\u110B\u1165\u11B9\u1102\u1173\u11AB_\u110B\u1161\u1110\u1173\u110B\u116F\u110F\u1173 4 1_0": 3293516593980826292
+      DashWhole_0: 693877499116038855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

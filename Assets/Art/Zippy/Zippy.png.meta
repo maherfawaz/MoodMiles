@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db1a26bd40b75704f9752dee7db36d20
+guid: c2753dd9f875c4e478b1178daae3bf49
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -142,10 +142,10 @@ TextureImporter:
       name: "\u672A\u547D\u540D\u7684\u4F5C\u54C1 5 1_0"
       rect:
         serializedVersion: 2
-        x: 76
-        y: 85
-        width: 163
-        height: 211
+        x: 22
+        y: 32
+        width: 141
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
