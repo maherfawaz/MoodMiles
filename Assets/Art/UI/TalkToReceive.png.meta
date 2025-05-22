@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b6f9a192baf3034a921386a85a4f065
+guid: 6035f281028bef643a6bef9749ac3976
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2154769848453845388
-    second: Component 6 (8)_0
+      213: -1755859769134075610
+    second: Rectangle 2014_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Component 6 (8)_0
+      name: Rectangle 2014_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 162
-        height: 122
+        width: 284
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8150ddb2c747ed10800000000000000
-      internalID: 2154769848453845388
+      spriteID: 6213d59c7dee1a7e0800000000000000
+      internalID: -1755859769134075610
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Component 6 (8)_0: 2154769848453845388
+      Rectangle 2014_0: -1755859769134075610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

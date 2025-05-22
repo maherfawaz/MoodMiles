@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 841d21bcb2cd5f14dbd203ba320c4d9f
+guid: 5d1433127442fc94186f877ebe4b202b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1728938581155539470
-    second: Game Play Scenario 1_NPC(Sloth) Page (3)_0
+      213: 9044968906769190868
+    second: Group 63_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Play Scenario 1_NPC(Sloth) Page (3)_0
+      name: Group 63_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 390
-        height: 844
+        width: 162
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f591cf45839108e0800000000000000
-      internalID: -1728938581155539470
+      spriteID: 4df4e646c4f268d70800000000000000
+      internalID: 9044968906769190868
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game Play Scenario 1_NPC(Sloth) Page (3)_0: -1728938581155539470
+      Group 63_0: 9044968906769190868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
