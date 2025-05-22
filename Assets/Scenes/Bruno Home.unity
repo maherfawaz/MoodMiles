@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f42247a8ab17948b12e5b8a808c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caloriesGoal: 1000
+  caloriesGoal: 20
   weightKg: 70
   counterTMP: {fileID: 1079910993}
   burnOn: 0
