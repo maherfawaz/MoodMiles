@@ -80,6 +80,8 @@ public class SlothInput : MonoBehaviour
         {
             wellDone.SetActive(true);
             wheel.SetActive(false);
+            boss.SetActive(false);
+            defeat.SetActive(true);
         }
 
         if(StaticHp.totalHP == 0)
