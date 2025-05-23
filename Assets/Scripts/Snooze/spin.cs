@@ -18,7 +18,7 @@ public class spin : MonoBehaviour
     public void Update()
     {
         this.transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
-        this.transform.RotateAround(rotateAround.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        
     
 
         }
