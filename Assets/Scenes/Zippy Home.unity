@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302746990764063058, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 545
+      value: 465
       objectReference: {fileID: 0}
     - target: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_Name
@@ -376,8 +376,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text
-      value: "Today\u2019s mission is to perform a simple breathing exercise! Are
-        you ready to calm yourself and fight against burn out?"
+      value: 'Quiet your mind:
+
+        Practice 3 minutes of
+
+        mindful breathing'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 218.797
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8789708537556349660, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_Sprite
@@ -1530,7 +1541,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 121.2
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 1175496117584063037, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1570,7 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: -5648197356988740343, guid: 6e5cb01c4cd862c4ab5a9d654ecf41ca, type: 3}
     - target: {fileID: 4494454712707638742, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_text
-      value: Blow into your microphone!
+      value: Gently blow into your phone
       objectReference: {fileID: 0}
     - target: {fileID: 4517007132006317675, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1718,7 +1729,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544036052826213846, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_text
-      value: Attack the boss!
+      value: 'Your calm breath helps
+
+        steady the flame'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544036052826213846, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8453353970200252430, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

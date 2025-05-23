@@ -720,11 +720,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 445.357
+      value: 371.467
       objectReference: {fileID: 0}
     - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.441
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 892603759073140629, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -203
       objectReference: {fileID: 0}
     - target: {fileID: 3705597560353453264, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Sprite
@@ -857,18 +861,6 @@ PrefabInstance:
     - target: {fileID: 7241197533396252266, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: sNumber
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7544036052826213846, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_text
-      value: Charge forward and bite the boss!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310348932845671131, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 517.799
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310348932845671131, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 9067550578706841801, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1374,6 +1366,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2626116633484311460, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_text
+      value: 1500 Steps
+      objectReference: {fileID: 0}
     - target: {fileID: 3532731713320358687, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -1381,6 +1377,18 @@ PrefabInstance:
     - target: {fileID: 3532731713320358687, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 286.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3263778409856897613, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
@@ -1897,8 +1905,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text
-      value: "Today\u2019s mission is to get moving and get your steps in! Are you
-        ready to get some excercise in and fight against burn out?"
+      value: 'Daily Dash:
+
+        Conquer 1500 steps!'
       objectReference: {fileID: 0}
     - target: {fileID: 7605014887809918183, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_IsActive

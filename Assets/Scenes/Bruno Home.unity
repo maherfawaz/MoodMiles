@@ -500,8 +500,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text
-      value: "Today\u2019s mission is to get moving and burn some calories! Are you
-        ready to get some excercise in and fight against burn out?"
+      value: 'Fuel Your Day by
+
+        Burning 100 Calories'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 633.177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 155.366
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -28.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866071626783936623, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030518
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -737,10 +762,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5648197356988740343, guid: 6e5cb01c4cd862c4ab5a9d654ecf41ca, type: 3}
-    - target: {fileID: 4494454712707638742, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_text
-      value: Tap the circle as fast as you can!
-      objectReference: {fileID: 0}
     - target: {fileID: 4669986355770239218, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -821,14 +842,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5269393209711393398, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5847160422029341956, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6021585068592435782, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 425.043
@@ -852,14 +865,6 @@ PrefabInstance:
     - target: {fileID: 6670848852706961805, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
       propertyPath: m_Name
       value: Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 6670848852706961805, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7544036052826213846, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
-      propertyPath: m_text
-      value: Attack the boss!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1043,6 +1048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2626116633484311460, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_text
+      value: 100 Calories
+      objectReference: {fileID: 0}
     - target: {fileID: 3532731713320358687, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -1050,6 +1059,18 @@ PrefabInstance:
     - target: {fileID: 3532731713320358687, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 316.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356610560387609387, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3263778409856897613, guid: 457ce9feb9264eb47aaf95b2ad39c7a4, type: 3}
