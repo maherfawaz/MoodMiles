@@ -4,6 +4,7 @@ public class BrunoAdvanceButton : MonoBehaviour
 {
     public GameObject mission;
     public GameObject tu;
+   
     public GameObject ready;
     public GameObject talkM;
     public GameObject talkP;
@@ -22,12 +23,14 @@ public class BrunoAdvanceButton : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(true);
             talkF.SetActive(false);
+           
         }
         if (Bruno.progress == true)
         {
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
+           
         }
         if (Bruno.attack == true)
         {
