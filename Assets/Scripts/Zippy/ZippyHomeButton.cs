@@ -6,10 +6,13 @@ public class ZippyHomeButton : MonoBehaviour
     public GameObject mission;
     public GameObject tu;
     public GameObject ready;
+    public GameObject talkM;
+    public GameObject talkP;
+    public GameObject talkF;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,17 +21,22 @@ public class ZippyHomeButton : MonoBehaviour
         if (Zippy.mission == true)
         {
             ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
         }
+       
         if (Zippy.attack == true)
         {
             ready.SetActive(true);
-
+            talkP.SetActive(false);
+            talkF.SetActive(true);
         }
         else
         {
             ready.SetActive(false);
         }
-    }
+    
+}
 
     public void Zipp()
     {

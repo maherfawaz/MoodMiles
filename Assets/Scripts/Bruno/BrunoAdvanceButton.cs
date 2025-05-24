@@ -5,6 +5,9 @@ public class BrunoAdvanceButton : MonoBehaviour
     public GameObject mission;
     public GameObject tu;
     public GameObject ready;
+    public GameObject talkM;
+    public GameObject talkP;
+    public GameObject talkF;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,10 +20,20 @@ public class BrunoAdvanceButton : MonoBehaviour
         if (Bruno.mission == true)
         {
             ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
+        }
+        if (Bruno.progress == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(false);
+            talkP.SetActive(true);
         }
         if (Bruno.attack == true)
         {
             ready.SetActive(true);
+            talkP.SetActive(false);
+            talkF.SetActive(true);
         }
         else
         {

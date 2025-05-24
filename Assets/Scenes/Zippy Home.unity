@@ -1199,6 +1199,9 @@ MonoBehaviour:
   mission: {fileID: 226722976}
   tu: {fileID: 1353533375307414025}
   ready: {fileID: 1140099344}
+  talkM: {fileID: 6457666822584643524}
+  talkP: {fileID: 6457666822584643523}
+  talkF: {fileID: 1173346302}
 --- !u!224 &1763938932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4669986355770239218, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
@@ -2139,6 +2142,16 @@ PrefabInstance:
 --- !u!224 &6457666822584643522 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7268573646045185989, guid: ad08527a59262884783ed31749a0f348, type: 3}
+  m_PrefabInstance: {fileID: 6457666822584643521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6457666822584643523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4268263181009601971, guid: ad08527a59262884783ed31749a0f348, type: 3}
+  m_PrefabInstance: {fileID: 6457666822584643521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6457666822584643524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794536039967571443, guid: ad08527a59262884783ed31749a0f348, type: 3}
   m_PrefabInstance: {fileID: 6457666822584643521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

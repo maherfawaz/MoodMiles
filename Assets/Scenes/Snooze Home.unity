@@ -535,6 +535,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7268573646045185989, guid: ad08527a59262884783ed31749a0f348, type: 3}
   m_PrefabInstance: {fileID: 1193901518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1193901520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4268263181009601971, guid: ad08527a59262884783ed31749a0f348, type: 3}
+  m_PrefabInstance: {fileID: 1193901518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1193901521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794536039967571443, guid: ad08527a59262884783ed31749a0f348, type: 3}
+  m_PrefabInstance: {fileID: 1193901518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1203823671
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +966,9 @@ MonoBehaviour:
   mission: {fileID: 2145939348}
   tu: {fileID: 1805780293}
   ready: {fileID: 1828381061}
+  talkM: {fileID: 1193901521}
+  talkP: {fileID: 1193901520}
+  talkF: {fileID: 2001868321}
 --- !u!114 &1339215224
 MonoBehaviour:
   m_ObjectHideFlags: 0
