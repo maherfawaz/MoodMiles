@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 43d5f3d971b515645b43befd3f55e03f
+guid: 4ce8d0eb65fd2f94e846fb43c02f607e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7775539121758612446
-    second: Game Play Scenario 1_NPC(Sloth) Page (4)_0
+      213: -7275747150402431968
+    second: Group 44_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Play Scenario 1_NPC(Sloth) Page (4)_0
+      name: Group 44_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 390
-        height: 844
+        width: 94
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edb239972a348eb60800000000000000
-      internalID: 7775539121758612446
+      spriteID: 024d3b8e38a570b90800000000000000
+      internalID: -7275747150402431968
       vertices: []
       indices: 
       edges: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game Play Scenario 1_NPC(Sloth) Page (4)_0: 7775539121758612446
+      Group 44_0: -7275747150402431968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
