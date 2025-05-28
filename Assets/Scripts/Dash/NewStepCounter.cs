@@ -19,6 +19,10 @@ public class NewStepCounter : MonoBehaviour
     public bool stepOn = false;
 
     void Start() {
+        if (PlayGamesManager.Instance != null) {
+            stepGoal = PlayGamesManager.Instance.data.stepGoal;
+        }
+
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;

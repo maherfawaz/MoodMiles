@@ -24,6 +24,11 @@ public class Calories : MonoBehaviour
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
+        if (PlayGamesManager.Instance != null) {
+            caloriesGoal = PlayGamesManager.Instance.data.caloriesGoal;
+            weightKg = PlayGamesManager.Instance.data.weightKg;
+        }
+
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;

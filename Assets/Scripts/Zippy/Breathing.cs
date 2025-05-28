@@ -15,7 +15,9 @@ public class Breathing : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        breathTimer = 60;
+        if (PlayGamesManager.Instance != null) {
+            breathTimer = PlayGamesManager.Instance.data.breathGoal;
+        }
         breathIn = true;
     }
 

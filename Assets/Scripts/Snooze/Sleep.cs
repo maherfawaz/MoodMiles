@@ -19,6 +19,9 @@ public class Sleep : MonoBehaviour
 
     void Start()
     {
+        if (PlayGamesManager.Instance != null) {
+            hours = PlayGamesManager.Instance.data.sleepGoal;
+        }
         timeRemaining = hours * 3600;
         ours = timeRemaining;
     }

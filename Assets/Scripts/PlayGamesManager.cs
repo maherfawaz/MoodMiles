@@ -227,7 +227,11 @@ public class PlayGamesManager : MonoBehaviour
 [System.Serializable]
 public class SaveData {
     public int bossHealth;
-    public float currentMissionProgress;
+    public float sleepGoal;
+    public float breathGoal;
+    public long stepGoal;
+    public int caloriesGoal;
+    public int weightKg;
     public int rewards;
     public bool trueIntro;
     public bool brunoIntro;
