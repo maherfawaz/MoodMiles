@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 1242520897}
   - component: {fileID: 1242520896}
   - component: {fileID: 1242520895}
-  - component: {fileID: 1242520894}
+  - component: {fileID: 1242520898}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -398,18 +398,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!114 &1242520894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242520888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36aa2536484fb6c42b72e6c0b2beca4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1242520895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,9 +442,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1242520894}
-        m_TargetAssemblyTypeName: Finish, Assembly-CSharp
-        m_MethodName: Finisher
+      - m_Target: {fileID: 1242520898}
+        m_TargetAssemblyTypeName: Testbut, Assembly-CSharp
+        m_MethodName: testButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -504,6 +492,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242520888}
   m_CullTransparentMesh: 1
+--- !u!114 &1242520898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242520888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a1e30fd4af8084e910157623270669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sNumber: 2
 --- !u!1 &2006475572
 GameObject:
   m_ObjectHideFlags: 0
