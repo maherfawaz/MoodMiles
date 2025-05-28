@@ -17,6 +17,13 @@ public class GainReward : MonoBehaviour
     public void Gain()
     {
         Rewards.reward += 50;
-        SceneManager.LoadScene("Quaid Base");
+        if(StaticHp.totalHP > 0)
+        {
+            SceneManager.LoadScene("Quaid Base");
+        }
+        if (StaticHp.totalHP <= 0)
+        {
+            SceneManager.LoadScene("Jail Cutsceen");
+        }
     }
 }

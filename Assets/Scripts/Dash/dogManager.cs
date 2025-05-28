@@ -50,17 +50,11 @@ public class dogManager : MonoBehaviour
         if(finish == true)
         {
             StaticHp.totalHP -= 1;
-            if (StaticHp.totalHP > 0)
-            {
+            
                 Dashie.attack = false;
                 Dashie.finish = true;
                 SceneManager.LoadScene(18);
-            }
             
-            if (StaticHp.totalHP == 0)
-            {
-                SceneManager.LoadScene("Jail Cutsceen");
-            }
             
         }
     }

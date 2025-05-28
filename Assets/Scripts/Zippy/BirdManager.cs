@@ -38,17 +38,13 @@ public class BirdManager : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         if (finish == true)
         {
-            if (StaticHp.totalHP > 0)
-            {
+           
                 Zippy.attack = false;
                 Zippy.finish = true;
                 SceneManager.LoadScene(18);
-            }
+            
 
-            if (StaticHp.totalHP == 0)
-            {
-                SceneManager.LoadScene("Jail Cutsceen");
-            }
+            
         }
     }
     private void EndTouch(InputAction.CallbackContext context)
