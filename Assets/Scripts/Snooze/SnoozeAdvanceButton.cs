@@ -17,19 +17,19 @@ public class SnoozeAdvanceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SnoozeInro.mission == true)
+        if (Snooze.mission == true)
         {
             ready.SetActive(false);
             talkM.SetActive(true);
             talkF.SetActive(false);
         }
-        if (SnoozeInro.progress == true)
+        if (Snooze.progress == true)
         {
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
         }
-        if (SnoozeInro.attack == true)
+        if (Snooze.attack == true)
         {
             ready.SetActive(true);
             talkP.SetActive(false);
@@ -43,12 +43,12 @@ public class SnoozeAdvanceButton : MonoBehaviour
 
     public void Zipp()
     {
-        if (SnoozeInro.mission == true)
+        if (Snooze.mission == true)
         {
             mission.SetActive(true);
         }
 
-        if (SnoozeInro.attack == true)
+        if (Snooze.attack == true)
         {
             if (Zippy.skipTu == false)
             {

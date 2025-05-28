@@ -30,8 +30,8 @@ public class AROUNDTHEWORLD : MonoBehaviour
                     charge = false;
                     StaticHp.totalHP -= 1;
                     GameObject.FindWithTag("Manager").GetComponent<SlothInput>().finish = true;
-                    SnoozeInro.attack = false;
-                    SnoozeInro.mission = true;
+                    Snooze.attack = false;
+                    Snooze.mission = true;
                     gameObject.SetActive(false);
 
                 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SnoozeInro : MonoBehaviour
+public class Snooze : MonoBehaviour
 {
     public static bool intro = false;
     public static bool mission = false;

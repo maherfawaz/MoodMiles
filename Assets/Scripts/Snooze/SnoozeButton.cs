@@ -9,7 +9,7 @@ public class SnoozeButton : MonoBehaviour
     public GameObject Light;
     public void Snooze()
     {
-        if (SnoozeInro.intro == false)
+        if (global::Snooze.intro == false)
         {
             SceneManager.LoadScene("Snooze Intro");
         }
@@ -22,7 +22,7 @@ public class SnoozeButton : MonoBehaviour
 
     public void Update()
     {
-        if (SnoozeInro.intro == false)
+        if (global::Snooze.intro == false)
         {
             Light.SetActive(true);
 

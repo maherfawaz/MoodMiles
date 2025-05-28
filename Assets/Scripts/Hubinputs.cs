@@ -57,7 +57,7 @@ public class Hubinputs : MonoBehaviour
 
         if (rayHit == GameObject.FindWithTag("Sloth"))
         {
-            if(SnoozeInro.intro == false)
+            if(Snooze.intro == false)
             {
                 SceneManager.LoadScene("Snooze Intro");
             }

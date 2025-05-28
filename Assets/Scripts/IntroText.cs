@@ -59,8 +59,8 @@ public class IntroText : MonoBehaviour
         }
         else if (animalName == "Snooze")
         {
-            SnoozeInro.intro = true;
-            SnoozeInro.mission = true;
+            Snooze.intro = true;
+            Snooze.mission = true;
             if (PlayGamesManager.Instance != null) {
                 PlayGamesManager.Instance.SaveData();
             }
