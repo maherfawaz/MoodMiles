@@ -58,7 +58,7 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     // https://www.youtube.com/watch?v=O8Ipo2LnRk4
-    public void SaveDataToJson() {
+    public void SaveData() {
         if (!PlayGamesPlatform.Instance.localUser.authenticated) {
             Debug.LogWarning("User is not authenticated to Google Play Services");
             return;
@@ -84,8 +84,31 @@ public class PlayGamesManager : MonoBehaviour
 
                 data = new SaveData {
                     bossHealth = StaticHp.totalHP,
-                    currentMission = "MissionName",
-                    currentMissionProgress = 0.5f
+                    rewards = Rewards.reward,
+                    trueIntro = TrueIntro.trueIntro,
+                    brunoIntro = Bruno.intro,
+                    brunoMission = Bruno.mission,
+                    brunoProgress = Bruno.progress,
+                    brunoAttack = Bruno.attack,
+                    brunoFinish = Bruno.finish,
+                    brunoSkip = Bruno.skipTu,
+                    snoozeIntro = SnoozeInro.intro,
+                    snoozeMission = SnoozeInro.mission,
+                    snoozeProgress = SnoozeInro.progress,
+                    snoozeAttack = SnoozeInro.attack,
+                    snoozeFinish = SnoozeInro.finish,
+                    snoozeSkip = SnoozeInro.skipTu,
+                    dashIntro = Dashie.intro,
+                    dashMission = Dashie.mission,
+                    dashProgress = Dashie.progress,
+                    dashAttack = Dashie.attack,
+                    dashFinish = Dashie.finish,
+                    dashSkip = Dashie.skipTu,
+                    zippyIntro = Zippy.intro,
+                    zippyMission = Zippy.mission,
+                    zippyAttack = Zippy.attack,
+                    zippyFinish = Zippy.finish,
+                    zippySkip = Zippy.skipTu,
                 };
 
                 string jsonString = JsonUtility.ToJson(data);
@@ -142,6 +165,32 @@ public class PlayGamesManager : MonoBehaviour
 
                         string jsonString = Encoding.ASCII.GetString(savedData);
                         data = JsonUtility.FromJson<SaveData>(jsonString);
+                        StaticHp.totalHP = data.bossHealth;
+                        Rewards.reward = data.rewards;
+                        TrueIntro.trueIntro = data.trueIntro;
+                        Bruno.intro = data.brunoIntro;
+                        Bruno.mission = data.brunoMission;
+                        Bruno.progress = data.brunoProgress;
+                        Bruno.attack = data.brunoAttack;
+                        Bruno.finish = data.brunoFinish;
+                        Bruno.skipTu = data.brunoSkip;
+                        SnoozeInro.intro = data.snoozeIntro;
+                        SnoozeInro.mission = data.snoozeMission;
+                        SnoozeInro.progress = data.snoozeProgress;
+                        SnoozeInro.attack = data.snoozeAttack;
+                        SnoozeInro.finish = data.snoozeFinish;
+                        SnoozeInro.skipTu = data.snoozeSkip;
+                        Dashie.intro = data.dashIntro;
+                        Dashie.mission = data.dashMission;
+                        Dashie.progress = data.dashProgress;
+                        Dashie.attack = data.dashAttack;
+                        Dashie.finish = data.dashFinish;
+                        Dashie.skipTu = data.dashSkip;
+                        Zippy.intro = data.zippyIntro;
+                        Zippy.mission = data.zippyMission;
+                        Zippy.attack = data.zippyAttack;
+                        Zippy.finish = data.zippyFinish;
+                        Zippy.skipTu = data.zippySkip;
 
                         isLoading = false;
                     }
@@ -169,7 +218,7 @@ public class PlayGamesManager : MonoBehaviour
                     return;
                 }
                 PlayGamesPlatform.Instance.SavedGame.Delete(metadata);
-                SceneManager.LoadScene(0);
+                Application.Quit();
             }
         );
     }
@@ -178,6 +227,30 @@ public class PlayGamesManager : MonoBehaviour
 [System.Serializable]
 public class SaveData {
     public int bossHealth;
-    public string currentMission;
     public float currentMissionProgress;
+    public int rewards;
+    public bool trueIntro;
+    public bool brunoIntro;
+    public bool brunoMission;
+    public bool brunoProgress;
+    public bool brunoAttack;
+    public bool brunoFinish;
+    public bool brunoSkip;
+    public bool snoozeIntro;
+    public bool snoozeMission;
+    public bool snoozeProgress;
+    public bool snoozeAttack;
+    public bool snoozeFinish;
+    public bool snoozeSkip;
+    public bool dashIntro;
+    public bool dashMission;
+    public bool dashProgress;
+    public bool dashAttack;
+    public bool dashFinish;
+    public bool dashSkip;
+    public bool zippyIntro;
+    public bool zippyMission;
+    public bool zippyAttack;
+    public bool zippyFinish;
+    public bool zippySkip;
 }

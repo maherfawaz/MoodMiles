@@ -21,5 +21,8 @@ public class Introstar : MonoBehaviour
     public void InEnd()
     {
         TrueIntro.trueIntro = false;
+        if (PlayGamesManager.Instance != null) {
+            PlayGamesManager.Instance.SaveData();
+        }
     }
 }

@@ -2481,6 +2481,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661397492}
   m_CullTransparentMesh: 1
+--- !u!1 &717052302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 717052304}
+  - component: {fileID: 717052303}
+  m_Layer: 0
+  m_Name: PlayGamesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &717052303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717052302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fcf065b21f1344985c016fd8778422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: PlayerProfile
+  data:
+    bossHealth: 0
+    currentMissionProgress: 0
+    rewards: 0
+    trueIntro: 0
+    brunoIntro: 0
+    brunoMission: 0
+    brunoProgress: 0
+    brunoAttack: 0
+    brunoFinish: 0
+    brunoSkip: 0
+    snoozeIntro: 0
+    snoozeMission: 0
+    snoozeProgress: 0
+    snoozeAttack: 0
+    snoozeFinish: 0
+    snoozeSkip: 0
+    dashIntro: 0
+    dashMission: 0
+    dashProgress: 0
+    dashAttack: 0
+    dashFinish: 0
+    dashSkip: 0
+    zippyIntro: 0
+    zippyMission: 0
+    zippyAttack: 0
+    zippyFinish: 0
+    zippySkip: 0
+  playerName: 
+  id: 
+  imgURL: 
+--- !u!4 &717052304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717052302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 76.131355, y: 176.98463, z: -0.83858174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742540461
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,3 +7122,4 @@ SceneRoots:
   - {fileID: 477368248}
   - {fileID: 75311167}
   - {fileID: 2066029580}
+  - {fileID: 717052304}
