@@ -19,5 +19,8 @@ public class Skip : MonoBehaviour
     {
         check.SetActive(true);
         Zippy.skipTu = true;
+        if (PlayGamesManager.Instance != null) {
+            PlayGamesManager.Instance.SaveData();
+        }
     }
 }

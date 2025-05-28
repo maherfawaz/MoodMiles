@@ -40,13 +40,12 @@ public class BearManager : MonoBehaviour
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         if (finish == true)
         {
-           
-                Bruno.attack = false;
-                Bruno.finish = true;
-                SceneManager.LoadScene(18);
-            
-
-           
+            Bruno.attack = false;
+            Bruno.finish = true;
+            if (PlayGamesManager.Instance != null) {
+                PlayGamesManager.Instance.SaveData();
+            }
+            SceneManager.LoadScene(18);
         }
     }
     private void EndTouch(InputAction.CallbackContext context)

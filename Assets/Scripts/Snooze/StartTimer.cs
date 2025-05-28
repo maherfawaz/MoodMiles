@@ -21,6 +21,9 @@ public class StartTimer : MonoBehaviour
         main.GetComponent<Camera>().backgroundColor = Color.black;
         SnoozeInro.mission = false;
         SnoozeInro.progress = true;
+        if (PlayGamesManager.Instance != null) {
+            PlayGamesManager.Instance.SaveData();
+        }
         sleep.GetComponent<Sleep>().timerIsRunning = true;
     }
 }

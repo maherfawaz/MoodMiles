@@ -50,10 +50,12 @@ public class dogManager : MonoBehaviour
         if(finish == true)
         {
             StaticHp.totalHP -= 1;
-            
-                Dashie.attack = false;
-                Dashie.finish = true;
-                SceneManager.LoadScene(18);
+            Dashie.attack = false;
+            Dashie.finish = true;
+            if (PlayGamesManager.Instance != null) {
+                PlayGamesManager.Instance.SaveData();
+            }
+            SceneManager.LoadScene(18);
             
             
         }

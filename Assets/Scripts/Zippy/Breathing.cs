@@ -17,7 +17,7 @@ public class Breathing : MonoBehaviour
     {
         breathTimer = 60;
         breathIn = true;
-}
+    }
 
     // Update is called once per frame
     public void Update()
@@ -76,6 +76,9 @@ public class Breathing : MonoBehaviour
         {
             Zippy.attack = true;
             Zippy.mission = false;
+            if (PlayGamesManager.Instance != null) {
+                PlayGamesManager.Instance.SaveData();
+            }
             SceneManager.LoadScene("Zippy Home");
         }
         

@@ -41,6 +41,9 @@ public class BirdManager : MonoBehaviour
            
                 Zippy.attack = false;
                 Zippy.finish = true;
+                if (PlayGamesManager.Instance != null) {
+                    PlayGamesManager.Instance.SaveData();
+                }
                 SceneManager.LoadScene(18);
             
 

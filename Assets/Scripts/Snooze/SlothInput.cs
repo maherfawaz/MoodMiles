@@ -46,7 +46,14 @@ public class SlothInput : MonoBehaviour
     {
         Debug.Log("Touch started " + acting.Touch.TouchPosition.ReadValue<Vector2>());
         if (OnStartTouch != null) OnStartTouch(acting.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
-        
+        if (finish == true) {
+            SnoozeInro.attack = false;
+            SnoozeInro.finish = true;
+            if (PlayGamesManager.Instance != null) {
+                PlayGamesManager.Instance.SaveData();
+            }
+            SceneManager.LoadScene(18);
+        }
     }
     private void EndTouch(InputAction.CallbackContext context)
     {
