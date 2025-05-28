@@ -663,6 +663,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805901421519747354, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 298.205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805901421519747354, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.837
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805901421519747354, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805901421519747354, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 3284873920618622978, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_Name
       value: Start Mission
@@ -681,7 +697,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6587043043874402709, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_text
-      value: 1 minute Breathing
+      value: '3 mins
+
+        breathing Excercise'
       objectReference: {fileID: 0}
     - target: {fileID: 6587043043874402709, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_fontSize
@@ -699,6 +717,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 6587043043874402709, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7509164226269904942, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -714,6 +736,14 @@ PrefabInstance:
     - target: {fileID: 8515664616424413121, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178655263439597016, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178655263439597016, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3130285819514131950, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
