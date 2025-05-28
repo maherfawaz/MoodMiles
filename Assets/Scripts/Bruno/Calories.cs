@@ -74,8 +74,14 @@ public class Calories : MonoBehaviour
                 counterTMP.text = $"{caloriesBurned}/{caloriesGoal}";
                 lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
             }
+            
+            if (PlayGamesManager.Instance != null) {
+                PlayGamesManager.Instance.data.caloriesBurned = caloriesBurned;
+                PlayGamesManager.Instance.SaveData();
+            }
 
-            if (caloriesBurned >= caloriesGoal) {
+            if (caloriesBurned >= caloriesGoal)
+            {
                 burnOn = false;
                 Bruno.progress = false;
                 Bruno.attack = true;

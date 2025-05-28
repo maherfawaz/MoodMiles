@@ -21,6 +21,8 @@ public class NewStepCounter : MonoBehaviour
     void Start() {
         if (PlayGamesManager.Instance != null) {
             stepGoal = PlayGamesManager.Instance.data.stepGoal;
+            lastStepOffset = PlayGamesManager.Instance.data.lastStepOffset;
+            stepsTaken = PlayGamesManager.Instance.data.stepsTaken;
         }
 
         if (Application.isEditor) {
@@ -54,6 +56,11 @@ public class NewStepCounter : MonoBehaviour
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
+                if (PlayGamesManager.Instance != null) {
+                    PlayGamesManager.Instance.data.lastStepOffset = lastStepOffset;
+                    PlayGamesManager.Instance.data.stepsTaken = stepsTaken;
+                    PlayGamesManager.Instance.SaveData();
+                }
                 counterTMP.text = $"{stepsTaken}/{stepGoal}";
             }
 

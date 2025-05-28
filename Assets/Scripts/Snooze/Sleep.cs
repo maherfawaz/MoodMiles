@@ -21,8 +21,14 @@ public class Sleep : MonoBehaviour
     {
         if (PlayGamesManager.Instance != null) {
             hours = PlayGamesManager.Instance.data.sleepGoal;
+            if (PlayGamesManager.Instance.data.sleepTimeRemaining > 0) {
+                timeRemaining = PlayGamesManager.Instance.data.sleepTimeRemaining;
+            } else {
+                timeRemaining = hours * 3600;
+            }
+        } else {
+            timeRemaining = hours * 3600;
         }
-        timeRemaining = hours * 3600;
         ours = timeRemaining;
     }
 
@@ -32,6 +38,10 @@ public class Sleep : MonoBehaviour
             if (timeRemaining > 0) {
                 stop.SetActive(false);
                 timeRemaining -= Time.deltaTime;
+                if (PlayGamesManager.Instance != null) {
+                    PlayGamesManager.Instance.data.sleepTimeRemaining = timeRemaining;
+                    PlayGamesManager.Instance.SaveData();
+                }
                 float timeRemainingMinutes = timeRemaining / 60;
                 float timeRemainingHours = timeRemaining / 3600;
                 timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)timeRemainingHours, (int)timeRemainingMinutes % 60, (int)timeRemaining % 60);
