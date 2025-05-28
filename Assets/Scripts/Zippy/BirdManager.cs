@@ -42,7 +42,7 @@ public class BirdManager : MonoBehaviour
             {
                 Zippy.attack = false;
                 Zippy.finish = true;
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(18);
             }
 
             if (StaticHp.totalHP == 0)

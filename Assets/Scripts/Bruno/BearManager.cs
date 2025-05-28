@@ -44,7 +44,7 @@ public class BearManager : MonoBehaviour
             {
                 Bruno.attack = false;
                 Bruno.finish = true;
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(18);
             }
 
             if (StaticHp.totalHP == 0)

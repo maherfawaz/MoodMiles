@@ -62,6 +62,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zippy Home.unity
     guid: f7b492f58a48f5b44855d94a7112620e
+  - enabled: 1
+    path: Assets/Scenes/Congratulations.unity
+    guid: 073d8e593ce66954cb185e5c3accfe12
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 9072f0d7118d4d0478e564634072b159, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34a8670f386f0ea4da3e529aa37d08a1, type: 2}

@@ -54,7 +54,7 @@ public class dogManager : MonoBehaviour
             {
                 Dashie.attack = false;
                 Dashie.finish = true;
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(18);
             }
             
             if (StaticHp.totalHP == 0)
