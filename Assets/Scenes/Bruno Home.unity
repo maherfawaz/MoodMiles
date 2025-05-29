@@ -1491,13 +1491,17 @@ PrefabInstance:
       propertyPath: m_fontColor.a
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5932211295936370812, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8180851271576590221, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       insertIndex: -1
       addedObject: {fileID: 390127613}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5629217316491450670, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1793514814}
   m_SourcePrefab: {fileID: 100100000, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
 --- !u!224 &1793514809 stripped
 RectTransform:
@@ -1514,6 +1518,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3284873920618622978, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
   m_PrefabInstance: {fileID: 1793514808}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793514812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 813016475459815632, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+  m_PrefabInstance: {fileID: 1793514808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1793514813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5629217316491450670, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+  m_PrefabInstance: {fileID: 1793514808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793514814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793514813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2111348ee668e24e979fe174f919e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximum: 0
+  current: 0
+  mask: {fileID: 1793514812}
 --- !u!1001 &1871253866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1858,16 +1893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f42247a8ab17948b12e5b8a808c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caloriesGoal: 20
-  weightKg: 70
   counterTMP: {fileID: 390127611}
-  burnOn: 0
   speed: 0
   duration: 0
   time: 0
   metValue: 0
   accel: {x: 0, y: 0, z: 0}
-  caloriesBurned: 0
   permissionGranted: 0
 --- !u!114 &2129141493
 MonoBehaviour:

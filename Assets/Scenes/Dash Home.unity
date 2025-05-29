@@ -1396,13 +1396,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 1500 Steps
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5932211295936370812, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8180851271576590221, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1766779396}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5629217316491450670, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1476747858}
   m_SourcePrefab: {fileID: 100100000, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
 --- !u!1 &1476747853 stripped
 GameObject:
@@ -1419,6 +1423,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1368702243392631071, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
   m_PrefabInstance: {fileID: 1476747852}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1476747856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 813016475459815632, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+  m_PrefabInstance: {fileID: 1476747852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1476747857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5629217316491450670, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+  m_PrefabInstance: {fileID: 1476747852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1476747858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476747857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838877341daae5f419dd33424fa061a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximum: 0
+  current: 0
+  mask: {fileID: 1476747856}
 --- !u!1 &1766779395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,13 +2262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79f0262ac33a5c40966070b06a29eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepGoal: 15
   counterTMP: {fileID: 0}
-  lastStepOffset: 0
-  stepsTaken: 0
   currentStepOffset: 0
   permissionGranted: 0
-  stepOn: 0
 --- !u!114 &2129141493
 MonoBehaviour:
   m_ObjectHideFlags: 0
