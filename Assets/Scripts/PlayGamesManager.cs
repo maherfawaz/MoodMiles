@@ -34,6 +34,10 @@ public class PlayGamesManager : MonoBehaviour
     private bool isDeleting = false;
 
     void Start() {
+        //RefreshRate refreshRate = Screen.currentResolution.refreshRateRatio;
+        //Application.targetFrameRate = (int)refreshRate.numerator;
+        Application.targetFrameRate = 200;
+        
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
 
         if (objs.Length > 1) {

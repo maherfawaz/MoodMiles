@@ -12,7 +12,6 @@ public class Calories : MonoBehaviour
     public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
-    public bool burnOn = false;
     public float speed;
     public float duration;
     public float time;
@@ -24,11 +23,6 @@ public class Calories : MonoBehaviour
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
-        if (PlayGamesManager.Instance != null) {
-            caloriesGoal = PlayGamesManager.Instance.data.caloriesGoal;
-            weightKg = PlayGamesManager.Instance.data.weightKg;
-        }
-
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
@@ -76,13 +70,11 @@ public class Calories : MonoBehaviour
             }
             
             if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.data.caloriesBurned = caloriesBurned;
                 PlayGamesManager.Instance.SaveData();
             }
 
             if (caloriesBurned >= caloriesGoal)
             {
-                burnOn = false;
                 Bruno.progress = false;
                 Bruno.attack = true;
             }
@@ -114,7 +106,6 @@ public class Calories : MonoBehaviour
     }
 
     public void BurnStart() {
-        burnOn = true;
         Bruno.mission = false;
     }
 }

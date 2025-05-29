@@ -16,7 +16,6 @@ public class NewStepCounter : MonoBehaviour
     public static float st;
     public long currentStepOffset;
     public bool permissionGranted = false;
-    public bool stepOn = false;
 
     void Start() {
         if (Application.isEditor) {
@@ -62,7 +61,6 @@ public class NewStepCounter : MonoBehaviour
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
                 InputSystem.DisableDevice(StepCounter.current);
-                stepOn = false;
             }
         }
         
@@ -89,9 +87,5 @@ public class NewStepCounter : MonoBehaviour
             // Reinitialize the step counter when the app is resumed
             InputSystem.EnableDevice(StepCounter.current);
         }
-    }
-
-    public void StepsStart() {
-        stepOn = true;
     }
   }
