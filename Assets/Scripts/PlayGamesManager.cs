@@ -82,32 +82,34 @@ public class PlayGamesManager : MonoBehaviour
                     return;
                 }
 
-                data.bossHealth = StaticHp.totalHP;
-                data.rewards = Rewards.reward;
-                data.trueIntro = TrueIntro.trueIntro;
-                data.brunoIntro = Bruno.intro;
-                data.brunoMission = Bruno.mission;
-                data.brunoProgress = Bruno.progress;
-                data.brunoAttack = Bruno.attack;
-                data.brunoFinish = Bruno.finish;
-                data.brunoSkip = Bruno.skipTu;
-                data.snoozeIntro = Snooze.intro;
-                data.snoozeMission = Snooze.mission;
-                data.snoozeProgress = Snooze.progress;
-                data.snoozeAttack = Snooze.attack;
-                data.snoozeFinish = Snooze.finish;
-                data.snoozeSkip = Snooze.skipTu;
-                data.dashIntro = Dashie.intro;
-                data.dashMission = Dashie.mission;
-                data.dashProgress = Dashie.progress;
-                data.dashAttack = Dashie.attack;
-                data.dashFinish = Dashie.finish;
-                data.dashSkip = Dashie.skipTu;
-                data.zippyIntro = Zippy.intro;
-                data.zippyMission = Zippy.mission;
-                data.zippyAttack = Zippy.attack;
-                data.zippyFinish = Zippy.finish;
-                data.zippySkip = Zippy.skipTu;
+                data = new SaveData {
+                    bossHealth = StaticHp.totalHP,
+                    rewards = Rewards.reward,
+                    trueIntro = TrueIntro.trueIntro,
+                    brunoIntro = Bruno.intro,
+                    brunoMission = Bruno.mission,
+                    brunoProgress = Bruno.progress,
+                    brunoAttack = Bruno.attack,
+                    brunoFinish = Bruno.finish,
+                    brunoSkip = Bruno.skipTu,
+                    snoozeIntro = Snooze.intro,
+                    snoozeMission = Snooze.mission,
+                    snoozeProgress = Snooze.progress,
+                    snoozeAttack = Snooze.attack,
+                    snoozeFinish = Snooze.finish,
+                    snoozeSkip = Snooze.skipTu,
+                    dashIntro = Dashie.intro,
+                    dashMission = Dashie.mission,
+                    dashProgress = Dashie.progress,
+                    dashAttack = Dashie.attack,
+                    dashFinish = Dashie.finish,
+                    dashSkip = Dashie.skipTu,
+                    zippyIntro = Zippy.intro,
+                    zippyMission = Zippy.mission,
+                    zippyAttack = Zippy.attack,
+                    zippyFinish = Zippy.finish,
+                    zippySkip = Zippy.skipTu,
+                };
 
                 string jsonString = JsonUtility.ToJson(data);
                 byte[] savedData = Encoding.ASCII.GetBytes(jsonString);
