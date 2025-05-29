@@ -37,14 +37,14 @@ public class PlayGamesManager : MonoBehaviour
         //RefreshRate refreshRate = Screen.currentResolution.refreshRateRatio;
         //Application.targetFrameRate = (int)refreshRate.numerator;
         Application.targetFrameRate = 200;
-        
-        PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
 
+        PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
         if (objs.Length > 1) {
             Destroy(gameObject);
         } else {
             DontDestroyOnLoad(gameObject);
         }
+
         SignIn();
     }
 
@@ -98,6 +98,7 @@ public class PlayGamesManager : MonoBehaviour
                     caloriesGoal = Calories.caloriesGoal,
                     weightKg = Calories.weightKg,
                     rewards = Rewards.reward,
+                    setupComplete = true,
                     trueIntro = TrueIntro.trueIntro,
                     brunoIntro = Bruno.intro,
                     brunoMission = Bruno.mission,
@@ -220,7 +221,7 @@ public class PlayGamesManager : MonoBehaviour
             }
         );
     }
-    
+
     public void DeleteData() {
         if (isDeleting == true) {
             Debug.LogError("Delete already in progress");
@@ -244,6 +245,14 @@ public class PlayGamesManager : MonoBehaviour
             }
         );
     }
+
+    public void Launch() {
+        if (!data.setupComplete) {
+            SceneManager.LoadScene(19);
+        } else {
+            SceneManager.LoadScene(1);
+        }
+    }
 }
 
 [System.Serializable]
@@ -259,6 +268,7 @@ public class SaveData {
     public int caloriesGoal;
     public int weightKg;
     public int rewards;
+    public bool setupComplete = false;
     public bool trueIntro;
     public bool brunoIntro;
     public bool brunoMission;

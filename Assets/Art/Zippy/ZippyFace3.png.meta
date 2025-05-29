@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff567e0d73cf20f4cb4d65dcced57020
+guid: 1f9866ab77a75c4448d2a17bed6f52e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5615816874911655936
-    second: SignUp_Personal information (8)_0
+      213: 6902657720213002876
+    second: ZippyFace3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SignUp_Personal information (8)_0
+      name: ZippyFace3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 390
-        height: 844
+        x: 2
+        y: 9
+        width: 102
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 008e0c0a1b36fed40800000000000000
-      internalID: 5615816874911655936
+      spriteID: c7a576bef9a2bcf50800000000000000
+      internalID: 6902657720213002876
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SignUp_Personal information (8)_0: 5615816874911655936
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
