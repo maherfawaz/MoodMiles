@@ -6,25 +6,19 @@ using UnityEngine.InputSystem;
 public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
-    public long stepGoal;
+    public static long stepGoal = 20;
     public static float sg;
     public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
-    public long lastStepOffset;
-    public long stepsTaken;
+    public static long lastStepOffset;
+    public static long stepsTaken;
     public static float st;
     public long currentStepOffset;
     public bool permissionGranted = false;
     public bool stepOn = false;
 
     void Start() {
-        if (PlayGamesManager.Instance != null) {
-            stepGoal = PlayGamesManager.Instance.data.stepGoal;
-            lastStepOffset = PlayGamesManager.Instance.data.lastStepOffset;
-            stepsTaken = PlayGamesManager.Instance.data.stepsTaken;
-        }
-
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
@@ -57,8 +51,6 @@ public class NewStepCounter : MonoBehaviour
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
                 if (PlayGamesManager.Instance != null) {
-                    PlayGamesManager.Instance.data.lastStepOffset = lastStepOffset;
-                    PlayGamesManager.Instance.data.stepsTaken = stepsTaken;
                     PlayGamesManager.Instance.SaveData();
                 }
                 counterTMP.text = $"{stepsTaken}/{stepGoal}";

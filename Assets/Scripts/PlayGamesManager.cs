@@ -84,6 +84,15 @@ public class PlayGamesManager : MonoBehaviour
 
                 data = new SaveData {
                     bossHealth = StaticHp.totalHP,
+                    sleepTimeRemaining = Sleep.timeRemaining,
+                    sleepGoal = Sleep.hours,
+                    breathGoal = Breathing.breathTimer,
+                    stepsTaken = NewStepCounter.stepsTaken,
+                    lastStepOffset = NewStepCounter.lastStepOffset,
+                    stepGoal = NewStepCounter.stepGoal,
+                    caloriesBurned = Calories.caloriesBurned,
+                    caloriesGoal = Calories.caloriesGoal,
+                    weightKg = Calories.weightKg,
                     rewards = Rewards.reward,
                     trueIntro = TrueIntro.trueIntro,
                     brunoIntro = Bruno.intro,
@@ -166,6 +175,15 @@ public class PlayGamesManager : MonoBehaviour
                         string jsonString = Encoding.ASCII.GetString(savedData);
                         data = JsonUtility.FromJson<SaveData>(jsonString);
                         StaticHp.totalHP = data.bossHealth;
+                        Sleep.timeRemaining = data.sleepTimeRemaining;
+                        Sleep.hours = data.sleepGoal;
+                        Breathing.breathTimer = data.breathGoal;
+                        NewStepCounter.stepsTaken = data.stepsTaken;
+                        NewStepCounter.lastStepOffset = data.lastStepOffset;
+                        NewStepCounter.stepGoal = data.stepGoal;
+                        Calories.caloriesBurned = data.caloriesBurned;
+                        Calories.caloriesGoal = data.caloriesGoal;
+                        Calories.weightKg = data.weightKg;
                         Rewards.reward = data.rewards;
                         TrueIntro.trueIntro = data.trueIntro;
                         Bruno.intro = data.brunoIntro;

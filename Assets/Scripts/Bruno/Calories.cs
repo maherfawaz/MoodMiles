@@ -6,9 +6,9 @@ public class Calories : MonoBehaviour
 {
     // https://www.calculator.net/calories-burned-calculator.html
     [Header("Inscribed")]
-    public int caloriesGoal = 1000;
+    public static int caloriesGoal = 20;
     public static float cg;
-    public int weightKg = 70;
+    public static int weightKg = 70;
     public TextMeshProUGUI counterTMP;
 
     [Header("Dynamic")]
@@ -18,7 +18,7 @@ public class Calories : MonoBehaviour
     public float time;
     public float metValue;
     public Vector3 accel;
-    public int caloriesBurned;
+    public static int caloriesBurned;
     public static float cb;
     public bool permissionGranted = false;
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value

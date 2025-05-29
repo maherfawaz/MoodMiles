@@ -6,7 +6,7 @@ using TMPro;
 public class Breathing : MonoBehaviour
 {
     
-    public float breathTimer = 60;
+    public static float breathTimer = 60;
     public float holding = 5;
     public bool breathIn = true;
     public bool Hold = false;
@@ -15,9 +15,6 @@ public class Breathing : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        if (PlayGamesManager.Instance != null) {
-            breathTimer = PlayGamesManager.Instance.data.breathGoal;
-        }
         breathIn = true;
     }
 

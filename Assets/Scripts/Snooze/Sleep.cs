@@ -5,14 +5,14 @@ using TMPro;
 public class Sleep : MonoBehaviour
 {
     [Header("Inscribed")]
-    public float hours;
+    public static float hours = 0.016f;
     public GameObject stop;
     public static float ours;
     
     public TextMeshProUGUI timerText;
 
     [Header("Dynamic")]
-    public float timeRemaining;
+    public static float timeRemaining;
     public static float tr;
     public bool timerIsRunning = false;
 
@@ -39,7 +39,6 @@ public class Sleep : MonoBehaviour
                 stop.SetActive(false);
                 timeRemaining -= Time.deltaTime;
                 if (PlayGamesManager.Instance != null) {
-                    PlayGamesManager.Instance.data.sleepTimeRemaining = timeRemaining;
                     PlayGamesManager.Instance.SaveData();
                 }
                 float timeRemainingMinutes = timeRemaining / 60;
