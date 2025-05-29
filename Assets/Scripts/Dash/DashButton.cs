@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DashButton : MonoBehaviour
 {
-    public GameObject Dash;
-    public GameObject Hound;
+    
     public GameObject progr;
     public int sNumber;
     public GameObject Light;
@@ -26,12 +25,18 @@ public class DashButton : MonoBehaviour
         if (Dashie.intro == false)
         {
             Light.SetActive(true);
-
+            progr.SetActive(false);
+        }
+        if (Dashie.progress == true)
+        {
+            Light.SetActive(false);
+            progr.SetActive(true);
         }
 
         else
         {
             Light.SetActive(false);
+            progr.SetActive(false);
         }
     }
 }

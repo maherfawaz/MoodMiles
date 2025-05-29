@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 160601381}
   - component: {fileID: 160601383}
   - component: {fileID: 160601382}
+  - component: {fileID: 160601384}
   m_Layer: 5
   m_Name: TalkToMeBru (2)
   m_TagString: Untagged
@@ -677,6 +678,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160601380}
   m_CullTransparentMesh: 1
+--- !u!114 &160601384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160601380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838877341daae5f419dd33424fa061a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximum: 0
+  current: 0
+  mask: {fileID: 1606936041}
 --- !u!1 &233413499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,9 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea693989fe1f70b4aae7e530e562b939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dash: {fileID: 0}
-  progr: {fileID: 0}
-  Hound: {fileID: 0}
+  progress: {fileID: 536512987}
   sNumber: 14
   Light: {fileID: 237394858}
 --- !u!1 &316626752
@@ -1429,6 +1443,7 @@ GameObject:
   - component: {fileID: 536512988}
   - component: {fileID: 536512990}
   - component: {fileID: 536512989}
+  - component: {fileID: 536512991}
   m_Layer: 5
   m_Name: TalkToMeBru (1)
   m_TagString: Untagged
@@ -1495,6 +1510,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536512987}
   m_CullTransparentMesh: 1
+--- !u!114 &536512991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536512987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2111348ee668e24e979fe174f919e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximum: 0
+  current: 0
+  mask: {fileID: 3596560}
 --- !u!1 &614871462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,6 +3058,7 @@ GameObject:
   - component: {fileID: 1407928529}
   - component: {fileID: 1407928531}
   - component: {fileID: 1407928530}
+  - component: {fileID: 1407928532}
   m_Layer: 5
   m_Name: TalkToMeBru (3)
   m_TagString: Untagged
@@ -3094,6 +3125,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407928528}
   m_CullTransparentMesh: 1
+--- !u!114 &1407928532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407928528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ceffe7b32a65a348a37f4c9e80ed135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximum: 0
+  current: 0
+  mask: {fileID: 1937849083}
 --- !u!1 &1409486371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,9 +4746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c69f0d5ac3728e4f8e91819f59ea0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Snooooo: {fileID: 0}
-  progr: {fileID: 0}
-  setup: {fileID: 0}
+  progr: {fileID: 1407928528}
   sNumber: 15
   Light: {fileID: 863003626}
 --- !u!1 &1680856855
@@ -5152,9 +5196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86c529ff103ebc4a94cc1613cdc8d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dash: {fileID: 0}
-  Hound: {fileID: 0}
-  progr: {fileID: 0}
+  progr: {fileID: 160601380}
   sNumber: 16
   Light: {fileID: 10918931}
 --- !u!1 &1937849081

@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SnoozeButton : MonoBehaviour
 {
-    public GameObject Snooooo;
+    
     public GameObject progr;
-    public GameObject setup;
+   
     public int sNumber;
     public GameObject Light;
     public void Snooze()
@@ -25,12 +25,17 @@ public class SnoozeButton : MonoBehaviour
         if (global::Snooze.intro == false)
         {
             Light.SetActive(true);
-
+            progr.SetActive(false);
         }
-
+        if (global::Snooze.progress == true)
+        {
+            Light.SetActive(false);
+            progr.SetActive(true);
+        }
         else
         {
             Light.SetActive(false);
+            progr.SetActive(false);
         }
     }
 }

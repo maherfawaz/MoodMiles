@@ -2,9 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BearButton : MonoBehaviour
 {
-    public GameObject Dash;
-    public GameObject progr;
-    public GameObject Hound;
+    
+    public GameObject progress;
     public int sNumber;
     public GameObject Light;
     public void Dashin()
@@ -25,12 +24,18 @@ public class BearButton : MonoBehaviour
         if (Bruno.intro == false)
         {
             Light.SetActive(true);
-
+            progress.SetActive(false);
         }
 
+        if(Bruno.progress == true)
+        {
+            Light.SetActive(false);
+            progress.SetActive(true);
+        }
         else
         {
             Light.SetActive(false);
+            progress.SetActive(false);
         }
     }
 }
