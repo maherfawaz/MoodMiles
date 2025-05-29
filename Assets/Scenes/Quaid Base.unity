@@ -4230,9 +4230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0625b3ecded1e094aad187d5d2ccd255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dash: {fileID: 0}
-  Hound: {fileID: 0}
-  Light: {fileID: 0}
+  Light: {fileID: 47973557}
   sNumber: 17
 --- !u!1 &1594550844
 GameObject:

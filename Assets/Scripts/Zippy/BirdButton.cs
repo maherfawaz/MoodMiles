@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class BirdButton : MonoBehaviour
 {
-    public GameObject Dash;
-    public GameObject Hound;
+    
     public GameObject Light;
     public int sNumber;
     public void Dashin()
