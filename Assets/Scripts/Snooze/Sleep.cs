@@ -8,7 +8,6 @@ public class Sleep : MonoBehaviour
     public static float hours = 0.016f;
     public GameObject stop;
     public static float ours;
-    
     public TextMeshProUGUI timerText;
 
     [Header("Dynamic")]
@@ -37,15 +36,11 @@ public class Sleep : MonoBehaviour
                 float timeRemainingMinutes = timeRemaining / 60;
                 float timeRemainingHours = timeRemaining / 3600;
                 timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)timeRemainingHours, (int)timeRemainingMinutes % 60, (int)timeRemaining % 60);
-                
-                
             } else {
                 Debug.Log("Time has run out!");
                 stop.SetActive(true);
                 timeRemaining = 0;
-                
                 timerIsRunning = false;
-               
             }
         }
     }
