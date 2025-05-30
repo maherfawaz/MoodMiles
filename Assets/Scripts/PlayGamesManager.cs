@@ -2,7 +2,6 @@ using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
-using TMPro;
 using System.Text;
 using UnityEngine.SceneManagement;
 
