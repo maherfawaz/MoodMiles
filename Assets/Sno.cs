@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class StartTimer : MonoBehaviour
+public class Sno : MonoBehaviour
 {
-    public GameObject sleep;
-    public GameObject main;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,14 +14,9 @@ public class StartTimer : MonoBehaviour
         
     }
 
-    public void Timer()
+    public void Next()
     {
-        main.GetComponent<Camera>().backgroundColor = Color.black;
         Snooze.mission = false;
         Snooze.progress = true;
-        if (PlayGamesManager.Instance != null) {
-            PlayGamesManager.Instance.SaveData();
-        }
-        
     }
 }

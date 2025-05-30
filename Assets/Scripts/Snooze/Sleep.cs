@@ -27,7 +27,7 @@ public class Sleep : MonoBehaviour
 
     void Update() {
         tr = timeRemaining;
-        if (timerIsRunning) {
+        if (Snooze.progress == true) {
             if (timeRemaining > 0) {
                 stop.SetActive(false);
                 timeRemaining -= Time.deltaTime;
