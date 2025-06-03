@@ -70,9 +70,7 @@ public class Calories : MonoBehaviour
                 lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
             }
             
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
 
             if (caloriesBurned >= caloriesGoal) {
                 Bruno.progress = false;

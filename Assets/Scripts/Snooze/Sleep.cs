@@ -29,9 +29,7 @@ public class Sleep : MonoBehaviour
             if (timeRemaining > 0) {
                 stop.SetActive(false);
                 timeRemaining -= Time.deltaTime;
-                if (PlayGamesManager.Instance != null) {
-                    PlayGamesManager.Instance.SaveData();
-                }
+                PlayGamesManager.Instance.SaveData();
                 float timeRemainingMinutes = timeRemaining / 60;
                 float timeRemainingHours = timeRemaining / 3600;
                 timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)timeRemainingHours, (int)timeRemainingMinutes % 60, (int)timeRemaining % 60);

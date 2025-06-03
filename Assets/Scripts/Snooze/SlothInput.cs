@@ -49,9 +49,7 @@ public class SlothInput : MonoBehaviour
         if (finish == true) {
             Snooze.attack = false;
             Snooze.finish = true;
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene(18);
         }
     }

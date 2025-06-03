@@ -61,27 +61,21 @@ public class IntroText : MonoBehaviour
         {
             Snooze.intro = true;
             Snooze.mission = true;
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Snooze Home");
         }
         else if (animalName == "Dash")
         {
             Dashie.intro = true;
             Dashie.mission = true;
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Dash Home");
         }
         else if (animalName == "Zippy")
         {
             Zippy.intro = true;
             Zippy.mission = true;
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Zippy Home");
         }
 
@@ -89,9 +83,7 @@ public class IntroText : MonoBehaviour
         {
             Bruno.intro = true;
             Bruno.mission = true;
-            if (PlayGamesManager.Instance != null) {
-                PlayGamesManager.Instance.SaveData();
-            }
+            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Bruno Home");
         }
     }

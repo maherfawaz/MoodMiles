@@ -72,6 +72,10 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
 
+        if (Application.isEditor) {
+            return;
+        }
+
         isSaving = true;
 
         PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
@@ -157,6 +161,10 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
 
+        if (Application.isEditor) {
+            return;
+        }
+
         isLoading = true;
 
         PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
@@ -228,8 +236,12 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void DeleteData() {
-        if (isDeleting == true) {
+        if (isDeleting) {
             Debug.LogError("Delete already in progress");
+            return;
+        }
+
+        if (Application.isEditor) {
             return;
         }
 

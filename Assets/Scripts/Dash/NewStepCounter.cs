@@ -49,9 +49,7 @@ public class NewStepCounter : MonoBehaviour
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
-                if (PlayGamesManager.Instance != null) {
-                    PlayGamesManager.Instance.SaveData();
-                }
+                PlayGamesManager.Instance.SaveData();
                 counterTMP.text = $"{stepsTaken}/{stepGoal}";
             }
 
