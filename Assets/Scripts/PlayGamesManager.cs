@@ -1,9 +1,9 @@
+using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
-using System.Text;
-using UnityEngine.SceneManagement;
 
 public class PlayGamesManager : MonoBehaviour
 {
@@ -119,6 +119,7 @@ public class PlayGamesManager : MonoBehaviour
                     dashSkip = Dashie.skipTu,
                     zippyIntro = Zippy.intro,
                     zippyMission = Zippy.mission,
+                    zippyProgress = Zippy.progress,
                     zippyAttack = Zippy.attack,
                     zippyFinish = Zippy.finish,
                     zippySkip = Zippy.skipTu,
@@ -210,6 +211,7 @@ public class PlayGamesManager : MonoBehaviour
                         Dashie.skipTu = data.dashSkip;
                         Zippy.intro = data.zippyIntro;
                         Zippy.mission = data.zippyMission;
+                        Zippy.progress = data.zippyProgress;
                         Zippy.attack = data.zippyAttack;
                         Zippy.finish = data.zippyFinish;
                         Zippy.skipTu = data.zippySkip;
@@ -289,6 +291,7 @@ public class SaveData {
     public bool dashSkip;
     public bool zippyIntro;
     public bool zippyMission;
+    public bool zippyProgress;
     public bool zippyAttack;
     public bool zippyFinish;
     public bool zippySkip;
