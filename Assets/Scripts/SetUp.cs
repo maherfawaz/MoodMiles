@@ -110,6 +110,5 @@ public class SetUp : MonoBehaviour
         if (NewStepCounter.stepGoal < 0) {
             NewStepCounter.stepGoal = 500;
         }
-        PlayGamesManager.Instance.SaveData();
     }
 }

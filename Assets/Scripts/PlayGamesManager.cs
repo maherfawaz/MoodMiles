@@ -101,7 +101,6 @@ public class PlayGamesManager : MonoBehaviour
                     caloriesGoal = Calories.caloriesGoal,
                     weightKg = Calories.weightKg,
                     rewards = Rewards.reward,
-                    setupComplete = true,
                     trueIntro = TrueIntro.trueIntro,
                     brunoIntro = Bruno.intro,
                     brunoMission = Bruno.mission,
@@ -264,7 +263,7 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void Launch() {
-        if (!data.setupComplete) {
+        if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
         } else {
             SceneManager.LoadScene(1);
@@ -285,7 +284,6 @@ public class SaveData {
     public int caloriesGoal;
     public int weightKg;
     public int rewards;
-    public bool setupComplete = false;
     public bool trueIntro;
     public bool brunoIntro;
     public bool brunoMission;

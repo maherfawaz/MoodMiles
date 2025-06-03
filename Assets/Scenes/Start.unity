@@ -872,6 +872,8 @@ MonoBehaviour:
     snoozeAttack: 0
     snoozeFinish: 0
     snoozeSkip: 0
+    hatOn: 0
+    hatId: 0
     dashIntro: 0
     dashMission: 0
     dashProgress: 0
@@ -880,6 +882,7 @@ MonoBehaviour:
     dashSkip: 0
     zippyIntro: 0
     zippyMission: 0
+    zippyProgress: 0
     zippyAttack: 0
     zippyFinish: 0
     zippySkip: 0
@@ -1209,8 +1212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -228.714}
-  m_SizeDelta: {x: 1432, y: 2356.572}
+  m_AnchoredPosition: {x: -0.000025749, y: -245.21}
+  m_SizeDelta: {x: 1440, y: 2389.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924529020
 MonoBehaviour:
