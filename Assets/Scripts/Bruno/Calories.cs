@@ -73,8 +73,7 @@ public class Calories : MonoBehaviour
                 PlayGamesManager.Instance.SaveData();
             }
 
-            if (caloriesBurned >= caloriesGoal)
-            {
+            if (caloriesBurned >= caloriesGoal) {
                 Bruno.progress = false;
                 Bruno.attack = true;
             }

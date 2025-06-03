@@ -13,7 +13,6 @@ public class Sleep : MonoBehaviour
     [Header("Dynamic")]
     public static float timeRemaining;
     public static float tr;
-    public bool timerIsRunning = false;
 
 
     void Start()
@@ -40,12 +39,7 @@ public class Sleep : MonoBehaviour
                 Debug.Log("Time has run out!");
                 stop.SetActive(true);
                 timeRemaining = 0;
-                timerIsRunning = false;
             }
         }
-    }
-
-    public void StartSleepTimer() {
-        timerIsRunning = true;
     }
 }
