@@ -7,9 +7,12 @@ public class SetUp : MonoBehaviour
     [Header("Inscribed")]
     public long initialStepGoal;
     public long stepGoalModifier;
-    public float sleepHours;
     public int weightKg;
     public Slider slider;
+    public TextMeshProUGUI sliderText;
+    public TextMeshProUGUI stepGoalText;
+    public TextMeshProUGUI caloriesGoalText;
+    public TextMeshProUGUI sleepHoursText;
 
     [Header("Dynamic")]
     public static long finalStepGoal;
@@ -42,7 +45,8 @@ public class SetUp : MonoBehaviour
     }
     
     public void SleepHours() {
-        Sleep.hours = sleepHours;
+        Sleep.hours = slider.value;
+        sliderText.text = slider.value + " hrs";
     }
     
     public void StepGoalModifier() {
@@ -81,6 +85,8 @@ public class SetUp : MonoBehaviour
                 finalCaloriesGoalModifier = -100;
                 break;
         }
+        sliderText.text = slider.value + " hrs";
+        Debug.Log("Final Calories Goal Modifier: " + finalCaloriesGoalModifier);
     }
     
     public void Weight() {
@@ -92,14 +98,18 @@ public class SetUp : MonoBehaviour
     public void FinishSetup() {
         NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier;
         Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
+        stepGoalText.text = NewStepCounter.stepGoal.ToString();
+        caloriesGoalText.text = Calories.caloriesGoal.ToString();
+        sleepHoursText.text = Sleep.hours.ToString();
         if (Calories.caloriesGoal < 0) {
             Calories.caloriesGoal = 0;
+        }
+        if (Calories.weightKg == 0) {
+            Calories.weightKg = 70; // Default weight if not set
         }
         if (NewStepCounter.stepGoal < 0) {
             NewStepCounter.stepGoal = 500;
         }
-        if (PlayGamesManager.Instance != null) {
-            PlayGamesManager.Instance.SaveData();
-        }
+        PlayGamesManager.Instance.SaveData();
     }
 }
