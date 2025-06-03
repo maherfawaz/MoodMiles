@@ -92,23 +92,24 @@ public class SetUp : MonoBehaviour
     public void Weight() {
         string weightString = GetComponent<TMP_InputField>().text;
         weightKg = int.Parse(weightString);
-        Calories.weightKg = weightKg;
+        if (weightKg == 0) {
+            Calories.weightKg = 70; // Default weight if not set
+        } else {
+            Calories.weightKg = weightKg;
+        }
     }
     
     public void FinishSetup() {
         NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier;
         Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
-        stepGoalText.text = NewStepCounter.stepGoal.ToString();
-        caloriesGoalText.text = Calories.caloriesGoal.ToString();
-        sleepHoursText.text = Sleep.hours.ToString();
         if (Calories.caloriesGoal < 0) {
             Calories.caloriesGoal = 0;
-        }
-        if (Calories.weightKg == 0) {
-            Calories.weightKg = 70; // Default weight if not set
         }
         if (NewStepCounter.stepGoal < 0) {
             NewStepCounter.stepGoal = 500;
         }
+        stepGoalText.text = NewStepCounter.stepGoal.ToString();
+        caloriesGoalText.text = Calories.caloriesGoal.ToString();
+        sleepHoursText.text = Sleep.hours.ToString();
     }
 }
