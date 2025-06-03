@@ -111,6 +111,8 @@ public class PlayGamesManager : MonoBehaviour
                     snoozeAttack = Snooze.attack,
                     snoozeFinish = Snooze.finish,
                     snoozeSkip = Snooze.skipTu,
+                    hatOn = Hat.hatsOn,
+                    hatId = Hat.id,
                     dashIntro = Dashie.intro,
                     dashMission = Dashie.mission,
                     dashProgress = Dashie.progress,
@@ -203,6 +205,8 @@ public class PlayGamesManager : MonoBehaviour
                         Snooze.attack = data.snoozeAttack;
                         Snooze.finish = data.snoozeFinish;
                         Snooze.skipTu = data.snoozeSkip;
+                        Hat.hatsOn = data.hatOn;
+                        Hat.id = data.hatId;
                         Dashie.intro = data.dashIntro;
                         Dashie.mission = data.dashMission;
                         Dashie.progress = data.dashProgress;
@@ -283,6 +287,8 @@ public class SaveData {
     public bool snoozeAttack;
     public bool snoozeFinish;
     public bool snoozeSkip;
+    public bool hatOn;
+    public int hatId;
     public bool dashIntro;
     public bool dashMission;
     public bool dashProgress;

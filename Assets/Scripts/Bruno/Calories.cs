@@ -34,10 +34,6 @@ public class Calories : MonoBehaviour
     void Update() {
         cb = caloriesBurned;
         cg = caloriesGoal;
-        if (caloriesBurned > lastCaloriesBurned) {
-            counterTMP.text = $"{caloriesBurned}/{caloriesGoal}";
-            lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
-        }
         if (Bruno.progress == true) {
             if (Application.isEditor || !permissionGranted) {
                 return;
@@ -53,14 +49,19 @@ public class Calories : MonoBehaviour
             duration = time / 60; // Convert seconds to minutes
             speed = Mathf.Sqrt(accel.x * accel.x + accel.y * accel.y + accel.z * accel.z) * 3.6f; // Convert m/s to km/h
                                                                                                   // Calculate MET value based on speed (in km/h)
-            if (speed < 4) {
-                metValue = 2.5f; // Walking at 2 mph (3.2 km/h)
-            } else if (speed < 6) {
-                metValue = 3.5f; // Walking at 4 mph (6.4 km/h)
-            } else if (speed < 8) {
-                metValue = 5.0f; // Jogging at 6 mph (9.7 km/h)
-            } else {
-                metValue = 8.0f; // Running at 8 mph (12.9 km/h)
+            switch (speed) {
+                case < 4:
+                    metValue = 2.5f; // Walking at 2 mph (3.2 km/h)
+                    break;
+                case < 6:
+                    metValue = 3.5f; // Walking at 4 mph (6.4 km/h)
+                    break;
+                case < 8:
+                    metValue = 5.0f; // Jogging at 6 mph (9.7 km/h)
+                    break;
+                default:
+                    metValue = 8.0f; // Running at 8 mph (12.9 km/h)
+                    break;
             }
             // Calculate calories burned using the formula: Calories = MET * weight (kg) * duration (hours)
             caloriesBurned = Mathf.RoundToInt(metValue * weightKg * (duration / 60)); // Convert duration from minutes to hours
