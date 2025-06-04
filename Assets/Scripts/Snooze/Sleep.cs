@@ -5,20 +5,23 @@ using TMPro;
 public class Sleep : MonoBehaviour
 {
     [Header("Inscribed")]
-    public static float hours = 0.016f;
     public GameObject stop;
-    public static float ours;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI goalText;
 
     [Header("Dynamic")]
     public static float timeRemaining;
     public static float tr;
+    public static float hours = 0.016f;
+    public static float ours;
 
 
-    void Start()
-    {
+    void Start() {
         if (timeRemaining == 0) {
             timeRemaining = hours * 3600;
+        }
+        if (hours > 0.016f) {
+            goalText.text = $"Sleep {hours} hours";
         }
         ours = timeRemaining;
     }

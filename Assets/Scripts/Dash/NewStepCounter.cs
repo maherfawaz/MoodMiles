@@ -6,19 +6,22 @@ using UnityEngine.InputSystem;
 public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
-    public static long stepGoal = 20;
-    public static float sg;
     public TextMeshProUGUI counterTMP;
+    public TextMeshProUGUI goalTMP;
 
     [Header("Dynamic")]
     public static long lastStepOffset;
     public static long stepsTaken;
     public static float st;
+    public static long stepGoal = 20;
+    public static float sg;
     public long currentStepOffset;
     public bool permissionGranted = false;
 
     void Start() {
-        if (Application.isEditor) {
+        goalTMP.text = $"{stepGoal} steps";
+        if (Application.isEditor)
+        {
             Debug.Log("Running in Editor");
             return;
         }

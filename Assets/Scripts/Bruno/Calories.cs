@@ -6,10 +6,8 @@ public class Calories : MonoBehaviour
 {
     // https://www.calculator.net/calories-burned-calculator.html
     [Header("Inscribed")]
-    public static int caloriesGoal = 20;
-    public static float cg;
-    public static int weightKg = 70;
     public TextMeshProUGUI counterTMP;
+    public TextMeshProUGUI goalTMP;
 
     [Header("Dynamic")]
     public float speed;
@@ -19,10 +17,14 @@ public class Calories : MonoBehaviour
     public Vector3 accel;
     public static int caloriesBurned;
     public static float cb;
+    public static int caloriesGoal = 20;
+    public static float cg;
+    public static int weightKg = 70;
     public bool permissionGranted = false;
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
+        goalTMP.text = $"{caloriesGoal} calories";
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
