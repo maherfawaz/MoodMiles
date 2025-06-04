@@ -17,15 +17,15 @@ public class SetUp : MonoBehaviour
     [Header("Dynamic")]
     public static long finalStepGoal;
     public static long finalStepGoalModifier;
-    public static int finalCaloriesGoal;
-    public static int finalCaloriesGoalModifier;
+    public static int finalCaloriesGoal = 150;
+    public static int finalCaloriesGoalModifier = -50;
 
     public void InitialSteps() {
         finalStepGoal = initialStepGoal;
     }
     
     public void InitialCalories() {
-        switch ((int)slider.value) {
+        switch (slider.value) {
             case 0:
                 finalCaloriesGoal = 0;
                 break;
@@ -51,7 +51,7 @@ public class SetUp : MonoBehaviour
     
     public void StepGoalModifier() {
         if (slider != null) {
-            switch ((int)slider.value) {
+            switch (slider.value) {
                 case 0:
                     finalStepGoalModifier = 0;
                     break;
@@ -74,7 +74,7 @@ public class SetUp : MonoBehaviour
     }
 
     public void CaloriesGoalModifier() {
-        switch ((int)slider.value) {
+        switch (slider.value) {
             case < 4:
                 finalCaloriesGoalModifier = 0;
                 break;
@@ -108,8 +108,8 @@ public class SetUp : MonoBehaviour
         if (NewStepCounter.stepGoal < 0) {
             NewStepCounter.stepGoal = 500;
         }
-        stepGoalText.text = NewStepCounter.stepGoal.ToString();
-        caloriesGoalText.text = Calories.caloriesGoal.ToString();
-        sleepHoursText.text = Sleep.hours.ToString();
+        stepGoalText.text = $"{NewStepCounter.stepGoal}";
+        caloriesGoalText.text = $"{Calories.caloriesGoal}";
+        sleepHoursText.text = $"{Sleep.hours}";
     }
 }
