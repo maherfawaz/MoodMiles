@@ -6,7 +6,7 @@ using TMPro;
 public class Breathing : MonoBehaviour
 {
     
-    public static float breathTimer = 60;
+    public static float breathTimer = 180;
     public float holding = 5;
     public bool breathIn = true;
     public bool Hold = false;
