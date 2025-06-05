@@ -7,21 +7,19 @@ public class NewStepCounter : MonoBehaviour
 {
     [Header("Inscribed")]
     public TextMeshProUGUI counterTMP;
-    public TextMeshProUGUI challengeGoalTMP;
-    public TextMeshProUGUI missionTMP;
+    public TextMeshProUGUI goalTMP;
 
     [Header("Dynamic")]
-    public long currentStepOffset;
-    public bool permissionGranted = false;
     public static long lastStepOffset;
     public static long stepsTaken;
     public static float st;
     public static long stepGoal = 20;
     public static float sg;
+    public long currentStepOffset;
+    public bool permissionGranted = false;
 
     void Start() {
-        missionTMP.text = $"Daily Dash: conquer {stepGoal} steps!";
-        challengeGoalTMP.text = $"{stepGoal} steps";
+        goalTMP.text = $"{stepGoal} steps";
         if (Application.isEditor)
         {
             Debug.Log("Running in Editor");

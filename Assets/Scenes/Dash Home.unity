@@ -2115,7 +2115,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text
-      value: 'Daily Dash: conquer 1500 steps!'
+      value: 'Daily Dash:
+
+        Conquer 1500 steps!'
       objectReference: {fileID: 0}
     - target: {fileID: 7605014887809918183, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_IsActive
@@ -2159,17 +2161,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eedf1c3c478c64a498609bc54dc06c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2023528943 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
-  m_PrefabInstance: {fileID: 2023528938}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2129141487
@@ -2300,8 +2291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTMP: {fileID: 1766779397}
-  challengeGoalTMP: {fileID: 579319646}
-  missionTMP: {fileID: 2023528943}
+  goalTMP: {fileID: 579319646}
   currentStepOffset: 0
   permissionGranted: 0
 --- !u!114 &2129141493
