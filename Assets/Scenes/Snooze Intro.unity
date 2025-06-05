@@ -560,13 +560,12 @@ MonoBehaviour:
   lines:
   - "Hey there! I\u2019m Snooze, your friendly rainforest sloth! I know how overwhelming
     life can feel, especially when burnout creeps in."
-  - To keep your energy up and stay at your best, getting enough rest is essential.
-    Let's gather energy through a mission together!
+  - You know, Burnout is sometimes not about doing too little, it's about...never
+    really being rested.
   - Did you know that quality sleep helps reduce burnout by giving your mind and
     body the time they need to recover?
-  - "When we\u2019re well-rested, we handle stress better, feel more energized, and
-    can focus on what really matters. Are you ready to make rest a priority and push
-    burnout away?"
+  - "I will record your sleep and help you establish a good rhythm. Rest isn\u2019t
+    lazy. It\u2019s how we heal. Ready to begin?"
   textSpeed: 0
   animalName: Snooze
 --- !u!114 &758177833
