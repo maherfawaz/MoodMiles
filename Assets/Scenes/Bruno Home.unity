@@ -469,9 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_text
-      value: 'Fuel Your Day by
-
-        Burning 100 Calories'
+      value: Fuel your day by burning 100 calories
       objectReference: {fileID: 0}
     - target: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_fontStyle
@@ -521,6 +519,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c53e112b5e345294da6fe4c073906e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &213402652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
+  m_PrefabInstance: {fileID: 213402648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &390127610
@@ -1094,7 +1103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &794948874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,10 +1500,6 @@ PrefabInstance:
     - target: {fileID: 7635326230001529102, guid: 86448cb89a9e8764aac1df71d08f14ab, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 9.7192
-      objectReference: {fileID: 0}
-    - target: {fileID: 7635326230001529102, guid: 86448cb89a9e8764aac1df71d08f14ab, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1105
       objectReference: {fileID: 0}
     - target: {fileID: 7635326230001529102, guid: 86448cb89a9e8764aac1df71d08f14ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2171,7 +2176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTMP: {fileID: 390127611}
-  goalTMP: {fileID: 515245428}
+  challengeGoalTMP: {fileID: 515245428}
+  missionTMP: {fileID: 213402652}
   speed: 0
   duration: 0
   time: 0

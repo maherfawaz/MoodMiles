@@ -7,7 +7,8 @@ public class Sleep : MonoBehaviour
     [Header("Inscribed")]
     public GameObject stop;
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI goalText;
+    public TextMeshProUGUI challengeGoalText;
+    public TextMeshProUGUI missionText;
 
     [Header("Dynamic")]
     public static float timeRemaining;
@@ -21,7 +22,8 @@ public class Sleep : MonoBehaviour
             timeRemaining = hours * 3600;
         }
         if (hours > 0.016f) {
-            goalText.text = $"Sleep {hours} hours";
+            challengeGoalText.text = $"Sleep {hours} hours";
+            missionText.text = $"Recharge by aiming for at least {hours} hours of sleep";
         }
         ours = timeRemaining;
     }
