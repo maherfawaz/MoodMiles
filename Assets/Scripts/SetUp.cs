@@ -17,8 +17,13 @@ public class SetUp : MonoBehaviour
     [Header("Dynamic")]
     public static long finalStepGoal;
     public static long finalStepGoalModifier;
+    public static long secondFinalStepGoalModifier = 1000;
     public static int finalCaloriesGoal = 150;
     public static int finalCaloriesGoalModifier = -50;
+
+    void Start() {
+        Sleep.hours = 6;
+    }
 
     public void InitialSteps() {
         finalStepGoal = initialStepGoal;
@@ -53,19 +58,19 @@ public class SetUp : MonoBehaviour
         if (slider != null) {
             switch (slider.value) {
                 case 0:
-                    finalStepGoalModifier = 0;
+                    secondFinalStepGoalModifier = 0;
                     break;
                 case 1:
-                    finalStepGoalModifier = 0;
+                    secondFinalStepGoalModifier = 0;
                     break;
                 case 2:
-                    finalStepGoalModifier = 1000;
+                    secondFinalStepGoalModifier = 1000;
                     break;
                 case 3:
-                    finalStepGoalModifier = 1500;
+                    secondFinalStepGoalModifier = 1500;
                     break;
                 case 4:
-                    finalStepGoalModifier = 2000;
+                    secondFinalStepGoalModifier = 2000;
                     break;
             }
         } else {
@@ -100,7 +105,7 @@ public class SetUp : MonoBehaviour
     }
     
     public void FinishSetup() {
-        NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier;
+        NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier + secondFinalStepGoalModifier;
         Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
         if (Calories.caloriesGoal < 0) {
             Calories.caloriesGoal = 0;
