@@ -21,4 +21,19 @@ public class Equip : MonoBehaviour
         Hat.id = numberId;
         Hat.hatsOn = true;
     }
+    public void BWears()
+    {
+        Hat.id = numberId;
+        Hat.BhatsOn = true;
+    }
+    public void DWears()
+    {
+        Hat.id = numberId;
+        Hat.DhatsOn = true;
+    }
+    public void ZWears()
+    {
+        Hat.id = numberId;
+        Hat.ZhatsOn = true;
+    }
 }

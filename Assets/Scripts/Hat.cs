@@ -6,6 +6,9 @@ public class Hat : MonoBehaviour
     public Sprite[] itemSprites;
     public static int id;
     public static bool hatsOn = false;
+    public static bool BhatsOn = false;
+    public static bool ZhatsOn = false;
+    public static bool DhatsOn = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

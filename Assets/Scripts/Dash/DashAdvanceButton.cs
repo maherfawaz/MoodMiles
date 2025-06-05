@@ -9,6 +9,7 @@ public class DashAdvanceButton : MonoBehaviour
     public GameObject talkM;
     public GameObject talkP;
     public GameObject talkF;
+    public GameObject hat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,14 @@ public class DashAdvanceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Hat.DhatsOn == true)
+        {
+            hat.SetActive(true);
+        }
+        if (Hat.DhatsOn == false)
+        {
+            hat.SetActive(false);
+        }
         if (Dashie.mission == true)
         {
             ready.SetActive(false);

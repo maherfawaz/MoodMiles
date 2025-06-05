@@ -6,6 +6,7 @@ public class SnoozeHome : MonoBehaviour
     public GameObject prog;
     public GameObject count;
     public GameObject main;
+    public GameObject hat;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,6 +17,14 @@ public class SnoozeHome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Hat.hatsOn == true)
+        {
+            hat.SetActive(true);
+        }
+        if (Hat.hatsOn == false)
+        {
+            hat.SetActive(false);
+        }
         if (Snooze.mission == true)
         {
             mis.SetActive(true);

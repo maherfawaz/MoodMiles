@@ -4,7 +4,7 @@ public class BrunoAdvanceButton : MonoBehaviour
 {
     public GameObject mission;
     public GameObject tu;
-   
+    public GameObject hat;
     public GameObject ready;
     public GameObject talkM;
     public GameObject talkP;
@@ -18,6 +18,14 @@ public class BrunoAdvanceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Hat.BhatsOn == true)
+        {
+            hat.SetActive(true);
+        }
+        if (Hat.BhatsOn == false)
+        {
+            hat.SetActive(false);
+        }
         if (Bruno.mission == true)
         {
             ready.SetActive(false);
