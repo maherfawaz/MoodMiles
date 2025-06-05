@@ -27,8 +27,7 @@ public class Calories : MonoBehaviour
     void Start() {
         challengeGoalTMP.text = $"{caloriesGoal} calories";
         missionTMP.text = $"Fuel your day by burning {caloriesGoal} calories";
-        if (Application.isEditor)
-        {
+        if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
         }

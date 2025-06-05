@@ -22,8 +22,7 @@ public class NewStepCounter : MonoBehaviour
     void Start() {
         missionTMP.text = $"Daily Dash: conquer {stepGoal} steps!";
         challengeGoalTMP.text = $"{stepGoal} steps";
-        if (Application.isEditor)
-        {
+        if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
         }
