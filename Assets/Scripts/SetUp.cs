@@ -53,19 +53,19 @@ public class SetUp : MonoBehaviour
         if (slider != null) {
             switch (slider.value) {
                 case 0:
-                    finalStepGoalModifier += 0;
+                    finalStepGoalModifier = 0;
                     break;
                 case 1:
-                    finalStepGoalModifier += 0;
+                    finalStepGoalModifier = 0;
                     break;
                 case 2:
-                    finalStepGoalModifier += 1000;
+                    finalStepGoalModifier = 1000;
                     break;
                 case 3:
-                    finalStepGoalModifier += 1500;
+                    finalStepGoalModifier = 1500;
                     break;
                 case 4:
-                    finalStepGoalModifier += 2000;
+                    finalStepGoalModifier = 2000;
                     break;
             }
         } else {
