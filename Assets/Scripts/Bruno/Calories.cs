@@ -1,13 +1,15 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Calories : MonoBehaviour
 {
     // https://www.calculator.net/calories-burned-calculator.html
     [Header("Inscribed")]
     public TextMeshProUGUI counterTMP;
-    public TextMeshProUGUI goalTMP;
+    public TextMeshProUGUI challengeGoalTMP;
+    public TextMeshProUGUI missionTMP;
 
     [Header("Dynamic")]
     public float speed;
@@ -24,8 +26,10 @@ public class Calories : MonoBehaviour
     private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
-        goalTMP.text = $"{caloriesGoal} calories";
-        if (Application.isEditor) {
+        challengeGoalTMP.text = $"{caloriesGoal} calories";
+        missionTMP.text = $"Fuel your day by burning {caloriesGoal} calories";
+        if (Application.isEditor)
+        {
             Debug.Log("Running in Editor");
             return;
         }
