@@ -27,7 +27,7 @@ public class SnoozeButton : MonoBehaviour
             Light.SetActive(true);
             progr.SetActive(false);
         }
-        if (global::Snooze.progress == true)
+        else if (global::Snooze.progress == true)
         {
             Light.SetActive(false);
             progr.SetActive(true);
