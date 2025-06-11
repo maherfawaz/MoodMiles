@@ -31,6 +31,7 @@ public class PlayGamesManager : MonoBehaviour
     private bool isLoading = false;
     private bool isSaving = false;
     private bool isDeleting = false;
+    private bool isSigningIn = false;
 
     void Start() {
         //RefreshRate refreshRate = Screen.currentResolution.refreshRateRatio;
@@ -48,6 +49,8 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void SignIn() {
+        if (isSigningIn) return;
+        isSigningIn = true;
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
 
@@ -56,7 +59,10 @@ public class PlayGamesManager : MonoBehaviour
             playerName = PlayGamesPlatform.Instance.GetUserDisplayName();
             id = PlayGamesPlatform.Instance.GetUserId();
             imgURL = PlayGamesPlatform.Instance.GetUserImageUrl();
+            isSigningIn = false;
             LoadData();
+        } else {
+            isSigningIn = false;
         }
     }
 
@@ -263,7 +269,7 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void Launch() {
-        if (isLoading) return;
+        if (isSigningIn || isLoading) return;
 
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
