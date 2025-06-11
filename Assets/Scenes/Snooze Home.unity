@@ -1927,10 +1927,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2129141491}
     m_Modifications:
-    - target: {fileID: 865286234053796801, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1858879770}
     - target: {fileID: 1481721773863068961, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1955,10 +1951,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1810439297660681407, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1858879770}
     - target: {fileID: 6930470589752799474, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_Name
       value: Decorate

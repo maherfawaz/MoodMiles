@@ -107,7 +107,6 @@ public class PlayGamesManager : MonoBehaviour
                     caloriesGoal = Calories.caloriesGoal,
                     weightKg = Calories.weightKg,
                     rewards = Rewards.reward,
-                    hatOn = Hat.hatsOn,
                     hatId = Hat.id,
                     trueIntro = TrueIntro.trueIntro,
                     brunoIntro = Bruno.intro,
@@ -116,24 +115,28 @@ public class PlayGamesManager : MonoBehaviour
                     brunoAttack = Bruno.attack,
                     brunoFinish = Bruno.finish,
                     brunoSkip = Bruno.skipTu,
+                    brunoHat = Hat.BhatsOn,
                     snoozeIntro = Snooze.intro,
                     snoozeMission = Snooze.mission,
                     snoozeProgress = Snooze.progress,
                     snoozeAttack = Snooze.attack,
                     snoozeFinish = Snooze.finish,
                     snoozeSkip = Snooze.skipTu,
+                    snoozeHat = Hat.hatsOn,
                     dashIntro = Dashie.intro,
                     dashMission = Dashie.mission,
                     dashProgress = Dashie.progress,
                     dashAttack = Dashie.attack,
                     dashFinish = Dashie.finish,
                     dashSkip = Dashie.skipTu,
+                    dashHat = Hat.DhatsOn,
                     zippyIntro = Zippy.intro,
                     zippyMission = Zippy.mission,
                     zippyProgress = Zippy.progress,
                     zippyAttack = Zippy.attack,
                     zippyFinish = Zippy.finish,
                     zippySkip = Zippy.skipTu,
+                    zippyHat = Hat.ZhatsOn
                 };
 
                 string jsonString = JsonUtility.ToJson(data);
@@ -205,7 +208,6 @@ public class PlayGamesManager : MonoBehaviour
                         Calories.caloriesGoal = data.caloriesGoal;
                         Calories.weightKg = data.weightKg;
                         Rewards.reward = data.rewards;
-                        Hat.hatsOn = data.hatOn;
                         Hat.id = data.hatId;
                         TrueIntro.trueIntro = data.trueIntro;
                         Bruno.intro = data.brunoIntro;
@@ -214,24 +216,28 @@ public class PlayGamesManager : MonoBehaviour
                         Bruno.attack = data.brunoAttack;
                         Bruno.finish = data.brunoFinish;
                         Bruno.skipTu = data.brunoSkip;
+                        Hat.BhatsOn = data.brunoHat;
                         Snooze.intro = data.snoozeIntro;
                         Snooze.mission = data.snoozeMission;
                         Snooze.progress = data.snoozeProgress;
                         Snooze.attack = data.snoozeAttack;
                         Snooze.finish = data.snoozeFinish;
                         Snooze.skipTu = data.snoozeSkip;
+                        Hat.hatsOn = data.snoozeHat;
                         Dashie.intro = data.dashIntro;
                         Dashie.mission = data.dashMission;
                         Dashie.progress = data.dashProgress;
                         Dashie.attack = data.dashAttack;
                         Dashie.finish = data.dashFinish;
                         Dashie.skipTu = data.dashSkip;
+                        Hat.DhatsOn = data.dashHat;
                         Zippy.intro = data.zippyIntro;
                         Zippy.mission = data.zippyMission;
                         Zippy.progress = data.zippyProgress;
                         Zippy.attack = data.zippyAttack;
                         Zippy.finish = data.zippyFinish;
                         Zippy.skipTu = data.zippySkip;
+                        Hat.ZhatsOn = data.zippyHat;
 
                         isLoading = false;
                     }
@@ -292,7 +298,6 @@ public class SaveData {
     public int caloriesGoal;
     public int weightKg;
     public int rewards;
-    public bool hatOn;
     public int hatId;
     public bool trueIntro;
     public bool brunoIntro;
@@ -301,22 +306,26 @@ public class SaveData {
     public bool brunoAttack;
     public bool brunoFinish;
     public bool brunoSkip;
+    public bool brunoHat;
     public bool snoozeIntro;
     public bool snoozeMission;
     public bool snoozeProgress;
     public bool snoozeAttack;
     public bool snoozeFinish;
     public bool snoozeSkip;
+    public bool snoozeHat;
     public bool dashIntro;
     public bool dashMission;
     public bool dashProgress;
     public bool dashAttack;
     public bool dashFinish;
     public bool dashSkip;
+    public bool dashHat;
     public bool zippyIntro;
     public bool zippyMission;
     public bool zippyProgress;
     public bool zippyAttack;
     public bool zippyFinish;
     public bool zippySkip;
+    public bool zippyHat;
 }
