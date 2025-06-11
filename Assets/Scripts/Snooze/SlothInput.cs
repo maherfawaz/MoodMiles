@@ -88,12 +88,6 @@ public class SlothInput : MonoBehaviour
             boss.SetActive(false);
             defeat.SetActive(true);
         }
-
-        if(StaticHp.totalHP == 0)
-        {
-            boss.SetActive(false);
-            defeat.SetActive(true);
-        }
     }
 }
 
