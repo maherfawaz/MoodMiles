@@ -58,7 +58,6 @@ public class NewStepCounter : MonoBehaviour
             }
 
             if (stepsTaken >= stepGoal) {
-                counterTMP.text = "Goal reached!";
                 Dashie.progress = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached

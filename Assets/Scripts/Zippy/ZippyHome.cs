@@ -14,15 +14,15 @@ public class ZippyHome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Zippy.mission == true)
-        {
-            mis.SetActive(true);
-            prog.SetActive(false);
-        }
         if (Zippy.progress == true)
         {
             mis.SetActive(false);
             prog.SetActive(true);
+        }
+        else if (Zippy.mission == true)
+        {
+            mis.SetActive(true);
+            prog.SetActive(false);
         }
     }
 }

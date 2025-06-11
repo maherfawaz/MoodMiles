@@ -14,15 +14,15 @@ public class BrunoHome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Bruno.mission == true)
-        {
-            mis.SetActive(true);
-            prog.SetActive(false);
-        }
         if (Bruno.progress == true)
         {
             mis.SetActive(false);
             prog.SetActive(true);
+        }
+        else if (Bruno.mission == true)
+        {
+            mis.SetActive(true);
+            prog.SetActive(false);
         }
     }
 }

@@ -25,19 +25,19 @@ public class SnoozeHome : MonoBehaviour
         {
             hat.SetActive(false);
         }
-        if (Snooze.mission == true)
-        {
-            mis.SetActive(true);
-            prog.SetActive(false);
-            count.SetActive(false);
-            main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
-        }
         if (Snooze.progress == true)
         {
             mis.SetActive(false);
             prog.SetActive(true);
             count.SetActive(true);
             main.GetComponent<Camera>().backgroundColor = Color.black;
+        }
+        else if (Snooze.mission == true)
+        {
+            mis.SetActive(true);
+            prog.SetActive(false);
+            count.SetActive(false);
+            main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
         }
         else
         {

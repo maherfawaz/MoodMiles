@@ -1200,6 +1200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Mission
       objectReference: {fileID: 0}
+    - target: {fileID: 3284873920618622978, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5157246302640246987, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_IsActive
       value: 0

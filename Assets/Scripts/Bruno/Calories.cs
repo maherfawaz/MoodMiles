@@ -36,7 +36,7 @@ public class Calories : MonoBehaviour
     }
 
     void Update() {
-        cb = caloriesBurned;
+        cb = lastCaloriesBurned;
         cg = caloriesGoal;
         if (Bruno.progress == true) {
             if (Application.isEditor || !permissionGranted) {

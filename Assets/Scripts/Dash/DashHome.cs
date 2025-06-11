@@ -14,16 +14,15 @@ public class DashHome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Dashie.mission == true)
-        {
-            mis.SetActive(true);
-            prog.SetActive(false);
-        }
         if (Dashie.progress == true)
         {
             mis.SetActive(false);
             prog.SetActive(true);
+        }
+        else if (Dashie.mission == true)
+        {
+            mis.SetActive(true);
+            prog.SetActive(false);
         }
     }
 }
