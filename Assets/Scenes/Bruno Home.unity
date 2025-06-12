@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 34974581}
   - component: {fileID: 34974580}
   - component: {fileID: 34974583}
-  - component: {fileID: 34974582}
   m_Layer: 5
   m_Name: Bruno
   m_TagString: Untagged
@@ -197,25 +196,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34974578}
   m_CullTransparentMesh: 1
---- !u!114 &34974582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34974578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2554ae0920bbfad4784db3ff7a2d679f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mission: {fileID: 213402650}
-  tu: {fileID: 629556761}
-  hat: {fileID: 794948873}
-  ready: {fileID: 4608887561122589671}
-  talkM: {fileID: 1871253869}
-  talkP: {fileID: 1871253868}
-  talkF: {fileID: 401538254}
 --- !u!114 &34974583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,8 +240,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 34974582}
-        m_TargetAssemblyTypeName: BrunoAdvanceButton, Assembly-CSharp
+      - m_Target: {fileID: 2129141496}
+        m_TargetAssemblyTypeName: Bruno, Assembly-CSharp
         m_MethodName: Zipp
         m_Mode: 1
         m_Arguments:
@@ -382,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 213402651}
+      objectReference: {fileID: 2129141496}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -398,6 +378,10 @@ PrefabInstance:
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Bruno, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -462,17 +446,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
   m_PrefabInstance: {fileID: 213402648}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &213402651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8438208954208857403, guid: 813bbea630928894089e51889e65038a, type: 3}
-  m_PrefabInstance: {fileID: 213402648}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c53e112b5e345294da6fe4c073906e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &213402652 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5066877519813719503, guid: 813bbea630928894089e51889e65038a, type: 3}
@@ -1670,7 +1643,7 @@ GameObject:
   - component: {fileID: 2129141492}
   - component: {fileID: 2129141494}
   - component: {fileID: 2129141493}
-  - component: {fileID: 2129141495}
+  - component: {fileID: 2129141496}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1791,6 +1764,7 @@ MonoBehaviour:
   time: 0
   metValue: 0
   accel: {x: 0, y: 0, z: 0}
+  caloriesBurned: 0
   permissionGranted: 0
 --- !u!114 &2129141493
 MonoBehaviour:
@@ -1830,7 +1804,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129141487}
   m_CullTransparentMesh: 1
---- !u!114 &2129141495
+--- !u!114 &2129141496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1839,11 +1813,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129141487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4534bd252a38d4494860cf526cab5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 02404e0f8948b6d4093a7f4cc745ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mis: {fileID: 462151412}
   prog: {fileID: 1793514811}
+  missionObj: {fileID: 213402650}
+  tu: {fileID: 629556761}
+  hat: {fileID: 794948873}
+  ready: {fileID: 4608887561122589671}
+  talkM: {fileID: 1871253869}
+  talkP: {fileID: 1871253868}
+  talkF: {fileID: 401538254}
 --- !u!1001 &4608887561122589669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1891,7 +1872,7 @@ PrefabInstance:
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 34974582}
+      objectReference: {fileID: 0}
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 226722977}
+      objectReference: {fileID: 2129141495}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ZippyMission, Assembly-CSharp
+      value: Zippy, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 832693633108426156, guid: 813bbea630928894089e51889e65038a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -302,19 +302,11 @@ PrefabInstance:
     - {fileID: 8438208954208857403, guid: 813bbea630928894089e51889e65038a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4550838022873148876, guid: 813bbea630928894089e51889e65038a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 226722977}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813bbea630928894089e51889e65038a, type: 3}
 --- !u!224 &226722974 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 242743978398820951, guid: 813bbea630928894089e51889e65038a, type: 3}
-  m_PrefabInstance: {fileID: 226722973}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &226722975 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4550838022873148876, guid: 813bbea630928894089e51889e65038a, type: 3}
   m_PrefabInstance: {fileID: 226722973}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &226722976 stripped
@@ -322,18 +314,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4448965807802984055, guid: 813bbea630928894089e51889e65038a, type: 3}
   m_PrefabInstance: {fileID: 226722973}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &226722977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226722975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f24b049bb64b484ebba60c2d6526e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &465680248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1403715282}
+      objectReference: {fileID: 0}
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1164,7 +1144,6 @@ GameObject:
   - component: {fileID: 1403715281}
   - component: {fileID: 1403715280}
   - component: {fileID: 1403715279}
-  - component: {fileID: 1403715282}
   m_Layer: 5
   m_Name: Zippy
   m_TagString: Untagged
@@ -1236,8 +1215,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403715282}
-        m_TargetAssemblyTypeName: ZippyHomeButton, Assembly-CSharp
+      - m_Target: {fileID: 2129141495}
+        m_TargetAssemblyTypeName: Zippy, Assembly-CSharp
         m_MethodName: Zipp
         m_Mode: 1
         m_Arguments:
@@ -1298,25 +1277,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403715277}
   m_CullTransparentMesh: 1
---- !u!114 &1403715282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403715277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd79b7ba325bbb041a09e1ebff3dc4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mission: {fileID: 226722976}
-  tu: {fileID: 1353533375307414025}
-  ready: {fileID: 1140099344}
-  talkM: {fileID: 6457666822584643524}
-  talkP: {fileID: 6457666822584643523}
-  talkF: {fileID: 1173346302}
-  hat: {fileID: 863961888}
 --- !u!1001 &1638997477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1783,11 +1743,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129141487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0875052c8de765d4b93530a2fc0ba35c, type: 3}
+  m_Script: {fileID: 11500000, guid: acc7c0f661b6dfa4f89a87103b1148ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mis: {fileID: 63863295}
   prog: {fileID: 652448937}
+  missionObj: {fileID: 226722976}
+  tu: {fileID: 1353533375307414025}
+  ready: {fileID: 1140099344}
+  talkM: {fileID: 6457666822584643524}
+  talkP: {fileID: 6457666822584643523}
+  talkF: {fileID: 1173346302}
+  hat: {fileID: 863961888}
 --- !u!1001 &1353533375307414024
 PrefabInstance:
   m_ObjectHideFlags: 0
