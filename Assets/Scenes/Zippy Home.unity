@@ -689,6 +689,7 @@ MonoBehaviour:
   heldItem: {fileID: 863961890}
   itemSprites:
   - {fileID: -1836120431684336037, guid: f4dfc918a6518af41a19e7323c331d40, type: 3}
+  numberId: 0
 --- !u!114 &863961890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2129141495}
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -888,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ZippyHomeButton, Assembly-CSharp
+      value: Zippy, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4945878609218462767, guid: d1528eee03cc2e846b0263040ba5c41f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1294,6 +1295,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 865286234053796801, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 863961889}
+    - target: {fileID: 865286234053796801, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ZWears
       objectReference: {fileID: 0}
@@ -1303,7 +1308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865286234053796801, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Equip, Assembly-CSharp
+      value: Hat, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1481721773863068961, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1330,8 +1335,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569893822343203784, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 863961889}
+    - target: {fileID: 4569893822343203784, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ZUnwears
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569893822343203784, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Hat, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6930470589752799474, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_Name

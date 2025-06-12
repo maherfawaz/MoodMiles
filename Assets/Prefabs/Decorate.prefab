@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 2560553267401397979}
   - component: {fileID: 5364655220676596928}
   - component: {fileID: 4569893822343203784}
-  - component: {fileID: 6891340797680453351}
   m_Layer: 5
   m_Name: Unequip
   m_TagString: Untagged
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6891340797680453351}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Equip, Assembly-CSharp
         m_MethodName: Unwears
         m_Mode: 1
@@ -284,19 +283,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6891340797680453351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384994217740898029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5fc00113b3bf24dafc30e3cb34192f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberId: 0
 --- !u!1 &5774278117450409087
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +427,6 @@ GameObject:
   - component: {fileID: 5118846121005317888}
   - component: {fileID: 8669882107622456411}
   - component: {fileID: 865286234053796801}
-  - component: {fileID: 2716889987106066117}
   m_Layer: 5
   m_Name: Hat
   m_TagString: Untagged
@@ -550,7 +535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2716889987106066117}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Equip, Assembly-CSharp
         m_MethodName: Wears
         m_Mode: 1
@@ -562,19 +547,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &2716889987106066117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5872729672363066376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5fc00113b3bf24dafc30e3cb34192f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberId: 0
 --- !u!1 &6930470589752799474
 GameObject:
   m_ObjectHideFlags: 0

@@ -106,8 +106,4 @@ public class Calories : MonoBehaviour
             InputSystem.EnableDevice(Accelerometer.current);
         }
     }
-
-    public void BurnStart() {
-        Bruno.mission = false;
-    }
 }

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 133573751}
   - component: {fileID: 133573750}
   - component: {fileID: 133573749}
-  - component: {fileID: 133573748}
+  - component: {fileID: 133573752}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -159,18 +159,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000061035, y: -1101.4}
   m_SizeDelta: {x: 596.194, y: 215.43}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &133573748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133573746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f7d68d2c760f34fbf5c43fb66e8ac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &133573749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +203,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 133573748}
-        m_TargetAssemblyTypeName: GainReward, Assembly-CSharp
+      - m_Target: {fileID: 133573752}
+        m_TargetAssemblyTypeName: Rewards, Assembly-CSharp
         m_MethodName: Gain
         m_Mode: 1
         m_Arguments:
@@ -265,6 +253,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133573746}
   m_CullTransparentMesh: 1
+--- !u!114 &133573752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133573746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5306d385d2777d46bab6cf857afeddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterTMP: {fileID: 0}
 --- !u!1 &298317646
 GameObject:
   m_ObjectHideFlags: 0
