@@ -8,20 +8,14 @@ public class SnoozeHome : MonoBehaviour
     public GameObject main;
     public GameObject hat;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(Hat.hatsOn == true)
+        if (Hat.hatsOn == true)
         {
             hat.SetActive(true);
         }
-        if (Hat.hatsOn == false)
+        else if (Hat.hatsOn == false)
         {
             hat.SetActive(false);
         }
@@ -30,7 +24,7 @@ public class SnoozeHome : MonoBehaviour
             mis.SetActive(false);
             prog.SetActive(true);
             count.SetActive(true);
-            main.GetComponent<Camera>().backgroundColor = Color.black;
+            main.GetComponent<Camera>().backgroundColor = new Color(76f / 255f, 176f / 255f, 229f / 255f);
         }
         else if (Snooze.mission == true)
         {
@@ -43,5 +37,19 @@ public class SnoozeHome : MonoBehaviour
         {
             main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
         }
+    }
+
+    public void StopTimer()
+    {
+        Snooze.progress = false;
+        Snooze.attack = true;
+        PlayGamesManager.Instance.SaveData();
+    }
+
+    public void StartTimer()
+    {
+        Snooze.mission = false;
+        Snooze.progress = true;
+        PlayGamesManager.Instance.SaveData();
     }
 }
