@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
+using TMPro;
 
 public class PlayGamesManager : MonoBehaviour
 {
     [Header("Inscribed")]
     [SerializeField] string fileName = "PlayerProfile";
+    public TextMeshProUGUI text;
 
     [Header("Dynamic")]
     public SaveData data;
@@ -51,6 +53,7 @@ public class PlayGamesManager : MonoBehaviour
     public void SignIn() {
         if (isSigningIn) return;
         isSigningIn = true;
+        text.text = "Signing in...";
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
 
@@ -63,6 +66,7 @@ public class PlayGamesManager : MonoBehaviour
             LoadData();
         } else {
             isSigningIn = false;
+            text.text = "Tap to Start";
         }
     }
 
@@ -174,6 +178,7 @@ public class PlayGamesManager : MonoBehaviour
         }
 
         isLoading = true;
+        text.text = "Loading Data...";
 
         PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
             fileName,
@@ -183,15 +188,17 @@ public class PlayGamesManager : MonoBehaviour
                 if (status != SavedGameRequestStatus.Success) {
                     Debug.LogError("Error opening saved game");
                     isLoading = false;
+                    text.text = "Tap to Start";
                     return;
                 }
 
                 PlayGamesPlatform.Instance.SavedGame.ReadBinaryData(
                     metadata,
                     (readStatus, savedData) => {
-                        if (readStatus != SavedGameRequestStatus.Success) {
+                        if (readStatus != SavedGameRequestStatus.Success || savedData == null || savedData.Length == 0) {
                             Debug.LogError("Error reading saved game data");
                             isLoading = false;
+                            text.text = "Tap to Start";
                             return;
                         }
 
@@ -240,6 +247,7 @@ public class PlayGamesManager : MonoBehaviour
                         Hat.ZhatsOn = data.zippyHat;
 
                         isLoading = false;
+                        text.text = "Tap to Start";
                     }
                 );
             }
@@ -252,11 +260,8 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
 
-        if (Application.isEditor) {
-            return;
-        }
-
         isDeleting = true;
+        text.text = "Deleting...";
 
         PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
             fileName,
@@ -275,6 +280,10 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void Launch() {
+        if (isLoading || isDeleting || isSigningIn) {
+            return;
+        }
+        
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
         } else {

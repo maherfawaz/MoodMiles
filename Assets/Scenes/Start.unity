@@ -487,7 +487,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 16
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -846,6 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: PlayerProfile
+  text: {fileID: 103649152}
   data:
     bossHealth: 0
     sleepTimeRemaining: 0
@@ -858,7 +859,7 @@ MonoBehaviour:
     caloriesGoal: 0
     weightKg: 0
     rewards: 0
-    setupComplete: 0
+    hatId: 0
     trueIntro: 0
     brunoIntro: 0
     brunoMission: 0
@@ -866,26 +867,28 @@ MonoBehaviour:
     brunoAttack: 0
     brunoFinish: 0
     brunoSkip: 0
+    brunoHat: 0
     snoozeIntro: 0
     snoozeMission: 0
     snoozeProgress: 0
     snoozeAttack: 0
     snoozeFinish: 0
     snoozeSkip: 0
-    hatOn: 0
-    hatId: 0
+    snoozeHat: 0
     dashIntro: 0
     dashMission: 0
     dashProgress: 0
     dashAttack: 0
     dashFinish: 0
     dashSkip: 0
+    dashHat: 0
     zippyIntro: 0
     zippyMission: 0
     zippyProgress: 0
     zippyAttack: 0
     zippyFinish: 0
     zippySkip: 0
+    zippyHat: 0
   playerName: 
   id: 
   imgURL: 
