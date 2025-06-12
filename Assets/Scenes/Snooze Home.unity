@@ -1862,6 +1862,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SnoozeHome, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1287738811858238346, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1368702243392631071, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
