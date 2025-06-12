@@ -103,7 +103,7 @@ public class PlayGamesManager : MonoBehaviour
                     stepsTaken = NewStepCounter.stepsTaken,
                     lastStepOffset = NewStepCounter.lastStepOffset,
                     stepGoal = NewStepCounter.stepGoal,
-                    caloriesBurned = Calories.caloriesBurned,
+                    caloriesBurned = Calories.lastCaloriesBurned,
                     caloriesGoal = Calories.caloriesGoal,
                     weightKg = Calories.weightKg,
                     rewards = Rewards.reward,
@@ -204,7 +204,7 @@ public class PlayGamesManager : MonoBehaviour
                         NewStepCounter.stepsTaken = data.stepsTaken;
                         NewStepCounter.lastStepOffset = data.lastStepOffset;
                         NewStepCounter.stepGoal = data.stepGoal;
-                        Calories.caloriesBurned = data.caloriesBurned;
+                        Calories.lastCaloriesBurned = data.caloriesBurned;
                         Calories.caloriesGoal = data.caloriesGoal;
                         Calories.weightKg = data.weightKg;
                         Rewards.reward = data.rewards;
@@ -275,7 +275,7 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void Launch() {
-        if (isSigningIn || isLoading) return;
+        if (isLoading) return;
 
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);

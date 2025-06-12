@@ -16,13 +16,13 @@ public class Calories : MonoBehaviour
     public float time;
     public float metValue;
     public Vector3 accel;
-    public static int caloriesBurned;
+    public int caloriesBurned;
     public static float cb;
     public static int caloriesGoal = 20;
     public static float cg;
     public static int weightKg = 70;
     public bool permissionGranted = false;
-    private int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
+    public static int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
         challengeGoalTMP.text = $"{caloriesGoal} calories";
