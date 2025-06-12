@@ -27,18 +27,25 @@ public class ZippyHomeButton : MonoBehaviour
         {
             hat.SetActive(false);
         }
-        if (Zippy.mission == true)
-        {
-            ready.SetActive(false);
-            talkM.SetActive(true);
-            talkF.SetActive(false);
-        }
        
         if (Zippy.attack == true)
         {
             ready.SetActive(true);
             talkP.SetActive(false);
             talkF.SetActive(true);
+        }
+        else if (Zippy.progress == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(false);
+            talkF.SetActive(false);
+            talkP.SetActive(true);
+        }
+        else if (Zippy.mission == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
         }
         else
         {

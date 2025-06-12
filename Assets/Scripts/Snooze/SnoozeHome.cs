@@ -8,6 +8,16 @@ public class SnoozeHome : MonoBehaviour
     public GameObject main;
     public GameObject hat;
 
+    void Start()
+    {
+        if (Snooze.mission == true)
+        {
+            mis.SetActive(true);
+            count.SetActive(false);
+            main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,13 +35,6 @@ public class SnoozeHome : MonoBehaviour
             prog.SetActive(true);
             count.SetActive(true);
             main.GetComponent<Camera>().backgroundColor = new Color(76f / 255f, 176f / 255f, 229f / 255f);
-        }
-        else if (Snooze.mission == true)
-        {
-            mis.SetActive(true);
-            prog.SetActive(false);
-            count.SetActive(false);
-            main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
         }
         else
         {
