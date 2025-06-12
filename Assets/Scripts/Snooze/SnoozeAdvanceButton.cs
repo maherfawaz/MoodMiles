@@ -17,23 +17,23 @@ public class SnoozeAdvanceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Snooze.mission == true)
-        {
-            ready.SetActive(false);
-            talkM.SetActive(true);
-            talkF.SetActive(false);
-        }
-        if (Snooze.progress == true)
-        {
-            ready.SetActive(false);
-            talkM.SetActive(false);
-            talkP.SetActive(true);
-        }
         if (Snooze.attack == true)
         {
             ready.SetActive(true);
             talkP.SetActive(false);
             talkF.SetActive(true);
+        }
+        else if (Snooze.progress == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(false);
+            talkP.SetActive(true);
+        }
+        else if (Snooze.mission == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
         }
         else
         {

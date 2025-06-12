@@ -27,23 +27,23 @@ public class DashAdvanceButton : MonoBehaviour
         {
             hat.SetActive(false);
         }
-        if (Dashie.mission == true)
-        {
-            ready.SetActive(false);
-            talkM.SetActive(true);
-            talkF.SetActive(false);
-        }
-        if (Dashie.progress == true)
-        {
-            ready.SetActive(false);
-            talkM.SetActive(false);
-            talkP.SetActive(true);
-        }
         if (Dashie.attack == true)
         {
             ready.SetActive(true);
             talkP.SetActive(false);
             talkF.SetActive(true);
+        }
+        else if (Dashie.progress == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(false);
+            talkP.SetActive(true);
+        }
+        else if (Dashie.mission == true)
+        {
+            ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
         }
         else
         {
@@ -60,7 +60,7 @@ public class DashAdvanceButton : MonoBehaviour
 
         if (Dashie.attack == true)
         {
-            if (Zippy.skipTu == false)
+            if (Dashie.skipTu == false)
             {
                 tu.SetActive(true);
             }

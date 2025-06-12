@@ -26,25 +26,25 @@ public class BrunoAdvanceButton : MonoBehaviour
         {
             hat.SetActive(false);
         }
-        if (Bruno.mission == true)
+        if (Bruno.attack == true)
         {
-            ready.SetActive(false);
-            talkM.SetActive(true);
-            talkF.SetActive(false);
-           
+            ready.SetActive(true);
+            talkP.SetActive(false);
+            talkF.SetActive(true);
         }
-        if (Bruno.progress == true)
+        else if (Bruno.progress == true)
         {
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
            
         }
-        if (Bruno.attack == true)
+        else if (Bruno.mission == true)
         {
-            ready.SetActive(true);
-            talkP.SetActive(false);
-            talkF.SetActive(true);
+            ready.SetActive(false);
+            talkM.SetActive(true);
+            talkF.SetActive(false);
+           
         }
         else
         {
@@ -61,7 +61,7 @@ public class BrunoAdvanceButton : MonoBehaviour
 
         if (Bruno.attack == true)
         {
-            if (Zippy.skipTu == false)
+            if (Bruno.skipTu == false)
             {
                 tu.SetActive(true);
             }
