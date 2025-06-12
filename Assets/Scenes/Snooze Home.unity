@@ -2003,8 +2003,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2015,12 +2023,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1386786564}
     - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1439013984773761547}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StopTimer
       objectReference: {fileID: 0}
     - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SnoozeHome, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750238250683699773, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

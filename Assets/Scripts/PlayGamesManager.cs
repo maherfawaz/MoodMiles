@@ -275,8 +275,6 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void Launch() {
-        if (isLoading) return;
-
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
         } else {
