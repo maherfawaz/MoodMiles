@@ -12,7 +12,6 @@ public class Sleep : MonoBehaviour
 
     [Header("Dynamic")]
     public static float timeRemaining;
-    public static float tr;
     public static float hours = 0.008f;
     public static float ours;
 
@@ -29,7 +28,6 @@ public class Sleep : MonoBehaviour
     }
 
     void Update() {
-        tr = timeRemaining;
         if (Snooze.progress == true) {
             if (timeRemaining > 0) {
                 stop.SetActive(false);

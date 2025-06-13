@@ -15,9 +15,7 @@ public class NewStepCounter : MonoBehaviour
     public bool permissionGranted = false;
     public static long lastStepOffset;
     public static long stepsTaken;
-    public static float st;
     public static long stepGoal = 20;
-    public static float sg;
 
     void Start() {
         missionTMP.text = $"Daily Dash: conquer {stepGoal} steps!";
@@ -31,8 +29,6 @@ public class NewStepCounter : MonoBehaviour
     }
 
     void Update() {
-        sg = stepGoal;
-        st = stepsTaken;
         if (Dashie.progress == true) {
             
             if (Application.isEditor || !permissionGranted) {

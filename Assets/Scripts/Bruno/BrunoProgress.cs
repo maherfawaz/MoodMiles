@@ -17,8 +17,8 @@ public class BrunoProgress : MonoBehaviour
     {
 
         GetCurrentFill();
-        current = Calories.cb;
-        maximum = Calories.cg;
+        current = Calories.lastCaloriesBurned;
+        maximum = Calories.caloriesGoal;
     }
 
     void GetCurrentFill()

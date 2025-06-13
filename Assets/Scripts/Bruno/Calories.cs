@@ -17,9 +17,7 @@ public class Calories : MonoBehaviour
     public float metValue;
     public Vector3 accel;
     public int caloriesBurned;
-    public static float cb;
     public static int caloriesGoal = 20;
-    public static float cg;
     public static int weightKg = 70;
     public bool permissionGranted = false;
     public static int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
@@ -36,8 +34,6 @@ public class Calories : MonoBehaviour
     }
 
     void Update() {
-        cb = lastCaloriesBurned;
-        cg = caloriesGoal;
         if (Bruno.progress == true) {
             if (Application.isEditor || !permissionGranted) {
                 return;

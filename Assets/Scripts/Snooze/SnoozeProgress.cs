@@ -17,7 +17,7 @@ public class SnoozeProgress : MonoBehaviour
     {
 
         GetCurrentFill();
-        current = Sleep.tr;
+        current = Sleep.timeRemaining;
         maximum = Sleep.ours;
 
     }
