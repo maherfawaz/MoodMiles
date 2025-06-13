@@ -52,9 +52,9 @@ public class Bruno : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
+            counterTMP.text = $"{Calories.lastCaloriesBurned}/{Calories.caloriesGoal}";
             if (Calories.caloriesBurned > Calories.lastCaloriesBurned)
             {
-                counterTMP.text = $"{Calories.lastCaloriesBurned}/{Calories.caloriesGoal}";
                 Calories.lastCaloriesBurned = Calories.caloriesBurned; // Update the lastCaloriesBurned value
             }
         }

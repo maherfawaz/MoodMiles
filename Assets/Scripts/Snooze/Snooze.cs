@@ -22,6 +22,8 @@ public class Snooze : MonoBehaviour
     public GameObject talkP;
     public GameObject talkF;
     public GameObject stop;
+    public GameObject homeButtons;
+    public GameObject island;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI challengeGoalText;
     public TextMeshProUGUI missionText;
@@ -56,6 +58,8 @@ public class Snooze : MonoBehaviour
             ready.SetActive(true);
             talkP.SetActive(false);
             talkF.SetActive(true);
+            homeButtons.SetActive(true);
+            island.SetActive(true);
             main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
         }
         else if (progress == true)
@@ -66,6 +70,8 @@ public class Snooze : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
+            homeButtons.SetActive(false);
+            island.SetActive(false);
             main.GetComponent<Camera>().backgroundColor = new Color(16f / 255f, 78f / 255f, 111f / 255f);
             if (Sleep.timeRemaining > 0)
             {
