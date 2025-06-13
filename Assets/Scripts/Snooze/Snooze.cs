@@ -56,7 +56,7 @@ public class Snooze : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
-            main.GetComponent<Camera>().backgroundColor = new Color(76f / 255f, 176f / 255f, 229f / 255f);
+            main.GetComponent<Camera>().backgroundColor = new Color(16f / 255f, 78f / 255f, 111f / 255f);
         }
         else if (mission == true)
         {
