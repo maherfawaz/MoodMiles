@@ -18,7 +18,7 @@ public class SnoozeProgress : MonoBehaviour
 
         GetCurrentFill();
         current = Sleep.timeRemaining;
-        maximum = Sleep.ours;
+        maximum = Sleep.hours * 3600;
 
     }
 

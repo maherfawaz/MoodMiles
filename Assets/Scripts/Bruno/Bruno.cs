@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Bruno : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class Bruno : MonoBehaviour
     public GameObject talkM;
     public GameObject talkP;
     public GameObject talkF;
+    public TextMeshProUGUI counterTMP;
+    public TextMeshProUGUI challengeGoalTMP;
+    public TextMeshProUGUI missionTMP;
+
+    void Start()
+    {
+        challengeGoalTMP.text = $"{Calories.caloriesGoal} calories";
+        missionTMP.text = $"Fuel your day by burning {Calories.caloriesGoal} calories";
+    } 
 
     void Update()
     {
@@ -42,6 +52,11 @@ public class Bruno : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
+            if (Calories.caloriesBurned > Calories.lastCaloriesBurned)
+            {
+                counterTMP.text = $"{Calories.lastCaloriesBurned}/{Calories.caloriesGoal}";
+                Calories.lastCaloriesBurned = Calories.caloriesBurned; // Update the lastCaloriesBurned value
+            }
         }
         else if (mission == true)
         {

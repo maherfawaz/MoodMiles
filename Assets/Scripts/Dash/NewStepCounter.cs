@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 // https://discussions.unity.com/t/how-do-i-track-my-user-s-steps-while-app-is-minimised/351827
 public class NewStepCounter : MonoBehaviour
 {
-    [Header("Inscribed")]
-    public TextMeshProUGUI counterTMP;
-    public TextMeshProUGUI challengeGoalTMP;
-    public TextMeshProUGUI missionTMP;
-
     [Header("Dynamic")]
     public long currentStepOffset;
     public bool permissionGranted = false;
@@ -18,8 +13,6 @@ public class NewStepCounter : MonoBehaviour
     public static long stepGoal = 20;
 
     void Start() {
-        missionTMP.text = $"Daily Dash: conquer {stepGoal} steps!";
-        challengeGoalTMP.text = $"{stepGoal} steps";
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
@@ -50,7 +43,6 @@ public class NewStepCounter : MonoBehaviour
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 stepsTaken = lastStepOffset - currentStepOffset;
                 PlayGamesManager.Instance.SaveData();
-                counterTMP.text = $"{stepsTaken}/{stepGoal}";
             }
 
             if (stepsTaken >= stepGoal) {

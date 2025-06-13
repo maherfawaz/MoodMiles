@@ -1657,7 +1657,6 @@ GameObject:
   - component: {fileID: 2129141490}
   - component: {fileID: 2129141489}
   - component: {fileID: 2129141488}
-  - component: {fileID: 2129141492}
   - component: {fileID: 2129141494}
   - component: {fileID: 2129141493}
   - component: {fileID: 2129141496}
@@ -1761,28 +1760,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2129141492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129141487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f42247a8ab17948b12e5b8a808c7e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counterTMP: {fileID: 390127611}
-  challengeGoalTMP: {fileID: 515245428}
-  missionTMP: {fileID: 213402652}
-  speed: 0
-  duration: 0
-  time: 0
-  metValue: 0
-  accel: {x: 0, y: 0, z: 0}
-  caloriesBurned: 0
-  permissionGranted: 0
 --- !u!114 &2129141493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,6 +1819,9 @@ MonoBehaviour:
   talkM: {fileID: 1871253869}
   talkP: {fileID: 1871253868}
   talkF: {fileID: 401538254}
+  counterTMP: {fileID: 390127611}
+  challengeGoalTMP: {fileID: 515245428}
+  missionTMP: {fileID: 213402652}
 --- !u!1001 &4608887561122589669
 PrefabInstance:
   m_ObjectHideFlags: 0

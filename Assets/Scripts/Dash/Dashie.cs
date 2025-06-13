@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Dashie : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class Dashie : MonoBehaviour
     public GameObject talkP;
     public GameObject talkF;
     public GameObject hat;
+    public TextMeshProUGUI counterTMP;
+    public TextMeshProUGUI challengeGoalTMP;
+    public TextMeshProUGUI missionTMP;
+
+    void Start()
+    {
+        missionTMP.text = $"Daily Dash: conquer {NewStepCounter.stepGoal} steps!";
+        challengeGoalTMP.text = $"{NewStepCounter.stepGoal} steps";
+    }
 
     void Update()
     {
@@ -42,6 +52,7 @@ public class Dashie : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
+            counterTMP.text = $"{NewStepCounter.stepsTaken}/{NewStepCounter.stepGoal}";
         }
         else if (mission == true)
         {

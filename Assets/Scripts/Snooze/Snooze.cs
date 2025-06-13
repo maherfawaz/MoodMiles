@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Snooze : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Snooze : MonoBehaviour
     public GameObject talkM;
     public GameObject talkP;
     public GameObject talkF;
+    public GameObject stop;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI challengeGoalText;
+    public TextMeshProUGUI missionText;
 
     void Start()
     {
@@ -28,6 +33,11 @@ public class Snooze : MonoBehaviour
             mis.SetActive(true);
             count.SetActive(false);
             main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
+        }
+        if (Sleep.hours > 0.016f)
+        {
+            challengeGoalText.text = $"Sleep {Sleep.hours} hours";
+            missionText.text = $"Recharge by aiming for at least {Sleep.hours} hours of sleep";
         }
     }
 
@@ -57,6 +67,15 @@ public class Snooze : MonoBehaviour
             talkM.SetActive(false);
             talkP.SetActive(true);
             main.GetComponent<Camera>().backgroundColor = new Color(16f / 255f, 78f / 255f, 111f / 255f);
+            if (Sleep.timeRemaining > 0)
+            {
+                stop.SetActive(false);
+                timerText.text = string.Format("{0:00}:{1:00}:{2:00}", (int)Sleep.timeRemainingHours, (int)Sleep.timeRemainingMinutes % 60, (int)Sleep.timeRemaining % 60);
+            }
+            else
+            {
+                stop.SetActive(true);
+            }
         }
         else if (mission == true)
         {

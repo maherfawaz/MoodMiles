@@ -5,26 +5,19 @@ using UnityEngine.InputSystem;
 public class Calories : MonoBehaviour
 {
     // https://www.calculator.net/calories-burned-calculator.html
-    [Header("Inscribed")]
-    public TextMeshProUGUI counterTMP;
-    public TextMeshProUGUI challengeGoalTMP;
-    public TextMeshProUGUI missionTMP;
-
     [Header("Dynamic")]
     public float speed;
     public float duration;
     public float time;
     public float metValue;
     public Vector3 accel;
-    public int caloriesBurned;
+    public static int caloriesBurned;
     public static int caloriesGoal = 20;
     public static int weightKg = 70;
     public bool permissionGranted = false;
     public static int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
-        challengeGoalTMP.text = $"{caloriesGoal} calories";
-        missionTMP.text = $"Fuel your day by burning {caloriesGoal} calories";
         if (Application.isEditor) {
             Debug.Log("Running in Editor");
             return;
@@ -65,10 +58,6 @@ public class Calories : MonoBehaviour
             }
             // Calculate calories burned using the formula: Calories = MET * weight (kg) * duration (hours)
             caloriesBurned = Mathf.RoundToInt(metValue * weightKg * (duration / 60)); // Convert duration from minutes to hours
-            if (caloriesBurned > lastCaloriesBurned) {
-                counterTMP.text = $"{caloriesBurned}/{caloriesGoal}";
-                lastCaloriesBurned = caloriesBurned; // Update the lastCaloriesBurned value
-            }
             
             PlayGamesManager.Instance.SaveData();
 
