@@ -11,6 +11,7 @@ public class PlayGamesManager : MonoBehaviour
     [Header("Inscribed")]
     [SerializeField] string fileName = "PlayerProfile";
     public TextMeshProUGUI text;
+    public GameObject signInButton;
 
     [Header("Dynamic")]
     public SaveData data;
@@ -46,13 +47,12 @@ public class PlayGamesManager : MonoBehaviour
         } else {
             DontDestroyOnLoad(gameObject);
         }
-
-        SignIn();
     }
 
     public void SignIn() {
         if (isSigningIn) return;
         isSigningIn = true;
+        signInButton.SetActive(false);
         text.text = "Signing in...";
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
@@ -66,6 +66,7 @@ public class PlayGamesManager : MonoBehaviour
             LoadData();
         } else {
             isSigningIn = false;
+            signInButton.SetActive(true);
             text.text = "Tap to Start";
         }
     }
