@@ -319,7 +319,8 @@ public class PlayGamesManager : MonoBehaviour
                 }
             );
         } else {
-            Application.Quit();
+            isDeleting = false;
+            text.text = "Tap to Start";
         }
     }
 

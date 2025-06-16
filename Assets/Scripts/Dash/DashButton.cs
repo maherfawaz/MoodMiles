@@ -27,7 +27,7 @@ public class DashButton : MonoBehaviour
             Light.SetActive(true);
             progr.SetActive(false);
         }
-        else if (Dashie.progress == true)
+        else if (Dashie.progress == true || Dashie.attack == true)
         {
             Light.SetActive(false);
             progr.SetActive(true);

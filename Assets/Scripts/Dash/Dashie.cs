@@ -41,6 +41,7 @@ public class Dashie : MonoBehaviour
         }
         if (attack == true)
         {
+            mis.SetActive(false);
             ready.SetActive(true);
             talkP.SetActive(false);
             talkF.SetActive(true);

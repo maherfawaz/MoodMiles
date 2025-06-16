@@ -50,7 +50,6 @@ public class Zippy : MonoBehaviour
         else if (mission == true)
         {
             mis.SetActive(true);
-            prog.SetActive(false);
             ready.SetActive(false);
             talkM.SetActive(true);
             talkF.SetActive(false);

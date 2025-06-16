@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioLoudnessDetector : MonoBehaviour
@@ -10,13 +8,12 @@ public class AudioLoudnessDetector : MonoBehaviour
 
     private void Start()
     {
-        {
-            MicrophoneToAudioClip(microphoneIndex: 0);
-        }
+        RequestPermission();
     }
+
     private void MicrophoneToAudioClip(int microphoneIndex)
     {
-        
+
         _microphoneName = Microphone.devices[microphoneIndex];
         _microphoneClip = Microphone.Start(_microphoneName, true, 20, AudioSettings.outputSampleRate);
     }
@@ -25,7 +22,7 @@ public class AudioLoudnessDetector : MonoBehaviour
     {
         return GetLoudnessFromAudioClip(Microphone.GetPosition(_microphoneName), _microphoneClip);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
     {
         int startPosition = clipPosition - sampleWindow;
@@ -42,5 +39,25 @@ public class AudioLoudnessDetector : MonoBehaviour
             TOTALlOUDNESS += Mathf.Abs(sample);
         }
         return TOTALlOUDNESS / sampleWindow;
+    }
+    
+    async void RequestPermission()
+    {
+#if UNITY_EDITOR
+        Debug.Log("Editor Platform");
+        MicrophoneToAudioClip(microphoneIndex: 0);
+#endif
+#if UNITY_ANDROID
+        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.RECORD_AUDIO");
+        if (result == AndroidRuntimePermissions.Permission.Granted)
+        {
+            Debug.Log("Permission granted");
+            MicrophoneToAudioClip(microphoneIndex: 0);
+        }
+        else
+        {
+            Debug.Log("Permission denied");
+        }
+#endif
     }
 }

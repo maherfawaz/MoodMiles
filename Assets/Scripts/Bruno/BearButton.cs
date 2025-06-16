@@ -26,7 +26,7 @@ public class BearButton : MonoBehaviour
             Light.SetActive(true);
             progress.SetActive(false);
         }
-        else if(Bruno.progress == true)
+        else if(Bruno.progress == true || Bruno.attack == true)
         {
             Light.SetActive(false);
             progress.SetActive(true);
