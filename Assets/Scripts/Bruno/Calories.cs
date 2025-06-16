@@ -14,7 +14,6 @@ public class Calories : MonoBehaviour
     public static int caloriesBurned;
     public static int caloriesGoal = 20;
     public static int weightKg = 70;
-    public bool permissionGranted = false;
     public static int lastCaloriesBurned = -1; // Tracks the last updated calories burned value
     
     void Start() {
@@ -23,12 +22,12 @@ public class Calories : MonoBehaviour
             return;
         }
 
-        RequestPermission();
+        InputSystem.EnableDevice(Accelerometer.current);
     }
 
     void Update() {
         if (Bruno.progress == true) {
-            if (Application.isEditor || !permissionGranted) {
+            if (Application.isEditor) {
                 return;
             }
 
@@ -69,24 +68,8 @@ public class Calories : MonoBehaviour
         
     }
 
-    async void RequestPermission() {
-#if UNITY_EDITOR
-        Debug.Log("Editor Platform");
-#endif
-#if UNITY_ANDROID
-        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.ACTIVITY_RECOGNITION");
-        if (result == AndroidRuntimePermissions.Permission.Granted) {
-            permissionGranted = true;
-            Debug.Log("Permission granted");
-            InputSystem.EnableDevice(Accelerometer.current);
-        } else {
-            Debug.Log("Permission denied");
-        }
-#endif
-    }
-
     void OnApplicationPause(bool pause) {
-        if (!pause && permissionGranted) {
+        if (!pause) {
             // Reinitialize the accelerometer when the app is resumed
             InputSystem.EnableDevice(Accelerometer.current);
         }

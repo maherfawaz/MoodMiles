@@ -431,8 +431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -766.7}
-  m_SizeDelta: {x: 682.6408, y: 97.1027}
+  m_AnchoredPosition: {x: 2.719, y: -766.7}
+  m_SizeDelta: {x: 1123.113, y: 97.103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103649152
 MonoBehaviour:
@@ -985,6 +985,9 @@ MonoBehaviour:
   fileName: PlayerProfile
   text: {fileID: 103649152}
   signInButton: {fileID: 1203141683}
+  permissions:
+  - android.permission.ACTIVITY_RECOGNITION
+  - android.permission.RECORD_AUDIO
   data:
     bossHealth: 0
     sleepTimeRemaining: 0
@@ -1030,6 +1033,9 @@ MonoBehaviour:
   playerName: 
   id: 
   imgURL: 
+  permissionGranted: 0
+  startAfterLoad: 0
+  loadedFromCloud: 0
 --- !u!4 &717052304
 Transform:
   m_ObjectHideFlags: 0

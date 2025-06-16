@@ -6,6 +6,7 @@ using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using TMPro;
 using System.IO;
+using System.Linq;
 
 public class PlayGamesManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class PlayGamesManager : MonoBehaviour
     [SerializeField] string fileName = "PlayerProfile";
     public TextMeshProUGUI text;
     public GameObject signInButton;
+    public string[] permissions = {
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.RECORD_AUDIO"
+    };
 
     [Header("Dynamic")]
     public SaveData data;
@@ -32,6 +37,7 @@ public class PlayGamesManager : MonoBehaviour
     public string playerName;
     public string id;
     public string imgURL;
+    public bool permissionGranted = false;
     public bool startAfterLoad = false;
     public bool loadedFromCloud = false;
     private bool isLoading = false;
@@ -334,12 +340,52 @@ public class PlayGamesManager : MonoBehaviour
             LoadData();
         }
         
+        if (!permissionGranted) {
+            text.text = "Permissions needed to continue";
+            RequestPermissions();
+            return;
+        }
+        
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
         } else {
             SceneManager.LoadScene(1);
         }
     }
+    
+    async void RequestPermissions() {
+#if UNITY_EDITOR
+        Debug.Log("Editor Platform");
+        permissionGranted = true;
+        Launch();
+#endif
+#if UNITY_ANDROID
+        AndroidRuntimePermissions.Permission[] results = await AndroidRuntimePermissions.RequestPermissionsAsync(permissions);
+        if (results.All(r => r == AndroidRuntimePermissions.Permission.Granted)) {
+            permissionGranted = true;
+            Launch();
+            Debug.Log("All permissions granted");
+        } else if (results.Any(r => r == AndroidRuntimePermissions.Permission.Denied)) {
+            text.text = "Permissions needed to continue";
+            AndroidRuntimePermissions.OpenSettings();
+        } else if (results.Any(r => r == AndroidRuntimePermissions.Permission.ShouldAsk)){
+            text.text = "Permissions needed to continue";
+            Debug.Log("Some permissions denied");
+        }
+#endif
+    }
+
+    /*void OnApplicationPause(bool pause) {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        if (!pause && SceneManager.GetActiveScene().buildIndex != 0) {
+            if (AndroidRuntimePermissions.CheckPermissions(permissions).Any(p => p != AndroidRuntimePermissions.Permission.Granted)) {
+                permissionGranted = false;
+                Destroy(GameObject.Find("MissionManager"));
+                SceneManager.LoadScene(0);
+            }
+        }
+#endif
+    }*/
 }
 
 [System.Serializable]

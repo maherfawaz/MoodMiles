@@ -7,7 +7,6 @@ public class NewStepCounter : MonoBehaviour
 {
     [Header("Dynamic")]
     public long currentStepOffset;
-    public bool permissionGranted = false;
     public static long lastStepOffset;
     public static long stepsTaken;
     public static long stepGoal = 20;
@@ -18,13 +17,13 @@ public class NewStepCounter : MonoBehaviour
             return;
         }
 
-        RequestPermission();
+        InputSystem.EnableDevice(StepCounter.current);
     }
 
     void Update() {
         if (Dashie.progress == true) {
             
-            if (Application.isEditor || !permissionGranted) {
+            if (Application.isEditor) {
                 return;
             }
 
@@ -55,24 +54,8 @@ public class NewStepCounter : MonoBehaviour
         
     }
 
-    async void RequestPermission() {
-#if UNITY_EDITOR
-        Debug.Log("Editor Platform");
-#endif
-#if UNITY_ANDROID
-        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.ACTIVITY_RECOGNITION");
-        if (result == AndroidRuntimePermissions.Permission.Granted) {
-            permissionGranted = true;
-            Debug.Log("Permission granted");
-            InputSystem.EnableDevice(StepCounter.current);
-        } else {
-            Debug.Log("Permission denied");
-        }
-#endif
-    }
-
     void OnApplicationPause(bool pause) {
-        if (!pause && permissionGranted) {
+        if (!pause) {
             // Reinitialize the step counter when the app is resumed
             InputSystem.EnableDevice(StepCounter.current);
         }
