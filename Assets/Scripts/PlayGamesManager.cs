@@ -5,6 +5,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using TMPro;
+using System.IO;
 
 public class PlayGamesManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class PlayGamesManager : MonoBehaviour
     public string playerName;
     public string id;
     public string imgURL;
+    public bool startAfterLoad = false;
+    public bool loadedFromCloud = false;
     private bool isLoading = false;
     private bool isSaving = false;
     private bool isDeleting = false;
@@ -72,12 +75,8 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     // https://www.youtube.com/watch?v=O8Ipo2LnRk4
+    // https://www.youtube.com/watch?v=0KDU_SzrCkA
     public void SaveData() {
-        if (!PlayGamesPlatform.Instance.localUser.authenticated) {
-            Debug.LogWarning("User is not authenticated to Google Play Services");
-            return;
-        }
-
         if (isSaving) {
             Debug.LogWarning("Already saving data");
             return;
@@ -88,87 +87,91 @@ public class PlayGamesManager : MonoBehaviour
         }
 
         isSaving = true;
+        
+        data = new SaveData {
+            bossHealth = StaticHp.totalHP,
+            sleepTimeRemaining = Sleep.timeRemaining,
+            sleepGoal = Sleep.hours,
+            breathGoal = Breathing.breathTimer,
+            stepsTaken = NewStepCounter.stepsTaken,
+            lastStepOffset = NewStepCounter.lastStepOffset,
+            stepGoal = NewStepCounter.stepGoal,
+            caloriesBurned = Calories.lastCaloriesBurned,
+            caloriesGoal = Calories.caloriesGoal,
+            weightKg = Calories.weightKg,
+            rewards = Rewards.reward,
+            hatId = Hat.id,
+            trueIntro = TrueIntro.trueIntro,
+            brunoIntro = Bruno.intro,
+            brunoMission = Bruno.mission,
+            brunoProgress = Bruno.progress,
+            brunoAttack = Bruno.attack,
+            brunoFinish = Bruno.finish,
+            brunoSkip = Bruno.skipTu,
+            brunoHat = Hat.BhatsOn,
+            snoozeIntro = Snooze.intro,
+            snoozeMission = Snooze.mission,
+            snoozeProgress = Snooze.progress,
+            snoozeAttack = Snooze.attack,
+            snoozeFinish = Snooze.finish,
+            snoozeSkip = Snooze.skipTu,
+            snoozeHat = Hat.hatsOn,
+            dashIntro = Dashie.intro,
+            dashMission = Dashie.mission,
+            dashProgress = Dashie.progress,
+            dashAttack = Dashie.attack,
+            dashFinish = Dashie.finish,
+            dashSkip = Dashie.skipTu,
+            dashHat = Hat.DhatsOn,
+            zippyIntro = Zippy.intro,
+            zippyMission = Zippy.mission,
+            zippyProgress = Zippy.progress,
+            zippyAttack = Zippy.attack,
+            zippyFinish = Zippy.finish,
+            zippySkip = Zippy.skipTu,
+            zippyHat = Hat.ZhatsOn
+        };
+        
+        string jsonString = JsonUtility.ToJson(data);
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, fileName + ".json"), jsonString);
 
-        PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
-            fileName,
-            DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseMostRecentlySaved,
-            (status, metadata) => {
-                if (status != SavedGameRequestStatus.Success) {
-                    Debug.LogError("Error opening saved game");
-                    isSaving = false;
-                    return;
-                }
-
-                data = new SaveData {
-                    bossHealth = StaticHp.totalHP,
-                    sleepTimeRemaining = Sleep.timeRemaining,
-                    sleepGoal = Sleep.hours,
-                    breathGoal = Breathing.breathTimer,
-                    stepsTaken = NewStepCounter.stepsTaken,
-                    lastStepOffset = NewStepCounter.lastStepOffset,
-                    stepGoal = NewStepCounter.stepGoal,
-                    caloriesBurned = Calories.lastCaloriesBurned,
-                    caloriesGoal = Calories.caloriesGoal,
-                    weightKg = Calories.weightKg,
-                    rewards = Rewards.reward,
-                    hatId = Hat.id,
-                    trueIntro = TrueIntro.trueIntro,
-                    brunoIntro = Bruno.intro,
-                    brunoMission = Bruno.mission,
-                    brunoProgress = Bruno.progress,
-                    brunoAttack = Bruno.attack,
-                    brunoFinish = Bruno.finish,
-                    brunoSkip = Bruno.skipTu,
-                    brunoHat = Hat.BhatsOn,
-                    snoozeIntro = Snooze.intro,
-                    snoozeMission = Snooze.mission,
-                    snoozeProgress = Snooze.progress,
-                    snoozeAttack = Snooze.attack,
-                    snoozeFinish = Snooze.finish,
-                    snoozeSkip = Snooze.skipTu,
-                    snoozeHat = Hat.hatsOn,
-                    dashIntro = Dashie.intro,
-                    dashMission = Dashie.mission,
-                    dashProgress = Dashie.progress,
-                    dashAttack = Dashie.attack,
-                    dashFinish = Dashie.finish,
-                    dashSkip = Dashie.skipTu,
-                    dashHat = Hat.DhatsOn,
-                    zippyIntro = Zippy.intro,
-                    zippyMission = Zippy.mission,
-                    zippyProgress = Zippy.progress,
-                    zippyAttack = Zippy.attack,
-                    zippyFinish = Zippy.finish,
-                    zippySkip = Zippy.skipTu,
-                    zippyHat = Hat.ZhatsOn
-                };
-
-                string jsonString = JsonUtility.ToJson(data);
-                byte[] savedData = Encoding.ASCII.GetBytes(jsonString);
-
-                SavedGameMetadataUpdate updatedMetadata = new SavedGameMetadataUpdate.Builder()
-                    .WithUpdatedDescription($"{id} - {playerName} - {System.DateTime.Now}")
-                    .Build();
-
-                PlayGamesPlatform.Instance.SavedGame.CommitUpdate(
-                    metadata,
-                    updatedMetadata,
-                    savedData,
-                    (commitStatus, _) => {
+        if (PlayGamesPlatform.Instance.localUser.authenticated) {
+            PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
+                fileName,
+                DataSource.ReadCacheOrNetwork,
+                ConflictResolutionStrategy.UseMostRecentlySaved,
+                (status, metadata) => {
+                    if (status != SavedGameRequestStatus.Success) {
+                        Debug.LogError("Error opening saved game");
                         isSaving = false;
-                        if (commitStatus == SavedGameRequestStatus.Success) {
-                            Debug.Log("Data saved successfully");
-                        } else {
-                            Debug.LogError("Error saving data");
-                        }
+                        return;
                     }
-                );
-            }
-        );
+
+                    byte[] savedData = Encoding.ASCII.GetBytes(jsonString);
+
+                    SavedGameMetadataUpdate updatedMetadata = new SavedGameMetadataUpdate.Builder()
+                        .WithUpdatedDescription($"{id} - {playerName} - {System.DateTime.Now}")
+                        .Build();
+
+                    PlayGamesPlatform.Instance.SavedGame.CommitUpdate(
+                        metadata,
+                        updatedMetadata,
+                        savedData,
+                        (commitStatus, _) => {
+                            if (commitStatus == SavedGameRequestStatus.Success) {
+                                Debug.Log("Data saved successfully");
+                            } else {
+                                Debug.LogError("Error saving data");
+                            }
+                        }
+                    );
+                }
+            );
+        }
+        isSaving = false;
     }
 
-    public void LoadData() {
+    void LoadData() {
         if (isLoading) {
             Debug.LogWarning("Load already in progress");
             return;
@@ -181,78 +184,107 @@ public class PlayGamesManager : MonoBehaviour
         isLoading = true;
         text.text = "Loading Data...";
 
-        PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
-            fileName,
-            DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseLongestPlaytime,
-            (status, metadata) => {
-                if (status != SavedGameRequestStatus.Success) {
-                    Debug.LogError("Error opening saved game");
-                    isLoading = false;
+        if (PlayGamesPlatform.Instance.localUser.authenticated) {
+            PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
+                fileName,
+                DataSource.ReadCacheOrNetwork,
+                ConflictResolutionStrategy.UseLongestPlaytime,
+                (status, metadata) => {
+                    if (status != SavedGameRequestStatus.Success) {
+                        Debug.LogError("Error opening saved game");
+                        LoadData2();
+                        return;
+                    }
+
+                    PlayGamesPlatform.Instance.SavedGame.ReadBinaryData(
+                        metadata,
+                        (readStatus, savedData) => {
+                            if (readStatus != SavedGameRequestStatus.Success || savedData == null || savedData.Length == 0) {
+                                Debug.LogError("Error reading saved game data");
+                                LoadData2();
+                                return;
+                            }
+
+                            string jsonString = Encoding.ASCII.GetString(savedData);
+                            data = JsonUtility.FromJson<SaveData>(jsonString);
+                            loadedFromCloud = true;
+                            LoadData2();
+                        }
+                    );
+                }
+            );
+        } else {
+            LoadData2();
+        }
+    }
+    
+    void LoadData2() {
+        if (!loadedFromCloud) {
+            if (File.Exists(Path.Combine(Application.persistentDataPath, fileName + ".json"))) {
+                string jsonString = File.ReadAllText(Path.Combine(Application.persistentDataPath, fileName + ".json"));
+                if (!string.IsNullOrEmpty(jsonString)) {
+                    data = JsonUtility.FromJson<SaveData>(jsonString);
+                }
+            } else {
+                isLoading = false;
+                if (startAfterLoad) {
+                    Launch();
+                    return;
+                } else {
                     text.text = "Tap to Start";
                     return;
                 }
+            } 
+        }
 
-                PlayGamesPlatform.Instance.SavedGame.ReadBinaryData(
-                    metadata,
-                    (readStatus, savedData) => {
-                        if (readStatus != SavedGameRequestStatus.Success || savedData == null || savedData.Length == 0) {
-                            Debug.LogError("Error reading saved game data");
-                            isLoading = false;
-                            text.text = "Tap to Start";
-                            return;
-                        }
-
-                        string jsonString = Encoding.ASCII.GetString(savedData);
-                        data = JsonUtility.FromJson<SaveData>(jsonString);
-                        StaticHp.totalHP = data.bossHealth;
-                        Sleep.timeRemaining = data.sleepTimeRemaining;
-                        Sleep.hours = data.sleepGoal;
-                        Breathing.breathTimer = data.breathGoal;
-                        NewStepCounter.stepsTaken = data.stepsTaken;
-                        NewStepCounter.lastStepOffset = data.lastStepOffset;
-                        NewStepCounter.stepGoal = data.stepGoal;
-                        Calories.lastCaloriesBurned = data.caloriesBurned;
-                        Calories.caloriesGoal = data.caloriesGoal;
-                        Calories.weightKg = data.weightKg;
-                        Rewards.reward = data.rewards;
-                        Hat.id = data.hatId;
-                        TrueIntro.trueIntro = data.trueIntro;
-                        Bruno.intro = data.brunoIntro;
-                        Bruno.mission = data.brunoMission;
-                        Bruno.progress = data.brunoProgress;
-                        Bruno.attack = data.brunoAttack;
-                        Bruno.finish = data.brunoFinish;
-                        Bruno.skipTu = data.brunoSkip;
-                        Hat.BhatsOn = data.brunoHat;
-                        Snooze.intro = data.snoozeIntro;
-                        Snooze.mission = data.snoozeMission;
-                        Snooze.progress = data.snoozeProgress;
-                        Snooze.attack = data.snoozeAttack;
-                        Snooze.finish = data.snoozeFinish;
-                        Snooze.skipTu = data.snoozeSkip;
-                        Hat.hatsOn = data.snoozeHat;
-                        Dashie.intro = data.dashIntro;
-                        Dashie.mission = data.dashMission;
-                        Dashie.progress = data.dashProgress;
-                        Dashie.attack = data.dashAttack;
-                        Dashie.finish = data.dashFinish;
-                        Dashie.skipTu = data.dashSkip;
-                        Hat.DhatsOn = data.dashHat;
-                        Zippy.intro = data.zippyIntro;
-                        Zippy.mission = data.zippyMission;
-                        Zippy.progress = data.zippyProgress;
-                        Zippy.attack = data.zippyAttack;
-                        Zippy.finish = data.zippyFinish;
-                        Zippy.skipTu = data.zippySkip;
-                        Hat.ZhatsOn = data.zippyHat;
-
-                        isLoading = false;
-                        text.text = "Tap to Start";
-                    }
-                );
-            }
-        );
+        StaticHp.totalHP = data.bossHealth;
+        Sleep.timeRemaining = data.sleepTimeRemaining;
+        Sleep.hours = data.sleepGoal;
+        Breathing.breathTimer = data.breathGoal;
+        NewStepCounter.stepsTaken = data.stepsTaken;
+        NewStepCounter.lastStepOffset = data.lastStepOffset;
+        NewStepCounter.stepGoal = data.stepGoal;
+        Calories.lastCaloriesBurned = data.caloriesBurned;
+        Calories.caloriesGoal = data.caloriesGoal;
+        Calories.weightKg = data.weightKg;
+        Rewards.reward = data.rewards;
+        Hat.id = data.hatId;
+        TrueIntro.trueIntro = data.trueIntro;
+        Bruno.intro = data.brunoIntro;
+        Bruno.mission = data.brunoMission;
+        Bruno.progress = data.brunoProgress;
+        Bruno.attack = data.brunoAttack;
+        Bruno.finish = data.brunoFinish;
+        Bruno.skipTu = data.brunoSkip;
+        Hat.BhatsOn = data.brunoHat;
+        Snooze.intro = data.snoozeIntro;
+        Snooze.mission = data.snoozeMission;
+        Snooze.progress = data.snoozeProgress;
+        Snooze.attack = data.snoozeAttack;
+        Snooze.finish = data.snoozeFinish;
+        Snooze.skipTu = data.snoozeSkip;
+        Hat.hatsOn = data.snoozeHat;
+        Dashie.intro = data.dashIntro;
+        Dashie.mission = data.dashMission;
+        Dashie.progress = data.dashProgress;
+        Dashie.attack = data.dashAttack;
+        Dashie.finish = data.dashFinish;
+        Dashie.skipTu = data.dashSkip;
+        Hat.DhatsOn = data.dashHat;
+        Zippy.intro = data.zippyIntro;
+        Zippy.mission = data.zippyMission;
+        Zippy.progress = data.zippyProgress;
+        Zippy.attack = data.zippyAttack;
+        Zippy.finish = data.zippyFinish;
+        Zippy.skipTu = data.zippySkip;
+        Hat.ZhatsOn = data.zippyHat;
+        
+        isLoading = false;
+        if (startAfterLoad) {
+            Launch();
+        } else {
+            text.text = "Tap to Start";
+        }
     }
 
     public void DeleteData() {
@@ -264,25 +296,41 @@ public class PlayGamesManager : MonoBehaviour
         isDeleting = true;
         text.text = "Deleting...";
 
-        PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
-            fileName,
-            DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseMostRecentlySaved,
-            (status, metadata) => {
-                if (status != SavedGameRequestStatus.Success) {
-                    Debug.LogError("Error opening saved game");
-                    isDeleting = false;
-                    return;
+        if (File.Exists(Path.Combine(Application.persistentDataPath, fileName + ".json"))) {
+            File.Delete(Path.Combine(Application.persistentDataPath, fileName + ".json"));
+        }
+
+        if (PlayGamesPlatform.Instance.localUser.authenticated) {
+            Debug.Log("Deleting saved game from cloud: " + fileName);
+            PlayGamesPlatform.Instance.SavedGame.OpenWithAutomaticConflictResolution(
+                fileName,
+                DataSource.ReadCacheOrNetwork,
+                ConflictResolutionStrategy.UseMostRecentlySaved,
+                (status, metadata) => {
+                    if (status != SavedGameRequestStatus.Success) {
+                        Debug.LogError("Error opening saved game");
+                        isDeleting = false;
+                        text.text = "Tap to Start";
+                        return;
+                    }
+                    PlayGamesPlatform.Instance.SavedGame.Delete(metadata);
+                    Debug.Log("Saved game deleted successfully");
+                    Application.Quit();
                 }
-                PlayGamesPlatform.Instance.SavedGame.Delete(metadata);
-                Application.Quit();
-            }
-        );
+            );
+        } else {
+            Application.Quit();
+        }
     }
 
     public void Launch() {
         if (isLoading || isDeleting || isSigningIn) {
             return;
+        }
+        
+        if (!PlayGamesPlatform.Instance.localUser.authenticated && !startAfterLoad) {
+            startAfterLoad = true;
+            LoadData();
         }
         
         if (TrueIntro.trueIntro) {
