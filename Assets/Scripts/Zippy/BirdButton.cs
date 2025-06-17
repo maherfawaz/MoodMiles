@@ -8,6 +8,10 @@ public class BirdButton : MonoBehaviour
     public int sNumber;
     public void Dashin()
     {
+        if (Zippy.finish)
+        {
+            return;
+        }
 
         if (Zippy.intro == false)
         {

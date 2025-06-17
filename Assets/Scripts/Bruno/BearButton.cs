@@ -8,6 +8,11 @@ public class BearButton : MonoBehaviour
     public GameObject Light;
     public void Dashin()
     {
+        if (Bruno.finish)
+        {
+            return;
+        }
+        
         if (Bruno.intro == false)
         {
             SceneManager.LoadScene("Bruno Intro");

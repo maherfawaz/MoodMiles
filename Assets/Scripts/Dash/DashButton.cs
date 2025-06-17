@@ -9,6 +9,11 @@ public class DashButton : MonoBehaviour
     public GameObject Light;
     public void Dashin()
     {
+        if (Dashie.finish)
+        {
+            return;
+        }
+        
         if (Dashie.intro == false)
         {
             SceneManager.LoadScene("Dash Intro");

@@ -9,6 +9,11 @@ public class SnoozeButton : MonoBehaviour
     public GameObject Light;
     public void Snooze()
     {
+        if (global::Snooze.finish)
+        {
+            return;
+        }
+        
         if (global::Snooze.intro == false)
         {
             SceneManager.LoadScene("Snooze Intro");
