@@ -107,10 +107,10 @@ public class SetUp : MonoBehaviour
     public void FinishSetup() {
         NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier + secondFinalStepGoalModifier;
         Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
-        if (Calories.caloriesGoal < 0) {
-            Calories.caloriesGoal = 0;
+        if (Calories.caloriesGoal <= 0) {
+            Calories.caloriesGoal = 20;
         }
-        if (NewStepCounter.stepGoal < 0) {
+        if (NewStepCounter.stepGoal <= 0) {
             NewStepCounter.stepGoal = 500;
         }
         stepGoalText.text = $"{NewStepCounter.stepGoal}";
