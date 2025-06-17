@@ -99,7 +99,7 @@ public class PlayGamesManager : MonoBehaviour
             sleepTimeRemaining = Sleep.timeRemaining,
             sleepGoal = Sleep.hours,
             breathGoal = Breathing.breathTimer,
-            stepsTaken = NewStepCounter.stepsTaken,
+            lastStepsTaken = NewStepCounter.lastStepsTaken,
             lastStepOffset = NewStepCounter.lastStepOffset,
             stepGoal = NewStepCounter.stepGoal,
             caloriesBurned = Calories.lastCaloriesBurned,
@@ -247,7 +247,7 @@ public class PlayGamesManager : MonoBehaviour
         Sleep.timeRemaining = data.sleepTimeRemaining;
         Sleep.hours = data.sleepGoal;
         Breathing.breathTimer = data.breathGoal;
-        NewStepCounter.stepsTaken = data.stepsTaken;
+        NewStepCounter.lastStepsTaken = data.lastStepsTaken;
         NewStepCounter.lastStepOffset = data.lastStepOffset;
         NewStepCounter.stepGoal = data.stepGoal;
         Calories.lastCaloriesBurned = data.caloriesBurned;
@@ -394,7 +394,7 @@ public class SaveData {
     public float sleepTimeRemaining;
     public float sleepGoal;
     public float breathGoal;
-    public long stepsTaken;
+    public long lastStepsTaken;
     public long lastStepOffset;
     public long stepGoal;
     public int caloriesBurned;

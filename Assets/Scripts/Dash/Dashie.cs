@@ -53,7 +53,7 @@ public class Dashie : MonoBehaviour
             ready.SetActive(false);
             talkM.SetActive(false);
             talkP.SetActive(true);
-            counterTMP.text = $"{NewStepCounter.stepsTaken}/{NewStepCounter.stepGoal}";
+            counterTMP.text = $"{NewStepCounter.lastStepsTaken}/{NewStepCounter.stepGoal}";
         }
         else if (mission == true)
         {

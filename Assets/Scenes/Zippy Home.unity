@@ -533,6 +533,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7414017699953102768, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7509164226269904942, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_Sprite
       value: 

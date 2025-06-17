@@ -17,7 +17,7 @@ public class DashProgress : MonoBehaviour
     {
 
         GetCurrentFill();
-        current = NewStepCounter.stepsTaken;
+        current = NewStepCounter.lastStepsTaken;
         maximum = NewStepCounter.stepGoal;
 
     }

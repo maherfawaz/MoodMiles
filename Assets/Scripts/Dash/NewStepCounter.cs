@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,8 +6,9 @@ public class NewStepCounter : MonoBehaviour
 {
     [Header("Dynamic")]
     public long currentStepOffset;
+    public long stepsTaken;
     public static long lastStepOffset;
-    public static long stepsTaken;
+    public static long lastStepsTaken;
     public static long stepGoal = 20;
 
     void Start() {
@@ -18,6 +18,9 @@ public class NewStepCounter : MonoBehaviour
         }
 
         InputSystem.EnableDevice(StepCounter.current);
+        if (lastStepsTaken > 0) {
+            stepsTaken = lastStepsTaken;
+        }
     }
 
     void Update() {
@@ -34,17 +37,16 @@ public class NewStepCounter : MonoBehaviour
 
             if (currentStepOffset == 0) {
                 currentStepOffset = StepCounter.current.stepCounter.ReadValue();
-                if (currentStepOffset > lastStepOffset) { // A scuffed way to track steps walked when app is closed cause Unity won't let me, won't work if device is restarted
-                    currentStepOffset = currentStepOffset - lastStepOffset;
+                if (currentStepOffset > lastStepOffset && lastStepOffset != 0) {
+                    stepsTaken += currentStepOffset - lastStepOffset;
                 }
-                Debug.Log("Step offset " + currentStepOffset);
             } else {
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
-                stepsTaken = lastStepOffset - currentStepOffset;
+                lastStepsTaken = lastStepOffset - currentStepOffset + stepsTaken;
                 PlayGamesManager.Instance.SaveData();
             }
 
-            if (stepsTaken >= stepGoal) {
+            if (lastStepsTaken >= stepGoal) {
                 Dashie.progress = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached
