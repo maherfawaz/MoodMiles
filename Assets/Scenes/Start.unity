@@ -844,7 +844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000026703, y: 700}
+  m_AnchoredPosition: {x: -0.000026703, y: 1149.47}
   m_SizeDelta: {x: 726.771, y: 136.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701970415
@@ -994,7 +994,7 @@ MonoBehaviour:
     sleepTimeRemaining: 0
     sleepGoal: 0
     breathGoal: 0
-    stepsTaken: 0
+    lastStepsTaken: 0
     lastStepOffset: 0
     stepGoal: 0
     caloriesBurned: 0
