@@ -21,10 +21,6 @@ public class SetUp : MonoBehaviour
     public static int finalCaloriesGoal = 150;
     public static int finalCaloriesGoalModifier = -50;
 
-    void Start() {
-        Sleep.hours = 6;
-    }
-
     public void InitialSteps() {
         finalStepGoal = initialStepGoal;
     }
@@ -112,6 +108,9 @@ public class SetUp : MonoBehaviour
         }
         if (NewStepCounter.stepGoal <= 0) {
             NewStepCounter.stepGoal = 500;
+        }
+        if (Sleep.hours <= 0.008f) {
+            Sleep.hours = 6;
         }
         stepGoalText.text = $"{NewStepCounter.stepGoal}";
         caloriesGoalText.text = $"{Calories.caloriesGoal}";
