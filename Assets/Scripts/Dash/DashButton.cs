@@ -27,7 +27,7 @@ public class DashButton : MonoBehaviour
 
     public void Update()
     {
-        if (Dashie.intro == false)
+        if (Dashie.intro == false || Dashie.mission == true)
         {
             Light.SetActive(true);
             progr.SetActive(false);

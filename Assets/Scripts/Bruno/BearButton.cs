@@ -26,7 +26,7 @@ public class BearButton : MonoBehaviour
 
     public void Update()
     {
-        if (Bruno.intro == false)
+        if (Bruno.intro == false || Bruno.mission == true)
         {
             Light.SetActive(true);
             progress.SetActive(false);

@@ -26,19 +26,19 @@ public class Rewards : MonoBehaviour
         }
         if (StaticHp.totalHP <= 0)
         {
-            Snooze.mission = false;
+            Snooze.mission = true;
             Snooze.progress = false;
             Snooze.attack = false;
             Snooze.finish = false;
-            Dashie.mission = false;
+            Dashie.mission = true;
             Dashie.progress = false;
             Dashie.attack = false;
             Dashie.finish = false;
-            Bruno.mission = false;
+            Bruno.mission = true;
             Bruno.progress = false;
             Bruno.attack = false;
             Bruno.finish = false;
-            Zippy.mission = false;
+            Zippy.mission = true;
             Zippy.progress = false;
             Zippy.attack = false;
             Zippy.finish = false;

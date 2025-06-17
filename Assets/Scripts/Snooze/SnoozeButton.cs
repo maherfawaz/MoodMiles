@@ -27,7 +27,7 @@ public class SnoozeButton : MonoBehaviour
 
     public void Update()
     {
-        if (global::Snooze.intro == false)
+        if (global::Snooze.intro == false || global::Snooze.mission == true)
         {
             Light.SetActive(true);
             progr.SetActive(false);

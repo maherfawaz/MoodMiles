@@ -15,7 +15,6 @@ public class BirdButton : MonoBehaviour
 
         if (Zippy.intro == false)
         {
-            Light.SetActive(true);
             SceneManager.LoadScene("Zippy Intro");
         }
 
@@ -29,10 +28,9 @@ public class BirdButton : MonoBehaviour
 
     public void Update()
     {
-        if (Zippy.intro == false)
+        if (Zippy.intro == false || Zippy.mission == true)
         {
             Light.SetActive(true);
-            
         }
 
         else
