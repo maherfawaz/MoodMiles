@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NewStepCounter))]
 [RequireComponent(typeof(Calories))]
@@ -11,6 +12,12 @@ public class MissionManager : MonoBehaviour
             Destroy(gameObject);
         } else {
             DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    void Update() {
+        if (SceneManager.GetActiveScene().name == "Jail Cutsceen") {
+            Destroy(gameObject);
         }
     }
 }
