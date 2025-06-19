@@ -48,6 +48,8 @@ public class Rewards : MonoBehaviour
             Calories.caloriesBurned = 0;
             Sleep.timeRemaining = 0;
             StaticHp.totalHP = 4;
+            Destroy(GameObject.Find("MissionManager"));
+            GameObject.Find("Music").GetComponent<AudioSource>().Pause();
             PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Jail Cutsceen");
         }

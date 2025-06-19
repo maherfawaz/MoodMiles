@@ -1273,26 +1273,14 @@ GameObject:
   - component: {fileID: 444782055}
   - component: {fileID: 444782054}
   - component: {fileID: 444782053}
-  - component: {fileID: 444782052}
+  - component: {fileID: 444782057}
   m_Layer: 0
   m_Name: MissionManager
-  m_TagString: Untagged
+  m_TagString: MissionManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &444782052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444782051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b0b6ade06cc894a8baa2636d80a3c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &444782053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,6 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStepOffset: 0
+  stepsTaken: 0
 --- !u!4 &444782056
 Transform:
   m_ObjectHideFlags: 0
@@ -1350,6 +1339,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444782057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444782051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036685d4b4a5cd44fb1c6e59915c37ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTag: 
 --- !u!1 &445726563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6071,7 +6073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036685d4b4a5cd44fb1c6e59915c37ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
+  objectTag: 
 --- !u!1 &2043844945
 GameObject:
   m_ObjectHideFlags: 0

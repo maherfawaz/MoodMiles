@@ -11,6 +11,10 @@ public class TrueIntro : MonoBehaviour
         {
             intro.SetActive(true);
         }
+        if (GameObject.Find("Music").GetComponent<AudioSource>().isPlaying == false)
+        {
+            GameObject.Find("Music").GetComponent<AudioSource>().UnPause();
+        }
     }
 
     public void InEnd()
