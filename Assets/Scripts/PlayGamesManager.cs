@@ -18,6 +18,7 @@ public class PlayGamesManager : MonoBehaviour
         "android.permission.ACTIVITY_RECOGNITION",
         "android.permission.RECORD_AUDIO"
     };
+    public static bool devMode;
 
     [Header("Dynamic")]
     public SaveData data;
@@ -351,6 +352,11 @@ public class PlayGamesManager : MonoBehaviour
         } else {
             SceneManager.LoadScene(1);
         }
+    }
+
+    public void DevMode() {
+        devMode = true;
+        Launch();
     }
     
     async void RequestPermissions() {
