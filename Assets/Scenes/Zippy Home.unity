@@ -511,7 +511,7 @@ PrefabInstance:
       propertyPath: m_text
       value: '3 mins
 
-        breathing Excercise'
+        breathing Exercise'
       objectReference: {fileID: 0}
     - target: {fileID: 6587043043874402709, guid: 33bfff2a25823c9498d9ec33b186a004, type: 3}
       propertyPath: m_fontSize
