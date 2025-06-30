@@ -8,6 +8,7 @@ public class Breathing : MonoBehaviour
     
     public static float breathTimer = 180;
     public float holding = 5;
+    public float breathSpeed = 4;
     public bool breathIn = true;
     public bool Hold = false;
     public bool breathOut = false;
@@ -28,7 +29,7 @@ public class Breathing : MonoBehaviour
             if(breathIn == true)
             {
                 counterTMP.text = "Breath!";
-                gameObject.GetComponent<Slider>().value += 1;
+                gameObject.GetComponent<Slider>().value += breathSpeed;
                 if(gameObject.GetComponent<Slider>().value == gameObject.GetComponent<Slider>().maxValue)
                 {
                     breathIn = false;
@@ -63,7 +64,7 @@ public class Breathing : MonoBehaviour
             if (breathOut == true)
             {
                 counterTMP.text = "Exhale!";
-                gameObject.GetComponent<Slider>().value -= 1;
+                gameObject.GetComponent<Slider>().value -= breathSpeed;
                 if (gameObject.GetComponent<Slider>().value == gameObject.GetComponent<Slider>().minValue)
                 {
                     breathOut = false;
