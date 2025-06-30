@@ -46,8 +46,10 @@ public class SetUp : MonoBehaviour
     }
     
     public void SleepHours() {
-        Sleep.hours = slider.value;
         sliderText.text = slider.value + " hrs";
+        if (!PlayGamesManager.devMode) {
+            Sleep.hours = slider.value;
+        }
     }
     
     public void StepGoalModifier() {
@@ -93,27 +95,33 @@ public class SetUp : MonoBehaviour
     public void Weight() {
         string weightString = GetComponent<TMP_InputField>().text;
         weightKg = int.Parse(weightString);
-        if (weightKg == 0) {
-            Calories.weightKg = 70; // Default weight if not set
-        } else {
-            Calories.weightKg = weightKg;
+        if (!PlayGamesManager.devMode) {
+            if (weightKg == 0) {
+                Calories.weightKg = 70; // Default weight if not set
+            } else {
+                Calories.weightKg = weightKg;
+            }
         }
     }
     
     public void FinishSetup() {
-        NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier + secondFinalStepGoalModifier;
-        Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
-        if (Calories.caloriesGoal <= 0) {
-            Calories.caloriesGoal = 20;
+        if (!PlayGamesManager.devMode) {
+            NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier + secondFinalStepGoalModifier;
+            Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
+            if (Calories.caloriesGoal <= 0) {
+                Calories.caloriesGoal = 20;
+            }
+            if (NewStepCounter.stepGoal <= 0) {
+                NewStepCounter.stepGoal = 500;
+            }
+            if (Sleep.hours <= 0.008f) {
+                Sleep.hours = 6;
+            }
+            stepGoalText.text = $"{NewStepCounter.stepGoal}";
+            caloriesGoalText.text = $"{Calories.caloriesGoal}";
+            sleepHoursText.text = $"{Sleep.hours}";
+        } else {
+            Breathing.breathTimer = 20;
         }
-        if (NewStepCounter.stepGoal <= 0) {
-            NewStepCounter.stepGoal = 500;
-        }
-        if (Sleep.hours <= 0.008f) {
-            Sleep.hours = 6;
-        }
-        stepGoalText.text = $"{NewStepCounter.stepGoal}";
-        caloriesGoalText.text = $"{Calories.caloriesGoal}";
-        sleepHoursText.text = $"{Sleep.hours}";
     }
 }

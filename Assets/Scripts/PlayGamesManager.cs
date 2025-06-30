@@ -49,7 +49,7 @@ public class PlayGamesManager : MonoBehaviour
     void Start() {
         //RefreshRate refreshRate = Screen.currentResolution.refreshRateRatio;
         //Application.targetFrameRate = (int)refreshRate.numerator;
-        Application.targetFrameRate = 200;
+        //Application.targetFrameRate = 200;
 
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
         if (objs.Length > 1) {
@@ -336,6 +336,10 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
         
+        if (playerName == "st0rmyrat" || Application.isEditor) {
+            devMode = true;
+        }
+        
         if (!PlayGamesPlatform.Instance.localUser.authenticated && !startAfterLoad) {
             startAfterLoad = true;
             LoadData();
@@ -352,11 +356,6 @@ public class PlayGamesManager : MonoBehaviour
         } else {
             SceneManager.LoadScene(1);
         }
-    }
-
-    public void DevMode() {
-        devMode = true;
-        Launch();
     }
     
     async void RequestPermissions() {
