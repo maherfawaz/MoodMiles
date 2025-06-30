@@ -107,6 +107,8 @@ public class Snooze : MonoBehaviour
     {
         mission = false;
         progress = true;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        GameObject.Find("Music").GetComponent<AudioSource>().Pause();
         PlayGamesManager.Instance.SaveData();
     }
 

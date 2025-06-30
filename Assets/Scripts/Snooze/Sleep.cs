@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 public class Sleep : MonoBehaviour
@@ -14,6 +15,11 @@ public class Sleep : MonoBehaviour
         if (timeRemaining == 0) {
             timeRemaining = hours * 3600;
         }
+        if (Snooze.progress == true) {
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            GameObject.Find("Music").GetComponent<AudioSource>().Pause();
+            SceneManager.LoadScene("Snooze Home");
+        }
     }
 
     void Update() {
@@ -25,6 +31,8 @@ public class Sleep : MonoBehaviour
                 timeRemainingHours = timeRemaining / 3600;
             } else {
                 Debug.Log("Time has run out!");
+                Screen.sleepTimeout = SleepTimeout.SystemSetting;
+                GameObject.Find("Music").GetComponent<AudioSource>().UnPause();
                 timeRemaining = 0;
             }
         }
