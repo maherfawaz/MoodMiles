@@ -19,7 +19,8 @@ public class ShakeDector : MonoBehaviour
         sqrShakeDetectionThreshold = Mathf.Pow(ShakeDetectionThreshold, 2);
         DogManager = GetComponent<dogManager>();
 
-        if (Application.isEditor) {
+        if (Application.isEditor)
+        {
             Debug.Log("Running in Editor");
             return;
         }
@@ -30,11 +31,13 @@ public class ShakeDector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Application.isEditor) {
+        if (Application.isEditor)
+        {
             return;
         }
 
-        if (Accelerometer.current == null) {
+        if (Accelerometer.current == null)
+        {
             Debug.Log("Accelerometer not available");
             return;
         }
@@ -48,8 +51,10 @@ public class ShakeDector : MonoBehaviour
         }
     }
 
-    void OnApplicationPause(bool pause) {
-        if (!pause) {
+    void OnApplicationPause(bool pause)
+    {
+        if (!pause)
+        {
             // Reinitialize the accelerometer when the app is resumed
             InputSystem.EnableDevice(Accelerometer.current);
         }
