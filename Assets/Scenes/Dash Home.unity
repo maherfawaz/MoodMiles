@@ -1339,7 +1339,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decorate
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8169439990173434853, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1364979120}
+    - target: {fileID: 8169439990173434853, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DWears
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 865286234053796801, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
