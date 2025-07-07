@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class NewStepCounter : MonoBehaviour
 {
     [Header("Dynamic")]
+    [Tooltip("The total amount of steps walked since the last time the device was booted.")]
     public long currentStepOffset;
+    [Tooltip("The total amount of steps taken by the user since the last time they played the game.")]
     public long stepsTaken;
     public static long lastStepOffset;
     public static long lastStepsTaken;
@@ -18,7 +20,7 @@ public class NewStepCounter : MonoBehaviour
         }
 
         InputSystem.EnableDevice(StepCounter.current);
-        if (lastStepsTaken > 0) {
+        if (lastStepsTaken > 0) { // Loads number of steps taken according to player save data
             stepsTaken = lastStepsTaken;
         }
     }
@@ -35,18 +37,19 @@ public class NewStepCounter : MonoBehaviour
                 return;
             }
 
-            if (currentStepOffset == 0) {
+            if (currentStepOffset == 0) { // Initial check of device step counter
                 currentStepOffset = StepCounter.current.stepCounter.ReadValue();
-                if (currentStepOffset > lastStepOffset && lastStepOffset != 0) {
+                if (currentStepOffset > lastStepOffset && lastStepOffset != 0) { // If the player has taken steps since last boot, add those to stepsTaken
                     stepsTaken += currentStepOffset - lastStepOffset;
                 }
-            } else {
+            } else { // Steps actively tracked here
+                // These offsets are used because the device step counter tracks the amount a user has walked since last device boot
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
-                lastStepsTaken = lastStepOffset - currentStepOffset + stepsTaken;
+                lastStepsTaken = lastStepOffset - currentStepOffset + stepsTaken; // lastStepsTaken here should be the total of steps user has taken thus far, which is saved
                 PlayGamesManager.Instance.SaveData();
             }
 
-            if (lastStepsTaken >= stepGoal) {
+            if (lastStepsTaken >= stepGoal) { // Completing mission once goal is reached
                 Dashie.progress = false;
                 Dashie.attack = true;
                 // Disable the step counter when the goal is reached

@@ -108,7 +108,7 @@ public class SetUp : MonoBehaviour
         if (!PlayGamesManager.devMode) {
             NewStepCounter.stepGoal = finalStepGoal + finalStepGoalModifier + secondFinalStepGoalModifier;
             Calories.caloriesGoal = finalCaloriesGoal + finalCaloriesGoalModifier;
-            if (Calories.caloriesGoal <= 0) {
+            if (Calories.caloriesGoal <= 0) { // Ensuring goals are not negative or zero
                 Calories.caloriesGoal = 20;
             }
             if (NewStepCounter.stepGoal <= 0) {

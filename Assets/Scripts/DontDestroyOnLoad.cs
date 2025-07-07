@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Currently used for MissionManager and Music objects, which appear in Quaid Base scene
 public class DontDestroyOnLoad : MonoBehaviour
 {
     [Header("Dynamic")]
