@@ -12,10 +12,10 @@ public class Sleep : MonoBehaviour
 
 
     void Start() {
-        if (timeRemaining == 0) {
+        if (timeRemaining == 0) { // Calculate start time in seconds
             timeRemaining = hours * 3600;
         }
-        if (Snooze.progress == true) {
+        if (Snooze.progress == true) { // If player closes and reopens while mission is in progress, the player is returned to the Snooze Home scene
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             GameObject.Find("Music").GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("Snooze Home");
@@ -27,12 +27,10 @@ public class Sleep : MonoBehaviour
             if (timeRemaining > 0) {
                 timeRemaining -= Time.deltaTime;
                 PlayGamesManager.Instance.SaveData();
-                timeRemainingMinutes = timeRemaining / 60;
-                timeRemainingHours = timeRemaining / 3600;
+                timeRemainingMinutes = timeRemaining / 60; // Used to display timer UI
+                timeRemainingHours = timeRemaining / 3600; // Used to display timer UI
             } else {
                 Debug.Log("Time has run out!");
-                Screen.sleepTimeout = SleepTimeout.SystemSetting;
-                GameObject.Find("Music").GetComponent<AudioSource>().UnPause();
                 timeRemaining = 0;
             }
         }

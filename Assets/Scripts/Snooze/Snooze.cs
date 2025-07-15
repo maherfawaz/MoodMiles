@@ -100,6 +100,8 @@ public class Snooze : MonoBehaviour
     {
         progress = false;
         attack = true;
+        Screen.sleepTimeout = SleepTimeout.SystemSetting;
+        GameObject.Find("Music").GetComponent<AudioSource>().UnPause();
         PlayGamesManager.Instance.SaveData();
     }
 
