@@ -35,4 +35,14 @@ public class Sleep : MonoBehaviour
             }
         }
     }
+
+    void OnApplicationPause(bool pause) {
+        if (Snooze.progress) {
+            if (pause) {
+                Screen.sleepTimeout = SleepTimeout.SystemSetting;
+            } else {
+                Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            }
+        }
+    }
 }
