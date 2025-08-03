@@ -837,7 +837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: PlayerProfile
   text: {fileID: 103649152}
-  signInButton: {fileID: 1203141683}
   permissions:
   - android.permission.ACTIVITY_RECOGNITION
   - android.permission.RECORD_AUDIO
@@ -887,8 +886,8 @@ MonoBehaviour:
   id: 
   imgURL: 
   permissionGranted: 0
-  startAfterLoad: 0
   loadedFromCloud: 0
+  loadedFromLocal: 0
 --- !u!4 &717052304
 Transform:
   m_ObjectHideFlags: 0
@@ -922,7 +921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1203141684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2164,8 +2163,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Are you sure? This cannot be undone!
 
-    If you are signed in, the game
-    will close.'
+    If successful, the game will
+    exit.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}
   m_sharedMaterial: {fileID: 5205836948720251117, guid: 0328fac68e96ee84c8e5275a19e0ccce, type: 2}

@@ -1,19 +1,21 @@
+using System;
 using System.Text;
+using System.Collections;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using TMPro;
-using System.IO;
-using System.Linq;
 
 public class PlayGamesManager : MonoBehaviour
 {
     [Header("Inscribed")]
     [SerializeField] string fileName = "PlayerProfile";
     public TextMeshProUGUI text;
-    public GameObject signInButton;
     public string[] permissions = {
         "android.permission.ACTIVITY_RECOGNITION",
         "android.permission.RECORD_AUDIO"
@@ -39,12 +41,13 @@ public class PlayGamesManager : MonoBehaviour
     public string id;
     public string imgURL;
     public bool permissionGranted = false;
-    public bool startAfterLoad = false;
     public bool loadedFromCloud = false;
+    public bool loadedFromLocal = false;
     private bool isLoading = false;
     private bool isSaving = false;
     private bool isDeleting = false;
     private bool isSigningIn = false;
+    private bool canStart = false;
 
     void Start() {
         //RefreshRate refreshRate = Screen.currentResolution.refreshRateRatio;
@@ -57,12 +60,35 @@ public class PlayGamesManager : MonoBehaviour
         } else {
             DontDestroyOnLoad(gameObject);
         }
+        
+        if (Application.internetReachability != NetworkReachability.NotReachable) {
+            StartCoroutine(CheckInternetConnection((isConnected) => {
+                if (isConnected) {
+                    SignIn();
+                }
+            }));
+        }
+        
+        LoadData();
+    }
+
+    // https://www.youtube.com/watch?v=xqcljLgQdGQ
+    IEnumerator CheckInternetConnection(System.Action<bool> callback) {
+        UnityWebRequest www = UnityWebRequest.Get("https://www.google.com");
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.Success) {
+            Debug.Log("Internet is reachable");
+            callback(true);
+        } else {
+            Debug.Log("Internet is not reachable: " + www.error);
+            callback(false);
+        }
     }
 
     public void SignIn() {
         if (isSigningIn) return;
         isSigningIn = true;
-        signInButton.SetActive(false);
         text.text = "Signing in...";
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
@@ -76,8 +102,7 @@ public class PlayGamesManager : MonoBehaviour
             LoadData();
         } else {
             isSigningIn = false;
-            signInButton.SetActive(true);
-            text.text = "Tap to Start";
+            LoadData();
         }
     }
 
@@ -157,7 +182,7 @@ public class PlayGamesManager : MonoBehaviour
                     byte[] savedData = Encoding.ASCII.GetBytes(jsonString);
 
                     SavedGameMetadataUpdate updatedMetadata = new SavedGameMetadataUpdate.Builder()
-                        .WithUpdatedDescription($"{id} - {playerName} - {System.DateTime.Now}")
+                        .WithUpdatedDescription($"{id} - {playerName} - {DateTime.Now}")
                         .Build();
 
                     PlayGamesPlatform.Instance.SavedGame.CommitUpdate(
@@ -211,6 +236,19 @@ public class PlayGamesManager : MonoBehaviour
                                 LoadData2();
                                 return;
                             }
+                            
+                            // As suggested by Google Gemini and improved by GitHub Copilot
+                            if (File.Exists(Path.Combine(Application.persistentDataPath, fileName + ".json"))) {
+                                DateTime localFileTime = File.GetLastWriteTimeUtc(Path.Combine(Application.persistentDataPath, fileName + ".json"));
+                                DateTime cloudFileTime = metadata.LastModifiedTimestamp;
+                                if (localFileTime > cloudFileTime) {
+                                    Debug.Log("Local data is newer, using local data");
+                                    LoadData2();
+                                    return;
+                                } else {
+                                    Debug.Log("Cloud data is newer, using cloud data");
+                                }
+                            }
 
                             string jsonString = Encoding.ASCII.GetString(savedData);
                             data = JsonUtility.FromJson<SaveData>(jsonString);
@@ -231,67 +269,63 @@ public class PlayGamesManager : MonoBehaviour
                 string jsonString = File.ReadAllText(Path.Combine(Application.persistentDataPath, fileName + ".json"));
                 if (!string.IsNullOrEmpty(jsonString)) {
                     data = JsonUtility.FromJson<SaveData>(jsonString);
+                    loadedFromLocal = true;
                 }
             } else {
                 isLoading = false;
-                if (startAfterLoad) {
-                    Launch();
-                    return;
-                } else {
-                    text.text = "Tap to Start";
-                    return;
-                }
-            } 
+                canStart = true;
+                text.text = "Tap to Start";
+                return;
+            }
         }
 
-        StaticHp.totalHP = data.bossHealth;
-        Sleep.timeRemaining = data.sleepTimeRemaining;
-        Sleep.hours = data.sleepGoal;
-        Breathing.breathTimer = data.breathGoal;
-        NewStepCounter.lastStepsTaken = data.lastStepsTaken;
-        NewStepCounter.lastStepOffset = data.lastStepOffset;
-        NewStepCounter.stepGoal = data.stepGoal;
-        Calories.lastCaloriesBurned = data.caloriesBurned;
-        Calories.caloriesGoal = data.caloriesGoal;
-        Calories.weightKg = data.weightKg;
-        Rewards.reward = data.rewards;
-        Hat.id = data.hatId;
-        TrueIntro.trueIntro = data.trueIntro;
-        Bruno.intro = data.brunoIntro;
-        Bruno.mission = data.brunoMission;
-        Bruno.progress = data.brunoProgress;
-        Bruno.attack = data.brunoAttack;
-        Bruno.finish = data.brunoFinish;
-        Bruno.skipTu = data.brunoSkip;
-        Hat.BhatsOn = data.brunoHat;
-        Snooze.intro = data.snoozeIntro;
-        Snooze.mission = data.snoozeMission;
-        Snooze.progress = data.snoozeProgress;
-        Snooze.attack = data.snoozeAttack;
-        Snooze.finish = data.snoozeFinish;
-        Snooze.skipTu = data.snoozeSkip;
-        Hat.hatsOn = data.snoozeHat;
-        Dashie.intro = data.dashIntro;
-        Dashie.mission = data.dashMission;
-        Dashie.progress = data.dashProgress;
-        Dashie.attack = data.dashAttack;
-        Dashie.finish = data.dashFinish;
-        Dashie.skipTu = data.dashSkip;
-        Hat.DhatsOn = data.dashHat;
-        Zippy.intro = data.zippyIntro;
-        Zippy.mission = data.zippyMission;
-        Zippy.progress = data.zippyProgress;
-        Zippy.attack = data.zippyAttack;
-        Zippy.finish = data.zippyFinish;
-        Zippy.skipTu = data.zippySkip;
-        Hat.ZhatsOn = data.zippyHat;
+        if (loadedFromCloud || loadedFromLocal) {
+            StaticHp.totalHP = data.bossHealth;
+            Sleep.timeRemaining = data.sleepTimeRemaining;
+            Sleep.hours = data.sleepGoal;
+            Breathing.breathTimer = data.breathGoal;
+            NewStepCounter.lastStepsTaken = data.lastStepsTaken;
+            NewStepCounter.lastStepOffset = data.lastStepOffset;
+            NewStepCounter.stepGoal = data.stepGoal;
+            Calories.lastCaloriesBurned = data.caloriesBurned;
+            Calories.caloriesGoal = data.caloriesGoal;
+            Calories.weightKg = data.weightKg;
+            Rewards.reward = data.rewards;
+            Hat.id = data.hatId;
+            TrueIntro.trueIntro = data.trueIntro;
+            Bruno.intro = data.brunoIntro;
+            Bruno.mission = data.brunoMission;
+            Bruno.progress = data.brunoProgress;
+            Bruno.attack = data.brunoAttack;
+            Bruno.finish = data.brunoFinish;
+            Bruno.skipTu = data.brunoSkip;
+            Hat.BhatsOn = data.brunoHat;
+            Snooze.intro = data.snoozeIntro;
+            Snooze.mission = data.snoozeMission;
+            Snooze.progress = data.snoozeProgress;
+            Snooze.attack = data.snoozeAttack;
+            Snooze.finish = data.snoozeFinish;
+            Snooze.skipTu = data.snoozeSkip;
+            Hat.hatsOn = data.snoozeHat;
+            Dashie.intro = data.dashIntro;
+            Dashie.mission = data.dashMission;
+            Dashie.progress = data.dashProgress;
+            Dashie.attack = data.dashAttack;
+            Dashie.finish = data.dashFinish;
+            Dashie.skipTu = data.dashSkip;
+            Hat.DhatsOn = data.dashHat;
+            Zippy.intro = data.zippyIntro;
+            Zippy.mission = data.zippyMission;
+            Zippy.progress = data.zippyProgress;
+            Zippy.attack = data.zippyAttack;
+            Zippy.finish = data.zippyFinish;
+            Zippy.skipTu = data.zippySkip;
+            Hat.ZhatsOn = data.zippyHat;
+        }
         
         isLoading = false;
-        if (startAfterLoad) {
-            Launch();
-        } else {
-            text.text = "Tap to Start";
-        }
+        canStart = true;
+        text.text = "Tap to Start";
     }
 
     public void DeleteData() {
@@ -326,23 +360,17 @@ public class PlayGamesManager : MonoBehaviour
                 }
             );
         } else {
-            isDeleting = false;
-            text.text = "Tap to Start";
+            Application.Quit();
         }
     }
 
     public void Launch() {
-        if (isLoading || isDeleting || isSigningIn) {
+        if (isLoading || isDeleting || isSigningIn || !canStart) {
             return;
         }
         
         if (playerName == "st0rmyrat" || Application.isEditor) {
             devMode = true;
-        }
-        
-        if (!PlayGamesPlatform.Instance.localUser.authenticated && !startAfterLoad) {
-            startAfterLoad = true;
-            LoadData();
         }
         
         if (!permissionGranted) {
@@ -393,7 +421,7 @@ public class PlayGamesManager : MonoBehaviour
     }*/
 }
 
-[System.Serializable]
+[Serializable]
 public class SaveData {
     public int bossHealth;
     public float sleepTimeRemaining;
