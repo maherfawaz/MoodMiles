@@ -4,6 +4,7 @@ using System;
 
 public class PushNotifications : MonoBehaviour
 {
+    // https://www.youtube.com/watch?v=fTpL7OSB4Gc
     public AndroidNotificationChannel notificationChannel;
     public AndroidNotification notification;
     public DateTime now = DateTime.Now;
