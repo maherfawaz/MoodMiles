@@ -1,0 +1,38 @@
+using UnityEngine;
+using Unity.Notifications.Android;
+using System;
+
+public class PushNotifications : MonoBehaviour
+{
+    public AndroidNotificationChannel notificationChannel;
+    public AndroidNotification notification;
+    public DateTime now = DateTime.Now;
+    public DateTime fireTime;
+
+    void Start() {
+        notificationChannel = new AndroidNotificationChannel() {
+            Id = "daily_reminder_channel",
+            Name = "Daily Reminders",
+            Importance = Importance.High,
+            Description = "Daily notifications for your app."
+        };
+        AndroidNotificationCenter.RegisterNotificationChannel(notificationChannel);
+
+        fireTime = new DateTime(now.Year, now.Month, now.Day, 9, 0, 0); // Example: 9:00 AM daily
+
+        // If the desired fire time has already passed today, schedule for tomorrow
+        if (fireTime < now) {
+            fireTime = fireTime.AddDays(1);
+        }
+
+        notification = new AndroidNotification() {
+            Title = "Daily Reminder",
+            Text = "Don't forget to complete your missions!",
+            RepeatInterval = TimeSpan.FromDays(1), // Schedule for daily repetition
+            LargeIcon = "icon_0",
+            FireTime = fireTime
+        };
+
+        AndroidNotificationCenter.SendNotification(notification, notificationChannel.Id);
+    }
+}
