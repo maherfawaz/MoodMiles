@@ -31,6 +31,7 @@ public class PushNotifications : MonoBehaviour
             Text = "Don't forget to complete your missions!",
             RepeatInterval = TimeSpan.FromDays(1), // Schedule for daily repetition
             LargeIcon = "icon_0",
+            SmallIcon = "icon_1",
             FireTime = fireTime
         };
 
