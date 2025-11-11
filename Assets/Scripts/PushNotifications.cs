@@ -11,6 +11,11 @@ public class PushNotifications : MonoBehaviour
     public DateTime fireTime;
 
     void Start() {
+        if (Application.isEditor) {
+            Debug.Log("Running in Editor - Notifications Disabled");
+            return;
+        }
+
         notificationChannel = new AndroidNotificationChannel() {
             Id = "daily_reminder_channel",
             Name = "Daily Reminders",
