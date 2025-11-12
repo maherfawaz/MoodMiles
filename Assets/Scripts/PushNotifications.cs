@@ -14,8 +14,20 @@ public class PushNotifications : MonoBehaviour
         if (Application.isEditor) {
             Debug.Log("Running in Editor - Notifications Disabled");
             return;
+        } else {
+            RequestPermission();
         }
+    }
 
+    async void RequestPermission() {
+        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.POST_NOTIFICATIONS");
+        if (result == AndroidRuntimePermissions.Permission.Granted) {
+            Debug.Log("Notification permission granted.");
+            ScheduleNotification();
+        }
+    }
+
+    void ScheduleNotification() {
         notificationChannel = new AndroidNotificationChannel() {
             Id = "daily_reminder_channel",
             Name = "Daily Reminders",
