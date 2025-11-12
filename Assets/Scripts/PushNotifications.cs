@@ -28,6 +28,11 @@ public class PushNotifications : MonoBehaviour
     }
 
     void ScheduleNotification() {
+        if (PlayerPrefs.GetInt("NotificationScheduled", 0) == 1) {
+            Debug.Log("Notification already scheduled.");
+            return;
+        }
+
         notificationChannel = new AndroidNotificationChannel() {
             Id = "daily_reminder_channel",
             Name = "Daily Reminders",
@@ -53,5 +58,6 @@ public class PushNotifications : MonoBehaviour
         };
 
         AndroidNotificationCenter.SendNotification(notification, notificationChannel.Id);
+        PlayerPrefs.SetInt("NotificationScheduled", 1);
     }
 }
