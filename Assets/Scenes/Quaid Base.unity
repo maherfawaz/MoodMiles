@@ -3801,7 +3801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1022422874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6721,7 +6721,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b12abe4814105d745ba5f22d41764866, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b12abe4814105d745ba5f22d41764866, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6927,6 +6927,10 @@ PrefabInstance:
     - target: {fileID: 138895776568144842, guid: f4e019f2095643246b6100f7a7b58402, type: 3}
       propertyPath: m_Name
       value: Store Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 138895776568144842, guid: f4e019f2095643246b6100f7a7b58402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437762396948163441, guid: f4e019f2095643246b6100f7a7b58402, type: 3}
       propertyPath: m_Pivot.x

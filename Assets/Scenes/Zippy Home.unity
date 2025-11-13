@@ -1402,6 +1402,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6930470589752799474, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
   m_PrefabInstance: {fileID: 1638997477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1638997480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533971252065574027, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+  m_PrefabInstance: {fileID: 1638997477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1763938932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4669986355770239218, guid: bd4f2a1c69db2d144aa467fea76408f5, type: 3}
@@ -1945,6 +1950,7 @@ MonoBehaviour:
   talkP: {fileID: 6457666822584643523}
   talkF: {fileID: 1173346302}
   hat: {fileID: 863961888}
+  hatPrice: {fileID: 1638997480}
 --- !u!1001 &1353533375307414024
 PrefabInstance:
   m_ObjectHideFlags: 0

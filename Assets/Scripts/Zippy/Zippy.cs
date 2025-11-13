@@ -18,6 +18,7 @@ public class Zippy : MonoBehaviour
     public GameObject talkP;
     public GameObject talkF;
     public GameObject hat;
+    public GameObject hatPrice;
 
     void Update()
     {
@@ -57,6 +58,10 @@ public class Zippy : MonoBehaviour
         else
         {
             ready.SetActive(false);
+        }
+        if (Hat.hatUnlocked)
+        {
+            hatPrice.SetActive(false);
         }
     }
 

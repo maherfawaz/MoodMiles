@@ -1460,6 +1460,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+--- !u!1 &1763529213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533971252065574027, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+  m_PrefabInstance: {fileID: 1763529212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1901459777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2053,6 +2058,7 @@ MonoBehaviour:
   counterTMP: {fileID: 1476747854}
   challengeGoalTMP: {fileID: 579319646}
   missionTMP: {fileID: 2023528943}
+  hatPrice: {fileID: 1763529213}
 --- !u!1001 &5968137917338482358
 PrefabInstance:
   m_ObjectHideFlags: 0

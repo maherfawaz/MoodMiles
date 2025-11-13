@@ -10,6 +10,7 @@ public class Hat : MonoBehaviour
     public static bool BhatsOn = false;
     public static bool ZhatsOn = false;
     public static bool DhatsOn = false;
+    public static bool hatUnlocked = false;
 
     void Update()
     {
@@ -21,27 +22,51 @@ public class Hat : MonoBehaviour
     }
     public void Wears()
     {
-        id = numberId;
-        hatsOn = true;
-        PlayGamesManager.Instance.SaveData();
+        if (Rewards.reward >= 200 || hatUnlocked) {
+            if (Rewards.reward >= 200 && !hatUnlocked) {
+                Rewards.reward -= 200;
+            }
+            id = numberId;
+            hatsOn = true;
+            hatUnlocked = true;
+            PlayGamesManager.Instance.SaveData();
+        }
     }
     public void BWears()
     {
-        id = numberId;
-        BhatsOn = true;
-        PlayGamesManager.Instance.SaveData();
+        if (Rewards.reward >= 200 || hatUnlocked) {
+            if (Rewards.reward >= 200 && !hatUnlocked) {
+                Rewards.reward -= 200;
+            }
+            id = numberId;
+            BhatsOn = true;
+            hatUnlocked = true;
+            PlayGamesManager.Instance.SaveData();
+        }
     }
     public void DWears()
     {
-        id = numberId;
-        DhatsOn = true;
-        PlayGamesManager.Instance.SaveData();
+        if (Rewards.reward >= 200 || hatUnlocked) {
+            if (Rewards.reward >= 200 && !hatUnlocked) {
+                Rewards.reward -= 200;
+            }
+            id = numberId;
+            DhatsOn = true;
+            hatUnlocked = true;
+            PlayGamesManager.Instance.SaveData();
+        }
     }
     public void ZWears()
     {
-        id = numberId;
-        ZhatsOn = true;
-        PlayGamesManager.Instance.SaveData();
+        if (Rewards.reward >= 200 || hatUnlocked) {
+            if (Rewards.reward >= 200 && !hatUnlocked) {
+                Rewards.reward -= 200;
+            }
+            id = numberId;
+            ZhatsOn = true;
+            hatUnlocked = true;
+            PlayGamesManager.Instance.SaveData();
+        }
     }
     public void Unwears()
     {

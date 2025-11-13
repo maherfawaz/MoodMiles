@@ -22,6 +22,7 @@ public class Bruno : MonoBehaviour
     public TextMeshProUGUI counterTMP;
     public TextMeshProUGUI challengeGoalTMP;
     public TextMeshProUGUI missionTMP;
+    public GameObject hatPrice;
 
     void Start()
     {
@@ -70,6 +71,10 @@ public class Bruno : MonoBehaviour
         else
         {
             ready.SetActive(false);
+        }
+        if (Hat.hatUnlocked)
+        {
+            hatPrice.SetActive(false);
         }
     }
 

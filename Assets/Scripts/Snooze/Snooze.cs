@@ -27,6 +27,7 @@ public class Snooze : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI challengeGoalText;
     public TextMeshProUGUI missionText;
+    public GameObject hatPrice;
 
     void Start()
     {
@@ -93,6 +94,10 @@ public class Snooze : MonoBehaviour
         {
             ready.SetActive(false);
             main.GetComponent<Camera>().backgroundColor = new Color(178f / 255f, 208f / 255f, 255f / 255f);
+        }
+        if (Hat.hatUnlocked)
+        {
+            hatPrice.SetActive(false);
         }
     }
 

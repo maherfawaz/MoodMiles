@@ -22,6 +22,7 @@ public class Dashie : MonoBehaviour
     public TextMeshProUGUI counterTMP;
     public TextMeshProUGUI challengeGoalTMP;
     public TextMeshProUGUI missionTMP;
+    public GameObject hatPrice;
 
     void Start()
     {
@@ -66,6 +67,10 @@ public class Dashie : MonoBehaviour
         else
         {
             ready.SetActive(false);
+        }
+        if (Hat.hatUnlocked)
+        {
+            hatPrice.SetActive(false);
         }
     }
 

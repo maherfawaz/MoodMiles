@@ -1792,6 +1792,7 @@ MonoBehaviour:
   timerText: {fileID: 1490847411}
   challengeGoalText: {fileID: 1439013984773761550}
   missionText: {fileID: 2145939349}
+  hatPrice: {fileID: 4782062580516213675}
 --- !u!1001 &2145939346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3109,6 +3110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decorate
       objectReference: {fileID: 0}
+    - target: {fileID: 6930470589752799474, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8169439990173434853, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3122,6 +3127,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+--- !u!1 &4782062580516213675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533971252065574027, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+  m_PrefabInstance: {fileID: 4782062580516213674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &4886113595547538703
 CanvasRenderer:
   m_ObjectHideFlags: 0

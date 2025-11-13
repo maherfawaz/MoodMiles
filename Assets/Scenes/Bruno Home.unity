@@ -1372,6 +1372,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6930470589752799474, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
   m_PrefabInstance: {fileID: 1387407839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1387407842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533971252065574027, guid: 7cadc08d01368f448911d1843cda22ca, type: 3}
+  m_PrefabInstance: {fileID: 1387407839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1751848378 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8885595217695258561, guid: 7264cafd19519ed4d86844178ead1d8c, type: 3}
@@ -1842,6 +1847,7 @@ MonoBehaviour:
   counterTMP: {fileID: 1793514809}
   challengeGoalTMP: {fileID: 515245428}
   missionTMP: {fileID: 213402652}
+  hatPrice: {fileID: 1387407842}
 --- !u!1001 &4608887561122589669
 PrefabInstance:
   m_ObjectHideFlags: 0

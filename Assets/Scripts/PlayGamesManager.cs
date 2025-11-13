@@ -54,6 +54,13 @@ public class PlayGamesManager : MonoBehaviour
         //Application.targetFrameRate = (int)refreshRate.numerator;
         //Application.targetFrameRate = 200;
 
+        if (Application.isEditor) {
+            Debug.Log("Running in Editor - Play Games Disabled");
+            canStart = true;
+            text.text = "Tap to Start";
+            return;
+        }
+
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
         if (objs.Length > 1) {
             Destroy(gameObject);
@@ -133,6 +140,7 @@ public class PlayGamesManager : MonoBehaviour
             weightKg = Calories.weightKg,
             rewards = Rewards.reward,
             hatId = Hat.id,
+            hatUnlocked = Hat.hatUnlocked,
             trueIntro = TrueIntro.trueIntro,
             brunoIntro = Bruno.intro,
             brunoMission = Bruno.mission,
@@ -292,6 +300,7 @@ public class PlayGamesManager : MonoBehaviour
             Calories.weightKg = data.weightKg;
             Rewards.reward = data.rewards;
             Hat.id = data.hatId;
+            Hat.hatUnlocked = data.hatUnlocked;
             TrueIntro.trueIntro = data.trueIntro;
             Bruno.intro = data.brunoIntro;
             Bruno.mission = data.brunoMission;
@@ -370,6 +379,7 @@ public class PlayGamesManager : MonoBehaviour
         }
         
         if (playerName == "st0rmyrat" || Application.isEditor) {
+            Rewards.reward = 200;
             devMode = true;
         }
         
@@ -435,6 +445,7 @@ public class SaveData {
     public int weightKg;
     public int rewards;
     public int hatId;
+    public bool hatUnlocked;
     public bool trueIntro;
     public bool brunoIntro;
     public bool brunoMission;
