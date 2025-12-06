@@ -27,9 +27,15 @@ public class PushNotifications : MonoBehaviour
         }
     }
 
+    // Some of the code below is attributed to Microsoft Copilot
+
     void ScheduleNotification() {
-        if (PlayerPrefs.GetInt("NotificationScheduled", 0) == 1) {
-            Debug.Log("Notification already scheduled.");
+        // Check if a notification was already scheduled today
+        string lastDate = PlayerPrefs.GetString("LastNotification", "");
+        string today = DateTime.Now.ToString("yyyy-MM-dd");
+
+        if (lastDate == today) {
+            Debug.Log("Notification already scheduled today.");
             return;
         }
 
@@ -56,6 +62,7 @@ public class PushNotifications : MonoBehaviour
         };
 
         AndroidNotificationCenter.SendNotification(notification, notificationChannel.Id);
-        PlayerPrefs.SetInt("NotificationScheduled", 1);
+        // Save today's date so we don't schedule twice
+        PlayerPrefs.SetString("LastNotification", today);
     }
 }

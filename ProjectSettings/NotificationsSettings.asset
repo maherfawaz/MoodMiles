@@ -35,10 +35,10 @@
                 "UnityNotificationAndroidScheduleExactAlarms"
             ],
             "m_Values": [
-                "False",
+                "True",
                 "True",
                 "com.TeamMood.MoodMiles.DailyReminder",
-                "4"
+                "0"
             ]
         },
         "DrawableResources": []
