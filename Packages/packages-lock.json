@@ -7,6 +7,16 @@
       "dependencies": {},
       "hash": "6eee66190fb6d7182518cc3b41e3919e054699b6"
     },
+    "com.google.play.appupdate": {
+      "version": "1.8.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.play.common": "1.9.2",
+        "com.google.play.core": "1.8.6"
+      },
+      "url": "https://package.openupm.com"
+    },
     "com.google.play.common": {
       "version": "1.9.2",
       "depth": 1,
@@ -25,6 +35,16 @@
     },
     "com.google.play.integrity": {
       "version": "1.4.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.play.common": "1.9.2",
+        "com.google.play.core": "1.8.6"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.google.play.review": {
+      "version": "1.8.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
