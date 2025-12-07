@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.google.external-dependency-manager": "https://github.com/googlesamples/unity-jar-resolver.git?path=upm",
+    "com.google.play.integrity": "1.4.1",
     "com.unity.adaptiveperformance": "5.1.6",
     "com.unity.adaptiveperformance.google.android": "5.1.6",
     "com.unity.feature.2d": "2.0.1",
