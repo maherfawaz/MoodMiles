@@ -5,6 +5,7 @@ using System;
 public class PushNotifications : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=fTpL7OSB4Gc
+    public GameObject enableNotificationsButton;
     public AndroidNotificationChannel notificationChannel;
     public AndroidNotification notification;
     public DateTime now = DateTime.Now;
@@ -19,10 +20,11 @@ public class PushNotifications : MonoBehaviour
         }
     }
 
-    async void RequestPermission() {
+    public async void RequestPermission() {
         AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.POST_NOTIFICATIONS");
         if (result == AndroidRuntimePermissions.Permission.Granted) {
             Debug.Log("Notification permission granted.");
+            enableNotificationsButton.SetActive(false);
             ScheduleNotification();
         }
     }
@@ -30,15 +32,6 @@ public class PushNotifications : MonoBehaviour
     // Some of the code below is attributed to Microsoft Copilot
 
     void ScheduleNotification() {
-        // Check if a notification was already scheduled today
-        string lastDate = PlayerPrefs.GetString("LastNotification", "");
-        string today = DateTime.Now.ToString("yyyy-MM-dd");
-
-        if (lastDate == today) {
-            Debug.Log("Notification already scheduled today.");
-            return;
-        }
-
         notificationChannel = new AndroidNotificationChannel() {
             Id = "daily_reminder_channel",
             Name = "Daily Reminders",
@@ -57,12 +50,14 @@ public class PushNotifications : MonoBehaviour
         notification = new AndroidNotification() {
             Title = "Daily Reminder",
             Text = "Don't forget to complete your missions!",
-            RepeatInterval = TimeSpan.FromDays(1), // Schedule for daily repetition
-            FireTime = fireTime
+            FireTime = fireTime,
+            RepeatInterval = TimeSpan.FromDays(1),
+            SmallIcon = "icon_0",
+            ShowTimestamp = false
         };
 
+        // Cancel any previously scheduled notifications to avoid duplicates
+        AndroidNotificationCenter.CancelAllScheduledNotifications();
         AndroidNotificationCenter.SendNotification(notification, notificationChannel.Id);
-        // Save today's date so we don't schedule twice
-        PlayerPrefs.SetString("LastNotification", today);
     }
 }
