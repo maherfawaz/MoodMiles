@@ -11,7 +11,6 @@ using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using Google.Play.Common;
 using Google.Play.AppUpdate;
-using Google.Play.Integrity;
 using TMPro;
 
 public class PlayGamesManager : MonoBehaviour
@@ -76,7 +75,6 @@ public class PlayGamesManager : MonoBehaviour
             StartCoroutine(CheckInternetConnection((isConnected) => {
                 if (isConnected) {
                     StartCoroutine(CheckForUpdate());
-                    StartCoroutine(PrepareIntegrityTokenCoroutine());
                     SignIn();
                 }
             }));
@@ -414,8 +412,8 @@ public class PlayGamesManager : MonoBehaviour
             // Check AppUpdateInfo's UpdateAvailability, UpdatePriority,
             // IsUpdateTypeAllowed(), ... and decide whether to ask the user
             // to start an in-app update.
-
-            if (appUpdateInfoResult.UpdateAvailability != UpdateAvailability.UpdateAvailable) {
+            
+            if (appUpdateInfoOperation.GetResult().UpdateAvailability != UpdateAvailability.UpdateAvailable) {
                 yield break;
             }
             
@@ -438,33 +436,8 @@ public class PlayGamesManager : MonoBehaviour
                 yield return null;
             }
         } else {
-            Debug.LogError("Failed to get app update info: " + appUpdateInfoOperation.Error);
+            // Log appUpdateInfoOperation.Error.
         }
-    }
-
-    IEnumerator PrepareIntegrityTokenCoroutine() {
-        long cloudProjectNumber = 1003787173421;
-
-        // Create an instance of a standard integrity manager.
-        var standardIntegrityManager = new StandardIntegrityManager();
-
-        // Request the token provider.
-        var integrityTokenProviderOperation =
-            standardIntegrityManager.PrepareIntegrityToken(
-            new PrepareIntegrityTokenRequest(cloudProjectNumber));
-
-        // Wait for PlayAsyncOperation to complete.
-        yield return integrityTokenProviderOperation;
-
-        // Check the resulting error code.
-        if (integrityTokenProviderOperation.Error != StandardIntegrityErrorCode.NoError) {
-            Debug.Log("StandardIntegrityAsyncOperation failed with error: " +
-                integrityTokenProviderOperation.Error);
-            yield break;
-        }
-
-        // Get the response.
-        var integrityTokenProvider = integrityTokenProviderOperation.GetResult();
     }
     
     async void RequestPermissions() {

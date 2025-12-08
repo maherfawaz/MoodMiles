@@ -323,7 +323,7 @@
 }
 
 -keep class com.google.android.play.core.integrity.StandardIntegrityManager$PrepareIntegrityTokenRequest {
-  public abstract long cloudProjectNumber();
+  public abstract java.lang.long cloudProjectNumber();
   public static com.google.android.play.core.integrity.StandardIntegrityManager$PrepareIntegrityTokenRequest$Builder builder();
 }
 
