@@ -24,7 +24,7 @@ public class Rewards : MonoBehaviour
         {
             SceneManager.LoadScene("Quaid Base");
         }
-        if (StaticHp.totalHP <= 0)
+        else if (StaticHp.totalHP <= 0)
         {
             Snooze.mission = true;
             Snooze.progress = false;
@@ -48,7 +48,19 @@ public class Rewards : MonoBehaviour
             Calories.caloriesBurned = 0;
             Sleep.timeRemaining = 0;
             StaticHp.totalHP = 4;
-            Destroy(GameObject.Find("MissionManager"));
+            GameObject missionManager = GameObject.Find("MissionManager");
+            GameObject musicObj = GameObject.Find("Music");
+            if (musicObj != null) {
+                AudioSource musicSource = musicObj.GetComponent<AudioSource>();
+                if (musicSource != null) {
+                    musicSource.Pause();
+                }
+            }
+            if (missionManager != null) {
+                Destroy(missionManager);
+            } else {
+                Debug.LogWarning("MissionManager GameObject not found. Nothing to destroy.");
+            }
             GameObject.Find("Music").GetComponent<AudioSource>().Pause();
             PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Jail Cutsceen");
