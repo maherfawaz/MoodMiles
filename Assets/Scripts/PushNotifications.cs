@@ -26,6 +26,8 @@ public class PushNotifications : MonoBehaviour
             Debug.Log("Notification permission granted.");
             enableNotificationsButton.SetActive(false);
             ScheduleNotification();
+        } else if (result == AndroidRuntimePermissions.Permission.Denied) {
+            AndroidRuntimePermissions.OpenSettings();
         }
     }
 
