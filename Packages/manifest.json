@@ -53,7 +53,9 @@
         "com.google.external-dependency-manager",
         "com.google.play.common",
         "com.google.play.core",
-        "com.google.play.integrity"
+        "com.google.play.integrity",
+        "com.google.play.appupdate",
+        "com.google.play.review"
       ]
     }
   ]
