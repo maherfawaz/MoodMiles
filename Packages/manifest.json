@@ -1,9 +1,7 @@
 {
   "dependencies": {
     "com.google.external-dependency-manager": "https://github.com/googlesamples/unity-jar-resolver.git?path=upm",
-    "com.google.play.appupdate": "1.8.5",
     "com.google.play.integrity": "1.4.1",
-    "com.google.play.review": "1.8.4",
     "com.unity.adaptiveperformance": "5.1.6",
     "com.unity.adaptiveperformance.google.android": "5.1.6",
     "com.unity.feature.2d": "2.0.1",
@@ -56,9 +54,7 @@
         "com.google.external-dependency-manager",
         "com.google.play.common",
         "com.google.play.core",
-        "com.google.play.integrity",
-        "com.google.play.appupdate",
-        "com.google.play.review"
+        "com.google.play.integrity"
       ]
     }
   ]

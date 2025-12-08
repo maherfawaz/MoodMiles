@@ -9,8 +9,6 @@ using UnityEngine.Networking;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
-using Google.Play.Common;
-using Google.Play.AppUpdate;
 using TMPro;
 
 public class PlayGamesManager : MonoBehaviour
@@ -39,7 +37,6 @@ public class PlayGamesManager : MonoBehaviour
             return _instance;
         }
     }
-    public AppUpdateManager appUpdateManager = new AppUpdateManager();
     public string playerName;
     public string id;
     public string imgURL;
@@ -74,7 +71,6 @@ public class PlayGamesManager : MonoBehaviour
         if (Application.internetReachability != NetworkReachability.NotReachable) {
             StartCoroutine(CheckInternetConnection((isConnected) => {
                 if (isConnected) {
-                    StartCoroutine(CheckForUpdate());
                     SignIn();
                 }
             }));
@@ -397,46 +393,6 @@ public class PlayGamesManager : MonoBehaviour
             SceneManager.LoadScene(19);
         } else {
             SceneManager.LoadScene(1);
-        }
-    }
-
-    IEnumerator CheckForUpdate() {
-        PlayAsyncOperation<AppUpdateInfo, AppUpdateErrorCode> appUpdateInfoOperation =
-            appUpdateManager.GetAppUpdateInfo();
-
-        // Wait until the asynchronous operation completes.
-        yield return appUpdateInfoOperation;
-
-        if (appUpdateInfoOperation.IsSuccessful) {
-            var appUpdateInfoResult = appUpdateInfoOperation.GetResult();
-            // Check AppUpdateInfo's UpdateAvailability, UpdatePriority,
-            // IsUpdateTypeAllowed(), ... and decide whether to ask the user
-            // to start an in-app update.
-            
-            if (appUpdateInfoOperation.GetResult().UpdateAvailability != UpdateAvailability.UpdateAvailable) {
-                yield break;
-            }
-            
-            // Creates an AppUpdateOptions defining a flexible in-app
-            // update flow and its parameters.
-            var appUpdateOptions = AppUpdateOptions.FlexibleAppUpdateOptions();
-            // Creates an AppUpdateRequest that can be used to monitor the
-            // requested in-app update flow.
-            var startUpdateRequest = appUpdateManager.StartUpdate(
-            // The result returned by PlayAsyncOperation.GetResult().
-            appUpdateInfoResult,
-            // The AppUpdateOptions created defining the requested in-app update
-            // and its parameters.
-            appUpdateOptions);
-
-            while (!startUpdateRequest.IsDone) {
-                // For flexible flow, the user can continue to use the app while
-                // the update downloads in the background. You can implement a
-                // progress bar showing the download status during this time.
-                yield return null;
-            }
-        } else {
-            // Log appUpdateInfoOperation.Error.
         }
     }
     
