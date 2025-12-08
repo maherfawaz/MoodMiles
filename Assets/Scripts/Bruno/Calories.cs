@@ -56,8 +56,6 @@ public class Calories : MonoBehaviour
             }
             // Calculate calories burned using the formula: Calories = MET * weight (kg) * duration (hours)
             caloriesBurned = Mathf.RoundToInt(metValue * weightKg * (duration / 60)); // Convert duration from minutes to hours
-            
-            PlayGamesManager.Instance.SaveData();
 
             if (caloriesBurned >= caloriesGoal) { // Completing mission once goal is reached
                 Bruno.progress = false;
@@ -71,6 +69,8 @@ public class Calories : MonoBehaviour
         if (!pause) {
             // Reinitialize the accelerometer when the app is resumed
             InputSystem.EnableDevice(Accelerometer.current);
+        } else {
+            PlayGamesManager.Instance.SaveData();
         }
     }
 }

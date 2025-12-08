@@ -26,7 +26,6 @@ public class Sleep : MonoBehaviour
         if (Snooze.progress == true) {
             if (timeRemaining > 0) {
                 timeRemaining -= Time.deltaTime;
-                PlayGamesManager.Instance.SaveData();
                 timeRemainingMinutes = timeRemaining / 60; // Used to display timer UI
                 timeRemainingHours = timeRemaining / 3600; // Used to display timer UI
             } else {
@@ -42,6 +41,7 @@ public class Sleep : MonoBehaviour
                 Screen.sleepTimeout = SleepTimeout.SystemSetting;
             } else {
                 Screen.sleepTimeout = SleepTimeout.NeverSleep;
+                PlayGamesManager.Instance.SaveData();
             }
         }
     }

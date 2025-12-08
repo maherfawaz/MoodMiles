@@ -46,7 +46,6 @@ public class NewStepCounter : MonoBehaviour
                 // These offsets are used because the device step counter tracks the amount a user has walked since last device boot
                 lastStepOffset = StepCounter.current.stepCounter.ReadValue();
                 lastStepsTaken = lastStepOffset - currentStepOffset + stepsTaken; // lastStepsTaken here should be the total of steps user has taken thus far, which is saved
-                PlayGamesManager.Instance.SaveData();
             }
 
             if (lastStepsTaken >= stepGoal) { // Completing mission once goal is reached
@@ -63,6 +62,8 @@ public class NewStepCounter : MonoBehaviour
         if (!pause) {
             // Reinitialize the step counter when the app is resumed
             InputSystem.EnableDevice(StepCounter.current);
+        } else {
+            PlayGamesManager.Instance.SaveData();
         }
     }
   }
