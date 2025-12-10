@@ -16,7 +16,7 @@ public class PushNotifications : MonoBehaviour
             Debug.Log("Running in Editor - Notifications Disabled");
             return;
         } else {
-            RequestPermission();
+            InitialRequestPermission();
         }
     }
 
@@ -28,6 +28,18 @@ public class PushNotifications : MonoBehaviour
             ScheduleNotification();
         } else if (result == AndroidRuntimePermissions.Permission.Denied) {
             AndroidRuntimePermissions.OpenSettings();
+        }
+    }
+
+    // :P
+    async void InitialRequestPermission() {
+        AndroidRuntimePermissions.Permission result = await AndroidRuntimePermissions.RequestPermissionAsync("android.permission.POST_NOTIFICATIONS");
+        if (result == AndroidRuntimePermissions.Permission.Granted) {
+            Debug.Log("Notification permission granted.");
+            enableNotificationsButton.SetActive(false);
+            ScheduleNotification();
+        } else if (result == AndroidRuntimePermissions.Permission.Denied) {
+            return;
         }
     }
 
