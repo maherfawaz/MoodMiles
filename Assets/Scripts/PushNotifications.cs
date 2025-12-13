@@ -70,8 +70,8 @@ public class PushNotifications : MonoBehaviour
             ShowTimestamp = false
         };
 
-        // Cancel any previously scheduled notifications to avoid duplicates
-        AndroidNotificationCenter.CancelAllScheduledNotifications();
+        // Cancel any previously scheduled notifications to avoid duplicates and clear any existing ones
+        AndroidNotificationCenter.CancelAllNotifications();
         AndroidNotificationCenter.SendNotification(notification, notificationChannel.Id);
     }
 }
