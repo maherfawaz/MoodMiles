@@ -47,10 +47,10 @@ public class PushNotifications : MonoBehaviour
 
     void ScheduleNotification() {
         notificationChannel = new AndroidNotificationChannel() {
-            Id = "daily_reminder_channel",
-            Name = "Daily Reminders",
+            Id = "reminder_channel",
+            Name = "Reminders",
             Importance = Importance.High,
-            Description = "Daily notifications for your app."
+            Description = "Reminder notifications for your app."
         };
         AndroidNotificationCenter.RegisterNotificationChannel(notificationChannel);
 
@@ -62,10 +62,9 @@ public class PushNotifications : MonoBehaviour
         }
 
         notification = new AndroidNotification() {
-            Title = "Daily Reminder",
+            Title = "Reminder",
             Text = "Don't forget to complete your missions!",
             FireTime = fireTime,
-            RepeatInterval = TimeSpan.FromDays(1),
             SmallIcon = "icon_0",
             ShowTimestamp = false
         };
