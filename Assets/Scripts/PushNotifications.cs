@@ -62,7 +62,6 @@ public class PushNotifications : MonoBehaviour
         }
 
         notification = new AndroidNotification() {
-            Title = "Reminder",
             Text = "Don't forget to complete your missions!",
             FireTime = fireTime,
             SmallIcon = "icon_0",
