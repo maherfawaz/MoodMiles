@@ -418,6 +418,10 @@ public class PlayGamesManager : MonoBehaviour
 #endif
     }
 
+    public void PrivacyPolicy() {
+        Application.OpenURL("https://www.maherfawaz.com/projects/moodmiles/moodmiles-privacy-policy");
+    }
+
     /*void OnApplicationPause(bool pause) {
 #if UNITY_ANDROID && !UNITY_EDITOR
         if (!pause && SceneManager.GetActiveScene().buildIndex != 0) {
