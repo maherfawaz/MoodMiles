@@ -62,8 +62,6 @@ public class NewStepCounter : MonoBehaviour
         if (!pause) {
             // Reinitialize the step counter when the app is resumed
             InputSystem.EnableDevice(StepCounter.current);
-        } else {
-            PlayGamesManager.Instance.SaveData();
         }
     }
   }

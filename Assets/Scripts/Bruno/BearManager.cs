@@ -42,7 +42,6 @@ public class BearManager : MonoBehaviour
         {
             Bruno.attack = false;
             Bruno.finish = true;
-            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene(18);
         }
     }

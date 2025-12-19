@@ -69,8 +69,6 @@ public class Calories : MonoBehaviour
         if (!pause) {
             // Reinitialize the accelerometer when the app is resumed
             InputSystem.EnableDevice(Accelerometer.current);
-        } else {
-            PlayGamesManager.Instance.SaveData();
         }
     }
 }

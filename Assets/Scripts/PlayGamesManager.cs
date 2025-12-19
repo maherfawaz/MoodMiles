@@ -115,7 +115,7 @@ public class PlayGamesManager : MonoBehaviour
 
     // https://www.youtube.com/watch?v=O8Ipo2LnRk4
     // https://www.youtube.com/watch?v=0KDU_SzrCkA
-    public void SaveData() {
+    void SaveData() {
         if (isSaving) {
             Debug.LogWarning("Already saving data");
             return;
@@ -389,6 +389,8 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
         
+        StartCoroutine(AutoSaveCoroutine());
+
         if (TrueIntro.trueIntro) {
             SceneManager.LoadScene(19);
         } else {
@@ -420,6 +422,27 @@ public class PlayGamesManager : MonoBehaviour
 
     public void PrivacyPolicy() {
         Application.OpenURL("https://www.maherfawaz.com/projects/moodmiles/moodmiles-privacy-policy");
+    }
+
+    void OnApplicationPause(bool pause) {
+        if (pause && TrueIntro.trueIntro) {
+            SaveData();
+        }
+    }
+
+    void OnApplicationQuit() {
+        if (TrueIntro.trueIntro) {
+            SaveData();
+        }
+    }
+
+    IEnumerator AutoSaveCoroutine() {
+        while (true) {
+            if (TrueIntro.trueIntro) {
+                yield return new WaitForSeconds(30f);
+                SaveData();
+            }
+        }
     }
 
     /*void OnApplicationPause(bool pause) {

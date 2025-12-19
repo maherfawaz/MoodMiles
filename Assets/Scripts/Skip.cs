@@ -17,7 +17,6 @@ public class Skip : MonoBehaviour
             } else if (SceneManager.GetActiveScene().name == "Dash Home") {
                 Dashie.skipTu = true;
             }
-            PlayGamesManager.Instance.SaveData();
         } else {
             check.SetActive(false);
             if (SceneManager.GetActiveScene().name == "Zippy Home") {
@@ -29,7 +28,6 @@ public class Skip : MonoBehaviour
             } else if (SceneManager.GetActiveScene().name == "Dash Home") {
                 Dashie.skipTu = false;
             }
-            PlayGamesManager.Instance.SaveData();
         }
     }
 }

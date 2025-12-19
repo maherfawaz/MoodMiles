@@ -41,7 +41,6 @@ public class Sleep : MonoBehaviour
                 Screen.sleepTimeout = SleepTimeout.SystemSetting;
             } else {
                 Screen.sleepTimeout = SleepTimeout.NeverSleep;
-                PlayGamesManager.Instance.SaveData();
             }
         }
     }

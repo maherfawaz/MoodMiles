@@ -107,7 +107,6 @@ public class Snooze : MonoBehaviour
         attack = true;
         Screen.sleepTimeout = SleepTimeout.SystemSetting;
         GameObject.Find("Music").GetComponent<AudioSource>().UnPause();
-        PlayGamesManager.Instance.SaveData();
     }
 
     public void StartTimer()
@@ -116,7 +115,6 @@ public class Snooze : MonoBehaviour
         progress = true;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         GameObject.Find("Music").GetComponent<AudioSource>().Pause();
-        PlayGamesManager.Instance.SaveData();
     }
 
     public void Zipp()

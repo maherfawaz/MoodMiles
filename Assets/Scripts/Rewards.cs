@@ -19,7 +19,6 @@ public class Rewards : MonoBehaviour
     public void Gain()
     {
         reward += 50;
-        PlayGamesManager.Instance.SaveData();
         if (StaticHp.totalHP > 0)
         {
             SceneManager.LoadScene("Quaid Base");
@@ -62,7 +61,6 @@ public class Rewards : MonoBehaviour
                 Debug.LogWarning("MissionManager GameObject not found. Nothing to destroy.");
             }
             GameObject.Find("Music").GetComponent<AudioSource>().Pause();
-            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Jail Cutsceen");
         }
     }

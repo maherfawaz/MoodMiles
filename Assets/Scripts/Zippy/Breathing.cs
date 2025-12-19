@@ -76,7 +76,6 @@ public class Breathing : MonoBehaviour
         {
             Zippy.attack = true;
             Zippy.progress = false;
-            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene("Zippy Home");
         }
         

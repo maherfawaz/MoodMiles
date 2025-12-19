@@ -20,6 +20,5 @@ public class TrueIntro : MonoBehaviour
     public void InEnd()
     {
         trueIntro = false;
-        PlayGamesManager.Instance.SaveData();
     }
 }

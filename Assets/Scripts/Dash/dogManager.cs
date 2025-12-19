@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 
@@ -52,7 +50,6 @@ public class dogManager : MonoBehaviour
             StaticHp.totalHP -= 1;
             Dashie.attack = false;
             Dashie.finish = true;
-            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene(18);
             
             

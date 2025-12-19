@@ -29,7 +29,6 @@ public class Hat : MonoBehaviour
             id = numberId;
             hatsOn = true;
             hatUnlocked = true;
-            PlayGamesManager.Instance.SaveData();
         }
     }
     public void BWears()
@@ -41,7 +40,6 @@ public class Hat : MonoBehaviour
             id = numberId;
             BhatsOn = true;
             hatUnlocked = true;
-            PlayGamesManager.Instance.SaveData();
         }
     }
     public void DWears()
@@ -53,7 +51,6 @@ public class Hat : MonoBehaviour
             id = numberId;
             DhatsOn = true;
             hatUnlocked = true;
-            PlayGamesManager.Instance.SaveData();
         }
     }
     public void ZWears()
@@ -65,27 +62,22 @@ public class Hat : MonoBehaviour
             id = numberId;
             ZhatsOn = true;
             hatUnlocked = true;
-            PlayGamesManager.Instance.SaveData();
         }
     }
     public void Unwears()
     {
         hatsOn = false;
-        PlayGamesManager.Instance.SaveData();
     }
     public void BUnwears()
     {
         BhatsOn = false;
-        PlayGamesManager.Instance.SaveData();
     }
     public void DUnwears()
     {
         DhatsOn = false;
-        PlayGamesManager.Instance.SaveData();
     }
     public void ZUnwears()
     {
         ZhatsOn = false;
-        PlayGamesManager.Instance.SaveData();
     }
 }

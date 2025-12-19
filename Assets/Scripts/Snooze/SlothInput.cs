@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 public class SlothInput : MonoBehaviour
@@ -49,7 +47,6 @@ public class SlothInput : MonoBehaviour
         if (finish == true) {
             Snooze.attack = false;
             Snooze.finish = true;
-            PlayGamesManager.Instance.SaveData();
             SceneManager.LoadScene(18);
         }
     }
