@@ -50,6 +50,7 @@ public class dogManager : MonoBehaviour
             StaticHp.totalHP -= 1;
             Dashie.attack = false;
             Dashie.finish = true;
+            Rewards.reward += 50;
             SceneManager.LoadScene(18);
             
             

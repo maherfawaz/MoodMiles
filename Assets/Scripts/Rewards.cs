@@ -18,7 +18,6 @@ public class Rewards : MonoBehaviour
     
     public void Gain()
     {
-        reward += 50;
         if (StaticHp.totalHP > 0)
         {
             SceneManager.LoadScene("Quaid Base");

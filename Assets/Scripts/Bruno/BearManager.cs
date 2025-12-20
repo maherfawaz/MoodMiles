@@ -42,6 +42,7 @@ public class BearManager : MonoBehaviour
         {
             Bruno.attack = false;
             Bruno.finish = true;
+            Rewards.reward += 50;
             SceneManager.LoadScene(18);
         }
     }

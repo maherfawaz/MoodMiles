@@ -41,6 +41,7 @@ public class BirdManager : MonoBehaviour
            
                 Zippy.attack = false;
                 Zippy.finish = true;
+                Rewards.reward += 50;
                 SceneManager.LoadScene(18);
             
 

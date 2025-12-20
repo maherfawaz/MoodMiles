@@ -47,6 +47,7 @@ public class SlothInput : MonoBehaviour
         if (finish == true) {
             Snooze.attack = false;
             Snooze.finish = true;
+            Rewards.reward += 50;
             SceneManager.LoadScene(18);
         }
     }

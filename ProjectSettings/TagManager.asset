@@ -12,6 +12,7 @@ TagManager:
   - Progress
   - Music
   - MissionManager
+  - AutoSaveManager
   layers:
   - Default
   - TransparentFX
