@@ -6,4 +6,4 @@ A mobile game about exercising to improve your mental wellbeing, currently in de
 
 [Join Google Group for access to future builds](https://groups.google.com/g/moodmiles-testing)
 
-[Privacy Policy](https://www.maherfawaz.com/projects/moodmiles/privacy-policy)
+[Privacy Policy](https://www.maherfawaz.com/projects/moodmiles/moodmiles-privacy-policy)
