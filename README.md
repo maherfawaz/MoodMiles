@@ -6,6 +6,8 @@ A mobile game about exercising to improve your mental wellbeing, developed over 
 
 [Available on Google Play Store](https://play.google.com/store/apps/details?id=com.TeamMood.MoodMiles)
 
+[Available on itch](https://maherfawaz.itch.io/moodmiles)
+
 [Google Group for Testers](https://groups.google.com/g/moodmiles-testing)
 
 [Privacy Policy](https://www.maherfawaz.com/projects/moodmiles/moodmiles-privacy-policy)
