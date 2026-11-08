@@ -11,10 +11,16 @@ dependencies {
     implementation 'com.google.android.play:age-signals:0.0.4' // Packages/com.tinybytes.playagesignals/Editor/PlayAgeSignalsDependencies.xml:4
     implementation 'com.google.android.play:core-common:2.0.4' // Packages/com.google.play.core/Editor/Dependencies.xml:3
     implementation 'com.google.android.play:integrity:1.4.0' // Packages/com.google.play.integrity/Editor/Dependencies.xml:3
-    implementation 'com.google.firebase:firebase-analytics:24.0.0' // Assets/Firebase/Editor/AppDependencies.xml:14
+    implementation 'com.google.firebase:firebase-analytics:24.0.0' // Assets/Firebase/Editor/CrashlyticsDependencies.xml:14
     implementation 'com.google.firebase:firebase-analytics-unity:14.1.0' // Assets/Firebase/Editor/AnalyticsDependencies.xml:17
+    implementation 'com.google.firebase:firebase-appcheck:20.0.0' // Assets/Firebase/Editor/AppCheckDependencies.xml:12
+    implementation 'com.google.firebase:firebase-appcheck-debug:20.0.0' // Assets/Firebase/Editor/AppCheckDependencies.xml:14
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity:20.0.0' // Assets/Firebase/Editor/AppCheckDependencies.xml:16
+    implementation 'com.google.firebase:firebase-appcheck-unity:14.1.0' // Assets/Firebase/Editor/AppCheckDependencies.xml:23
     implementation 'com.google.firebase:firebase-app-unity:14.1.0' // Assets/Firebase/Editor/AppDependencies.xml:21
     implementation 'com.google.firebase:firebase-common:23.0.0' // Assets/Firebase/Editor/AppDependencies.xml:12
+    implementation 'com.google.firebase:firebase-crashlytics-ndk:21.0.1' // Assets/Firebase/Editor/CrashlyticsDependencies.xml:12
+    implementation 'com.google.firebase:firebase-crashlytics-unity:14.1.0' // Assets/Firebase/Editor/CrashlyticsDependencies.xml:19
 // Android Resolver Dependencies End
 **DEPS**}
 
