@@ -22,6 +22,10 @@ public class PlayGamesManager : MonoBehaviour
         "android.permission.RECORD_AUDIO"
     };
     public static bool devMode;
+    public GameObject ageVerifyPopup;
+    public GameObject ageConfirmPopup;
+    public GameObject ageDenyPopup;
+    public GameObject ageChangeApprovePopup;
 
     [Header("Dynamic")]
     public SaveData data;
@@ -124,11 +128,13 @@ public class PlayGamesManager : MonoBehaviour
 
         if (result.IsVerificationRequired) {
             // The user must resolve their age in the Play Store app before signals are available.
+            ageVerifyPopup.SetActive(true);
             return;
         }
 
         if (!result.IsShared) {
             // The user (or their parent) declined to share. Fall back to your own age gate.
+            ageConfirmPopup.SetActive(true);
             return;
         }
 
@@ -142,6 +148,15 @@ public class PlayGamesManager : MonoBehaviour
         // Check for supervision (Parental Controls)
         if (result.IsSupervised) {
             Debug.Log($"User is supervised. Significant change: {result.significantChangeStatus}");
+            ageConfirmPopup.SetActive(true);
+        }
+
+        if (result.significantChangeStatus == SignificantChangeStatus.PENDING) {
+            ageChangeApprovePopup.SetActive(true);
+        }
+
+        if (result.significantChangeStatus == SignificantChangeStatus.DECLINED) {
+            ageDenyPopup.SetActive(true);
         }
     }
 
@@ -155,6 +170,7 @@ public class PlayGamesManager : MonoBehaviour
             Invoke(nameof(RequestAgeInfo), 2.0f);
         } else {
             // Handle non-recoverable errors (e.g. show specific UI)
+            ageConfirmPopup.SetActive(true);
             switch (error.errorCode) {
                 case AgeSignalsErrorCode.PLAY_STORE_NOT_FOUND:
                 // Prompt user to install/enable Play Store
