@@ -10,6 +10,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using TMPro;
+using TinyBytes.PlayAgeSignals;
 
 public class PlayGamesManager : MonoBehaviour
 {
@@ -61,6 +62,8 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
 
+        RequestAgeInfo();
+
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
         if (objs.Length > 1) {
             Destroy(gameObject);
@@ -98,6 +101,61 @@ public class PlayGamesManager : MonoBehaviour
         isSigningIn = true;
         text.text = "Signing in...";
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+    }
+
+    public void RequestAgeInfo() {
+        PlayAgeSignalsWrapper.Request(
+            OnSuccess, 
+            OnError
+            // Optional: Pass test data here for Editor/testing
+            // new AgeSignalsResultData { ageSignalsStatus = AgeSignalsStatus.SHARED, ... }
+        );
+    }
+
+    void OnSuccess(AgeSignalsResultData result) {
+        // WARNING: This might be on a background thread.
+        // Use a dispatcher if you need to touch Unity objects.
+
+        if (result.IsVerificationRequired) {
+            // The user must resolve their age in the Play Store app before signals are available.
+            return;
+        }
+
+        if (!result.IsShared) {
+            // The user (or their parent) declined to share. Fall back to your own age gate.
+            return;
+        }
+
+        Debug.Log($"Age Source: {result.ageRangeSource}");
+
+        if (result.HasAgeRange) {
+            // ageUpper is -1 for the open-ended top band (e.g. 18+).
+            Debug.Log($"Age Range: {result.ageLower}-{result.ageUpper}");
+        }
+
+        // Check for supervision (Parental Controls)
+        if (result.IsSupervised) {
+            Debug.Log($"User is supervised. Significant change: {result.significantChangeStatus}");
+        }
+    }
+
+    void OnError(AgeSignalsError error) {
+        // WARNING: This might be on a background thread.
+
+        Debug.LogError($"Error {error.errorCode}: {error.message}");
+
+        if (error.IsRetryable) {
+            // Implement retry logic (e.g., exponential backoff)
+            Invoke(nameof(RequestAgeInfo), 2.0f);
+        } else {
+            // Handle non-recoverable errors (e.g. show specific UI)
+            switch (error.errorCode) {
+                case AgeSignalsErrorCode.PLAY_STORE_NOT_FOUND:
+                // Prompt user to install/enable Play Store
+                break;
+                // ... handle other codes
+            }
+        }
     }
 
     internal void ProcessAuthentication(SignInStatus status) {

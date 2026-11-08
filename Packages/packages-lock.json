@@ -33,6 +33,13 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.tinybytes.playagesignals": {
+      "version": "https://github.com/dvillaseca/unity-play-age-signals.git?path=/Assets/PlayAgeSignals",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1f9cd63597f00b884fc5b360ccbde59989ac31e4"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.6",
       "depth": 1,
