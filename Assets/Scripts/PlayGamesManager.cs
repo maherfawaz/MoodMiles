@@ -55,14 +55,14 @@ public class PlayGamesManager : MonoBehaviour
         //Application.targetFrameRate = (int)refreshRate.numerator;
         //Application.targetFrameRate = 200;
 
+        RequestAgeInfo();
+
         if (Application.isEditor) {
             Debug.Log("Running in Editor - Play Games Disabled");
             canStart = true;
             text.text = "Tap to Start";
             return;
         }
-
-        RequestAgeInfo();
 
         PlayGamesManager[] objs = FindObjectsByType<PlayGamesManager>(FindObjectsSortMode.None);
         if (objs.Length > 1) {
@@ -104,11 +104,17 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void RequestAgeInfo() {
+        var testData = new AgeSignalsResultData {
+            ageSignalsStatus = AgeSignalsStatus.SHARED,
+            ageRangeSource = AgeRangeSource.TIER_D,
+            ageLower = 18,
+            ageUpper = -1
+        };
+        
         PlayAgeSignalsWrapper.Request(
             OnSuccess, 
-            OnError
-            // Optional: Pass test data here for Editor/testing
-            // new AgeSignalsResultData { ageSignalsStatus = AgeSignalsStatus.SHARED, ... }
+            OnError,
+            testData
         );
     }
 
