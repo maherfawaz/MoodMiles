@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263796692236",
+    "project_id": "portfolio-cb139",
+    "storage_bucket": "portfolio-cb139.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263796692236:android:79ecc50cc4d12a79e66529",
+        "android_client_info": {
+          "package_name": "com.TeamMood.MoodMiles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCob4XDsBm0sop4nzcDThtFGg7FRHl7SfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
