@@ -112,13 +112,14 @@ public class PlayGamesManager : MonoBehaviour
             ageSignalsStatus = AgeSignalsStatus.SHARED,
             ageRangeSource = AgeRangeSource.TIER_D,
             ageLower = 18,
-            ageUpper = -1
+            ageUpper = -1,
+            significantChangeStatus = SignificantChangeStatus.PENDING
         };
         
         PlayAgeSignalsWrapper.Request(
             OnSuccess, 
-            OnError,
-            testData
+            OnError
+            //testData
         );
     }
 
@@ -140,23 +141,30 @@ public class PlayGamesManager : MonoBehaviour
 
         Debug.Log($"Age Source: {result.ageRangeSource}");
 
-        if (result.HasAgeRange) {
-            // ageUpper is -1 for the open-ended top band (e.g. 18+).
-            Debug.Log($"Age Range: {result.ageLower}-{result.ageUpper}");
+        if (result.significantChangeStatus == SignificantChangeStatus.DECLINED) {
+            ageDenyPopup.SetActive(true);
+            return;
+        }
+
+        if (result.significantChangeStatus == SignificantChangeStatus.PENDING) {
+            ageChangeApprovePopup.SetActive(true);
+            return;
         }
 
         // Check for supervision (Parental Controls)
         if (result.IsSupervised) {
             Debug.Log($"User is supervised. Significant change: {result.significantChangeStatus}");
             ageConfirmPopup.SetActive(true);
+            return;
         }
 
-        if (result.significantChangeStatus == SignificantChangeStatus.PENDING) {
-            ageChangeApprovePopup.SetActive(true);
-        }
-
-        if (result.significantChangeStatus == SignificantChangeStatus.DECLINED) {
-            ageDenyPopup.SetActive(true);
+        if (result.HasAgeRange) {
+            // ageUpper is -1 for the open-ended top band (e.g. 18+).
+            Debug.Log($"Age Range: {result.ageLower}-{result.ageUpper}");
+            if (result.ageLower < 18) {
+                ageConfirmPopup.SetActive(true);
+            }
+            return;
         }
     }
 
