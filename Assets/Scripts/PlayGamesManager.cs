@@ -133,12 +133,6 @@ public class PlayGamesManager : MonoBehaviour
             return;
         }
 
-        if (!result.IsShared) {
-            // The user (or their parent) declined to share. Fall back to your own age gate.
-            ageConfirmPopup.SetActive(true);
-            return;
-        }
-
         Debug.Log($"Age Source: {result.ageRangeSource}");
 
         if (result.significantChangeStatus == SignificantChangeStatus.DECLINED) {
@@ -164,6 +158,12 @@ public class PlayGamesManager : MonoBehaviour
             if (result.ageLower < 18) {
                 ageConfirmPopup.SetActive(true);
             }
+            return;
+        }
+
+        if (!result.IsShared) {
+            // The user (or their parent) declined to share. Fall back to your own age gate.
+            ageConfirmPopup.SetActive(true);
             return;
         }
     }
