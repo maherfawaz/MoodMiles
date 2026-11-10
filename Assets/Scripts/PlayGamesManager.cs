@@ -108,6 +108,10 @@ public class PlayGamesManager : MonoBehaviour
     }
 
     public void RequestAgeInfo() {
+        /*OnError(new AgeSignalsError {
+            errorCode = AgeSignalsErrorCode.NETWORK_ERROR,
+        });*/
+
         var testData = new AgeSignalsResultData {
             ageSignalsStatus = AgeSignalsStatus.SHARED,
             ageRangeSource = AgeRangeSource.TIER_D,
@@ -173,18 +177,23 @@ public class PlayGamesManager : MonoBehaviour
 
         Debug.LogError($"Error {error.errorCode}: {error.message}");
 
-        if (error.IsRetryable) {
+        if (error.IsRetryable && !Application.isEditor) {
             // Implement retry logic (e.g., exponential backoff)
             Invoke(nameof(RequestAgeInfo), 2.0f);
         } else {
             // Handle non-recoverable errors (e.g. show specific UI)
-            ageConfirmPopup.SetActive(true);
             switch (error.errorCode) {
-                case AgeSignalsErrorCode.PLAY_STORE_NOT_FOUND:
-                // Prompt user to install/enable Play Store
-                break;
-                // ... handle other codes
+                case AgeSignalsErrorCode.NETWORK_ERROR:
+                    ageConfirmPopup.SetActive(true);
+                    return;
+                case AgeSignalsErrorCode.CLIENT_TRANSIENT_ERROR:
+                    ageConfirmPopup.SetActive(true);
+                    return;
+                case AgeSignalsErrorCode.INTERNAL_ERROR:
+                    ageConfirmPopup.SetActive(true);
+                    return;
             }
+            ageVerifyPopup.SetActive(true);
         }
     }
 

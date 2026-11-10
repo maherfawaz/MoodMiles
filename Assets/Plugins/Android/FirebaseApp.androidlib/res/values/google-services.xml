@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
-  <string name="gcm_defaultSenderId" translatable="false">263796692236</string>
-  <string name="google_storage_bucket" translatable="false">portfolio-cb139.firebasestorage.app</string>
-  <string name="project_id" translatable="false">portfolio-cb139</string>
-  <string name="google_api_key" translatable="false">AIzaSyCob4XDsBm0sop4nzcDThtFGg7FRHl7SfM</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCob4XDsBm0sop4nzcDThtFGg7FRHl7SfM</string>
-  <string name="google_app_id" translatable="false">1:263796692236:android:79ecc50cc4d12a79e66529</string>
-</resources>
